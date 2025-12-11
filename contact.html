@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Radiant Beauty</title>
+    <meta name="description" content="Get in touch with us for personalized beauty advice, recommendations, and questions.">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">✨</span>
+                Radiant Beauty
+            </a>
+
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="makeup.html" class="nav-link">Makeup</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="hair.html" class="nav-link">Hair</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="nails.html" class="nav-link">Nails</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="skincare.html" class="nav-link">Skincare</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link active">Contact</a>
+                    </li>
+                </ul>
+
+                <div class="nav-close" id="nav-close">
+                    <span>&times;</span>
+                </div>
+            </div>
+
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <span class="page-icon">💌</span>
+                <h1 class="page-title">Get in Touch</h1>
+                <p class="page-description">We'd love to hear from you and help with your beauty journey</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-wrapper">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h2 class="contact-info-title">Let's Connect</h2>
+                    <p class="contact-info-description">
+                        Have a question about beauty tips, product recommendations, or want personalized advice?
+                        We're here to help you look and feel your best.
+                    </p>
+
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <span class="contact-icon">📧</span>
+                            <div class="contact-detail-content">
+                                <h3>Email Us</h3>
+                                <p>hello@radiantbeauty.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail">
+                            <span class="contact-icon">📱</span>
+                            <div class="contact-detail-content">
+                                <h3>Call Us</h3>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail">
+                            <span class="contact-icon">⏰</span>
+                            <div class="contact-detail-content">
+                                <h3>Working Hours</h3>
+                                <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links-section">
+                        <h3 class="social-title">Follow Us</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                            <a href="#" class="social-link" aria-label="Pinterest">📌</a>
+                            <a href="#" class="social-link" aria-label="YouTube">▶️</a>
+                            <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contact-form">
+                        <h2 class="form-title">Send Us a Message</h2>
+
+                        <div class="form-group">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                class="form-input"
+                                placeholder="Enter your name"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                class="form-input"
+                                placeholder="your.email@example.com"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <select id="subject" name="subject" class="form-input" required>
+                                <option value="">Select a topic</option>
+                                <option value="makeup">Makeup Advice</option>
+                                <option value="hair">Hair Care Tips</option>
+                                <option value="nails">Nail Art & Care</option>
+                                <option value="skincare">Skincare Routine</option>
+                                <option value="product">Product Recommendations</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Your Message</label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                class="form-input form-textarea"
+                                rows="6"
+                                placeholder="Tell us how we can help you..."
+                                required
+                            ></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">
+                            Send Message
+                        </button>
+
+                        <div id="form-message" class="form-message"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <h3 class="faq-question">How quickly will I receive a response?</h3>
+                    <p class="faq-answer">
+                        We typically respond to all inquiries within 24-48 hours during business days.
+                        For urgent matters, please call us directly.
+                    </p>
+                </div>
+
+                <div class="faq-card">
+                    <h3 class="faq-question">Do you offer personalized consultations?</h3>
+                    <p class="faq-answer">
+                        Yes! We offer personalized beauty consultations. Contact us to schedule
+                        a one-on-one session with our beauty experts.
+                    </p>
+                </div>
+
+                <div class="faq-card">
+                    <h3 class="faq-question">Can you recommend products for my skin type?</h3>
+                    <p class="faq-answer">
+                        Absolutely! Share details about your skin type and concerns in the contact form,
+                        and we'll provide tailored product recommendations.
+                    </p>
+                </div>
+
+                <div class="faq-card">
+                    <h3 class="faq-question">Are your tutorials suitable for beginners?</h3>
+                    <p class="faq-answer">
+                        Yes! We offer tutorials for all skill levels, from complete beginners to
+                        advanced beauty enthusiasts. Each tutorial is clearly labeled by difficulty.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">
+                        <span class="logo-icon">✨</span>
+                        Radiant Beauty
+                    </h3>
+                    <p class="footer-description">
+                        Your complete guide to beauty excellence. Explore makeup, hair, nails, and skincare tips.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="makeup.html">Makeup</a></li>
+                        <li><a href="hair.html">Hair</a></li>
+                        <li><a href="nails.html">Nails</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-heading">More</h4>
+                    <ul class="footer-links">
+                        <li><a href="skincare.html">Skincare</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html#categories">Categories</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-heading">Connect</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-link" aria-label="Pinterest">📌</a>
+                        <a href="#" class="social-link" aria-label="YouTube">▶️</a>
+                        <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Radiant Beauty. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

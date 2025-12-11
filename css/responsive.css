@@ -1,0 +1,436 @@
+/* ===================================
+   Responsive Design - Mobile First
+   =================================== */
+
+/* ===================================
+   Mobile Navigation
+   =================================== */
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 350px;
+        height: 100vh;
+        background-color: var(--white);
+        padding: var(--spacing-xl) var(--spacing-md);
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+        z-index: 1001;
+    }
+
+    .nav-menu.show {
+        right: 0;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 0;
+        margin-top: var(--spacing-xl);
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .nav-link {
+        display: block;
+        padding: var(--spacing-md) 0;
+        border-bottom: 1px solid var(--gray-100);
+        font-size: 1.125rem;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-close {
+        display: block;
+        position: absolute;
+        top: var(--spacing-md);
+        right: var(--spacing-md);
+    }
+
+    .nav-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+}
+
+/* ===================================
+   Tablet & Mobile (< 768px)
+   =================================== */
+@media screen and (max-width: 768px) {
+    /* Typography */
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .cta-title {
+        font-size: 1.875rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .hero-text {
+        order: 1;
+    }
+
+    .hero-image {
+        order: 2;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    /* Category Grid */
+    .category-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    /* Features Grid */
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    /* Content Grid */
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    /* Tips Grid */
+    .tips-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    /* Contact Section */
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .contact-form-wrapper {
+        padding: var(--spacing-md);
+    }
+
+    /* FAQ Grid */
+    .faq-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        text-align: center;
+    }
+
+    .footer-title,
+    .social-links {
+        justify-content: center;
+    }
+
+    /* Spacing */
+    .categories,
+    .features,
+    .content-section,
+    .tips-section,
+    .faq-section,
+    .contact-section {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .hero,
+    .cta {
+        padding: var(--spacing-lg) 0;
+    }
+
+    /* Container */
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    /* Buttons */
+    .btn-large {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+/* ===================================
+   Small Mobile (< 480px)
+   =================================== */
+@media screen and (max-width: 480px) {
+    /* Typography */
+    html {
+        font-size: 14px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .page-title {
+        font-size: 1.75rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .cta-title {
+        font-size: 1.5rem;
+    }
+
+    .nav-logo {
+        font-size: 1.25rem;
+    }
+
+    /* Hero */
+    .hero-image-placeholder .placeholder-icon {
+        font-size: 6rem;
+    }
+
+    .page-icon {
+        font-size: 3rem;
+    }
+
+    /* Cards */
+    .category-image-placeholder .placeholder-icon,
+    .tutorial-image-placeholder .placeholder-icon {
+        font-size: 3rem;
+    }
+
+    /* Contact Details */
+    .contact-detail {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-sm);
+    }
+
+    .contact-icon {
+        font-size: 2.5rem;
+    }
+
+    /* Social Links */
+    .social-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Spacing */
+    .section-header {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .btn-large {
+        padding: 0.875rem 1.75rem;
+    }
+
+    /* Form */
+    .form-input {
+        padding: 0.75rem var(--spacing-sm);
+    }
+
+    /* Navigation */
+    .nav {
+        height: 70px;
+    }
+
+    .hero,
+    .page-hero {
+        margin-top: 70px;
+    }
+}
+
+/* ===================================
+   Tablet & Desktop (768px - 1024px)
+   =================================== */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /* Hero */
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-content {
+        gap: var(--spacing-lg);
+    }
+
+    /* Grids */
+    .category-grid,
+    .content-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .features-grid,
+    .tips-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Contact */
+    .contact-wrapper {
+        gap: var(--spacing-lg);
+    }
+}
+
+/* ===================================
+   Large Desktop (> 1200px)
+   =================================== */
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 1280px;
+    }
+
+    .hero-title {
+        font-size: 4rem;
+    }
+
+    .section-title {
+        font-size: 3rem;
+    }
+
+    /* 3 columns for content grids */
+    .content-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ===================================
+   Landscape Orientation (Mobile)
+   =================================== */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .nav-menu {
+        padding: var(--spacing-md);
+    }
+
+    .nav-list {
+        margin-top: var(--spacing-md);
+    }
+
+    .nav-link {
+        padding: var(--spacing-sm) 0;
+        font-size: 1rem;
+    }
+}
+
+/* ===================================
+   Print Styles
+   =================================== */
+@media print {
+    .header,
+    .nav,
+    .nav-toggle,
+    .nav-close,
+    .cta,
+    .footer,
+    .social-links,
+    .btn {
+        display: none;
+    }
+
+    .hero,
+    .page-hero {
+        margin-top: 0;
+    }
+
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        color: #000;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+}
+
+/* ===================================
+   Accessibility - Reduced Motion
+   =================================== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ===================================
+   Dark Mode Support (Optional)
+   =================================== */
+@media (prefers-color-scheme: dark) {
+    /* Add dark mode styles here if needed */
+}
+
+/* ===================================
+   High DPI Displays
+   =================================== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Optimize for retina displays */
+    .hero-image-placeholder,
+    .category-image-placeholder,
+    .tutorial-image-placeholder {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
+
+/* ===================================
+   Hover Capabilities
+   =================================== */
+@media (hover: none) {
+    /* Remove hover effects on touch devices */
+    .category-card:hover,
+    .tutorial-card:hover,
+    .feature-card:hover,
+    .tip-card:hover {
+        transform: none;
+    }
+
+    .btn-primary:hover,
+    .btn-secondary:hover {
+        transform: none;
+    }
+}
