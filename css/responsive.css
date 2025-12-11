@@ -86,30 +86,70 @@
         font-size: 1.875rem;
     }
 
-    /* Hero Section */
-    .hero {
-        padding: var(--spacing-xl) 0;
+    /* Hero Section - Floating Balls */
+    .hero-floating {
+        min-height: 100vh;
     }
 
-    .hero-content {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
+    .hero-main-title {
+        font-size: 2.5rem;
     }
 
-    .hero-text {
-        order: 1;
+    .hero-tagline {
+        font-size: 1rem;
+        letter-spacing: 1px;
     }
 
-    .hero-image {
-        order: 2;
+    .floating-balls-container {
+        min-height: 500px;
     }
 
-    .hero-buttons {
-        flex-direction: column;
+    /* Smaller balls on mobile */
+    .floating-ball {
+        width: 120px;
+        height: 120px;
     }
 
-    .hero-buttons .btn {
-        width: 100%;
+    .ball-emoji {
+        font-size: 2.5rem;
+    }
+
+    .ball-label {
+        font-size: 0.75rem;
+        bottom: 0.5rem;
+    }
+
+    /* Hide some balls on mobile, reposition others */
+    .ball-3,
+    .ball-5,
+    .ball-8 {
+        display: none;
+    }
+
+    /* Reposition remaining balls for mobile */
+    .ball-1 {
+        top: 20%;
+        left: 15%;
+    }
+
+    .ball-2 {
+        top: 20%;
+        right: 15%;
+    }
+
+    .ball-4 {
+        top: 50%;
+        left: 10%;
+    }
+
+    .ball-6 {
+        top: 65%;
+        left: 60%;
+    }
+
+    .ball-7 {
+        top: 50%;
+        right: 10%;
     }
 
     /* Category Grid */
@@ -220,9 +260,53 @@
         font-size: 1.25rem;
     }
 
-    /* Hero */
-    .hero-image-placeholder .placeholder-icon {
-        font-size: 6rem;
+    /* Hero - Floating Balls for very small screens */
+    .hero-main-title {
+        font-size: 2rem;
+    }
+
+    .hero-tagline {
+        font-size: 0.875rem;
+    }
+
+    /* Even smaller balls */
+    .floating-ball {
+        width: 100px;
+        height: 100px;
+    }
+
+    .ball-emoji {
+        font-size: 2rem;
+    }
+
+    .ball-label {
+        font-size: 0.7rem;
+    }
+
+    /* Adjust positions for very small screens */
+    .ball-1 {
+        top: 18%;
+        left: 10%;
+    }
+
+    .ball-2 {
+        top: 18%;
+        right: 10%;
+    }
+
+    .ball-4 {
+        top: 48%;
+        left: 5%;
+    }
+
+    .ball-6 {
+        top: 70%;
+        left: 65%;
+    }
+
+    .ball-7 {
+        top: 48%;
+        right: 5%;
     }
 
     .page-icon {
@@ -287,13 +371,64 @@
    Tablet & Desktop (768px - 1024px)
    =================================== */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-    /* Hero */
-    .hero-title {
-        font-size: 3rem;
+    /* Hero - Floating Balls */
+    .hero-main-title {
+        font-size: 3.5rem;
     }
 
-    .hero-content {
-        gap: var(--spacing-lg);
+    .hero-tagline {
+        font-size: 1.25rem;
+    }
+
+    /* Medium-sized balls for tablets */
+    .floating-ball {
+        width: 150px;
+        height: 150px;
+    }
+
+    .ball-emoji {
+        font-size: 3.5rem;
+    }
+
+    /* Show one more ball on tablets */
+    .ball-3,
+    .ball-5 {
+        display: none;
+    }
+
+    .ball-8 {
+        display: block;
+    }
+
+    /* Reposition balls for tablet */
+    .ball-1 {
+        top: 18%;
+        left: 12%;
+    }
+
+    .ball-2 {
+        top: 22%;
+        right: 15%;
+    }
+
+    .ball-4 {
+        top: 15%;
+        left: 40%;
+    }
+
+    .ball-6 {
+        top: 45%;
+        left: 18%;
+    }
+
+    .ball-7 {
+        top: 20%;
+        right: 40%;
+    }
+
+    .ball-8 {
+        top: 65%;
+        left: 50%;
     }
 
     /* Grids */
@@ -432,5 +567,15 @@
     .btn-primary:hover,
     .btn-secondary:hover {
         transform: none;
+    }
+
+    /* Show labels on floating balls for touch devices */
+    .ball-label {
+        opacity: 1;
+    }
+
+    /* Subtle tap effect for floating balls */
+    .floating-ball:active {
+        transform: scale(0.95);
     }
 }

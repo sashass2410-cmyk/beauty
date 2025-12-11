@@ -211,29 +211,45 @@ ul {
 }
 
 /* ===================================
-   Hero Section
+   Hero Section - Floating Balls
    =================================== */
-.hero {
+.hero-floating {
     margin-top: 80px;
-    padding: var(--spacing-2xl) 0;
-    background: linear-gradient(135deg, var(--rose-50) 0%, var(--gold-50) 100%);
+    min-height: 100vh;
+    position: relative;
+    background: linear-gradient(135deg,
+        #fff1f2 0%,      /* soft rose */
+        #ffe4e6 25%,     /* light pink */
+        #fecdd3 50%,     /* peach pink */
+        #fef3c7 75%,     /* soft gold */
+        #fffbeb 100%     /* nude cream */
+    );
     overflow: hidden;
 }
 
-.hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-xl);
-    align-items: center;
+.hero-overlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: calc(100vh - 80px);
 }
 
-.hero-title {
+.hero-center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.hero-main-title {
     font-family: var(--font-display);
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     font-weight: 700;
-    line-height: 1.2;
-    color: var(--gray-900);
     margin-bottom: var(--spacing-md);
+    text-shadow: 0 2px 20px rgba(255, 255, 255, 0.8);
 }
 
 .gradient-text {
@@ -243,43 +259,222 @@ ul {
     background-clip: text;
 }
 
-.hero-description {
-    font-size: 1.125rem;
-    color: var(--gray-600);
-    margin-bottom: var(--spacing-lg);
-    line-height: 1.8;
+.hero-tagline {
+    font-size: 1.5rem;
+    color: var(--gray-700);
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-shadow: 0 1px 10px rgba(255, 255, 255, 0.9);
 }
 
-.hero-buttons {
-    display: flex;
-    gap: var(--spacing-md);
-    flex-wrap: wrap;
-}
-
-.hero-image-placeholder {
+/* Floating Balls Container */
+.floating-balls-container {
+    position: relative;
     width: 100%;
-    aspect-ratio: 1;
-    background: linear-gradient(135deg, var(--rose-200), var(--gold-200));
-    border-radius: var(--radius-lg);
+    height: calc(100vh - 80px);
+    min-height: 600px;
+}
+
+/* Individual Floating Ball */
+.floating-ball {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    cursor: pointer;
+    text-decoration: none;
+    z-index: 10;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ball-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.95),
+        rgba(255, 255, 255, 0.8)
+    );
+    border: 3px solid rgba(233, 30, 99, 0.15);
+    box-shadow:
+        0 8px 32px rgba(233, 30, 99, 0.15),
+        0 4px 16px rgba(212, 175, 55, 0.1),
+        inset 0 1px 2px rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.ball-inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%,
+        rgba(255, 255, 255, 0.4) 0%,
+        transparent 60%
+    );
+    pointer-events: none;
+}
+
+.ball-image {
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: var(--shadow-xl);
-    animation: float 6s ease-in-out infinite;
+    position: relative;
 }
 
-.placeholder-icon {
-    font-size: 8rem;
-    opacity: 0.7;
+.ball-emoji {
+    font-size: 4rem;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+    transition: transform 0.3s ease;
 }
 
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
+.ball-label {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.9);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Hover Effects */
+.floating-ball:hover {
+    transform: scale(1.15);
+    z-index: 100;
+}
+
+.floating-ball:hover .ball-inner {
+    border-color: var(--primary-color);
+    box-shadow:
+        0 12px 48px rgba(233, 30, 99, 0.25),
+        0 8px 24px rgba(212, 175, 55, 0.2),
+        inset 0 1px 2px rgba(255, 255, 255, 0.9),
+        0 0 0 8px rgba(233, 30, 99, 0.1);
+}
+
+.floating-ball:hover .ball-emoji {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.floating-ball:hover .ball-label {
+    opacity: 1;
+}
+
+/* Position each ball - Desktop Layout */
+.ball-1 {
+    top: 15%;
+    left: 10%;
+    animation: float-1 8s ease-in-out infinite;
+}
+
+.ball-2 {
+    top: 25%;
+    right: 12%;
+    animation: float-2 9s ease-in-out infinite;
+}
+
+.ball-3 {
+    top: 55%;
+    left: 8%;
+    animation: float-3 7s ease-in-out infinite;
+}
+
+.ball-4 {
+    top: 12%;
+    left: 35%;
+    animation: float-4 8.5s ease-in-out infinite;
+}
+
+.ball-5 {
+    top: 60%;
+    right: 15%;
+    animation: float-5 7.5s ease-in-out infinite;
+}
+
+.ball-6 {
+    top: 40%;
+    left: 15%;
+    animation: float-6 9s ease-in-out infinite;
+}
+
+.ball-7 {
+    top: 18%;
+    right: 35%;
+    animation: float-7 8s ease-in-out infinite;
+}
+
+.ball-8 {
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: float-8 7.8s ease-in-out infinite;
+}
+
+/* Floating Animations */
+@keyframes float-1 {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(15px, -20px); }
+    66% { transform: translate(-10px, 10px); }
+}
+
+@keyframes float-2 {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(-20px, 15px); }
+    66% { transform: translate(10px, -10px); }
+}
+
+@keyframes float-3 {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(10px, 20px); }
+    66% { transform: translate(-15px, -15px); }
+}
+
+@keyframes float-4 {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(-15px, -15px); }
+    66% { transform: translate(20px, 10px); }
+}
+
+@keyframes float-5 {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(15px, -10px); }
+    66% { transform: translate(-20px, 15px); }
+}
+
+@keyframes float-6 {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(-10px, 15px); }
+    66% { transform: translate(15px, -20px); }
+}
+
+@keyframes float-7 {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(20px, 10px); }
+    66% { transform: translate(-15px, -15px); }
+}
+
+@keyframes float-8 {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    33% { transform: translateX(-50%) translate(10px, -15px); }
+    66% { transform: translateX(-50%) translate(-10px, 10px); }
 }
 
 /* ===================================
