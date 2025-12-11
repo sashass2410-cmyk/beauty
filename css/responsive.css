@@ -126,30 +126,40 @@
         display: none;
     }
 
-    /* Reposition remaining balls for mobile */
+    /* Reposition remaining 5 balls in circular pattern for mobile */
     .ball-1 {
-        top: 20%;
-        left: 15%;
+        /* Top */
+        top: 15%;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .ball-2 {
-        top: 20%;
+        /* Top-Right */
+        top: 30%;
         right: 15%;
+        transform: none;
     }
 
     .ball-4 {
-        top: 50%;
-        left: 10%;
+        /* Bottom-Right */
+        bottom: 20%;
+        right: 20%;
+        transform: none;
     }
 
     .ball-6 {
-        top: 65%;
-        left: 60%;
+        /* Bottom-Left */
+        bottom: 20%;
+        left: 20%;
+        transform: none;
     }
 
     .ball-7 {
-        top: 50%;
-        right: 10%;
+        /* Top-Left */
+        top: 30%;
+        left: 15%;
+        transform: none;
     }
 
     /* Category Grid */
@@ -283,30 +293,40 @@
         font-size: 0.7rem;
     }
 
-    /* Adjust positions for very small screens */
+    /* Adjust positions for very small screens - maintain circular pattern */
     .ball-1 {
+        /* Top */
         top: 18%;
-        left: 10%;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .ball-2 {
-        top: 18%;
-        right: 10%;
+        /* Top-Right */
+        top: 32%;
+        right: 12%;
+        transform: none;
     }
 
     .ball-4 {
-        top: 48%;
-        left: 5%;
+        /* Bottom-Right */
+        bottom: 22%;
+        right: 18%;
+        transform: none;
     }
 
     .ball-6 {
-        top: 70%;
-        left: 65%;
+        /* Bottom-Left */
+        bottom: 22%;
+        left: 18%;
+        transform: none;
     }
 
     .ball-7 {
-        top: 48%;
-        right: 5%;
+        /* Top-Left */
+        top: 32%;
+        left: 12%;
+        transform: none;
     }
 
     .page-icon {
@@ -390,7 +410,7 @@
         font-size: 3.5rem;
     }
 
-    /* Show one more ball on tablets */
+    /* Show 6 balls on tablets - hide 2 */
     .ball-3,
     .ball-5 {
         display: none;
@@ -400,35 +420,47 @@
         display: block;
     }
 
-    /* Reposition balls for tablet */
+    /* Reposition 6 balls in hexagon pattern for tablet */
     .ball-1 {
-        top: 18%;
-        left: 12%;
+        /* Top */
+        top: 12%;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .ball-2 {
-        top: 22%;
+        /* Top-Right */
+        top: 25%;
         right: 15%;
+        transform: none;
     }
 
     .ball-4 {
-        top: 15%;
-        left: 40%;
+        /* Bottom-Right */
+        bottom: 22%;
+        right: 15%;
+        transform: none;
     }
 
     .ball-6 {
-        top: 45%;
-        left: 18%;
+        /* Bottom-Left */
+        bottom: 22%;
+        left: 15%;
+        transform: none;
     }
 
     .ball-7 {
-        top: 20%;
-        right: 40%;
+        /* Top-Left */
+        top: 25%;
+        left: 15%;
+        transform: none;
     }
 
     .ball-8 {
-        top: 65%;
+        /* Bottom */
+        bottom: 12%;
         left: 50%;
+        transform: translateX(-50%);
     }
 
     /* Grids */
