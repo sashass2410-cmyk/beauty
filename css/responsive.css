@@ -120,46 +120,41 @@
         opacity: 0.8;
     }
 
-    /* Hide some balls on mobile, reposition others */
+    /* Mobile Layout - Keep left/right structure with 4 balls (2 on each side) */
     .ball-3,
+    .ball-4,
     .ball-5,
     .ball-8 {
         display: none;
     }
 
-    /* Reposition remaining 5 balls in circular pattern for mobile */
+    /* LEFT SIDE - 2 Balls on mobile */
     .ball-1 {
-        /* Top */
-        top: 15%;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .ball-2 {
-        /* Top-Right */
-        top: 30%;
-        right: 15%;
-        transform: none;
-    }
-
-    .ball-4 {
-        /* Bottom-Right */
-        bottom: 20%;
-        right: 20%;
+        /* Left Top */
+        top: 25%;
+        left: 12%;
         transform: none;
     }
 
     .ball-6 {
-        /* Bottom-Left */
-        bottom: 20%;
-        left: 20%;
+        /* Left Bottom */
+        bottom: 25%;
+        left: 12%;
+        transform: none;
+    }
+
+    /* RIGHT SIDE - 2 Balls on mobile */
+    .ball-2 {
+        /* Right Top */
+        top: 25%;
+        right: 12%;
         transform: none;
     }
 
     .ball-7 {
-        /* Top-Left */
-        top: 30%;
-        left: 15%;
+        /* Right Bottom */
+        bottom: 25%;
+        right: 12%;
         transform: none;
     }
 
@@ -296,39 +291,34 @@
         opacity: 0.8;
     }
 
-    /* Adjust positions for very small screens - maintain circular pattern */
+    /* Small Mobile - Keep left/right structure with 4 balls (2 on each side) */
+    /* LEFT SIDE - 2 Balls */
     .ball-1 {
-        /* Top */
-        top: 18%;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .ball-2 {
-        /* Top-Right */
-        top: 32%;
-        right: 12%;
-        transform: none;
-    }
-
-    .ball-4 {
-        /* Bottom-Right */
-        bottom: 22%;
-        right: 18%;
+        /* Left Top */
+        top: 28%;
+        left: 8%;
         transform: none;
     }
 
     .ball-6 {
-        /* Bottom-Left */
-        bottom: 22%;
-        left: 18%;
+        /* Left Bottom */
+        bottom: 28%;
+        left: 8%;
+        transform: none;
+    }
+
+    /* RIGHT SIDE - 2 Balls */
+    .ball-2 {
+        /* Right Top */
+        top: 28%;
+        right: 8%;
         transform: none;
     }
 
     .ball-7 {
-        /* Top-Left */
-        top: 32%;
-        left: 12%;
+        /* Right Bottom */
+        bottom: 28%;
+        right: 8%;
         transform: none;
     }
 
@@ -419,57 +409,59 @@
         opacity: 0.75;
     }
 
-    /* Show 6 balls on tablets - hide 2 */
-    .ball-3,
-    .ball-5 {
+    /* Tablet - Full 6 balls (3 on each side) */
+    .ball-5,
+    .ball-8 {
         display: none;
     }
 
-    .ball-8 {
+    .ball-3,
+    .ball-4 {
         display: block;
     }
 
-    /* Reposition 6 balls in hexagon pattern for tablet */
+    /* LEFT SIDE - 3 Balls on tablet */
     .ball-1 {
-        /* Top */
-        top: 12%;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .ball-2 {
-        /* Top-Right */
-        top: 25%;
-        right: 15%;
-        transform: none;
-    }
-
-    .ball-4 {
-        /* Bottom-Right */
-        bottom: 22%;
-        right: 15%;
+        /* Left Top */
+        top: 20%;
+        left: 12%;
         transform: none;
     }
 
     .ball-6 {
-        /* Bottom-Left */
-        bottom: 22%;
-        left: 15%;
+        /* Left Middle */
+        top: 50%;
+        left: 12%;
+        transform: translateY(-50%);
+    }
+
+    .ball-3 {
+        /* Left Bottom */
+        bottom: 20%;
+        left: 12%;
+        transform: none;
+    }
+
+    /* RIGHT SIDE - 3 Balls on tablet */
+    .ball-2 {
+        /* Right Top */
+        top: 20%;
+        right: 12%;
         transform: none;
     }
 
     .ball-7 {
-        /* Top-Left */
-        top: 25%;
-        left: 15%;
-        transform: none;
+        /* Right Middle */
+        top: 50%;
+        right: 12%;
+        transform: translateY(-50%);
     }
 
-    .ball-8 {
-        /* Bottom */
-        bottom: 12%;
-        left: 50%;
-        transform: translateX(-50%);
+    .ball-4 {
+        /* Right Bottom */
+        bottom: 20%;
+        right: 12%;
+        transform: none;
     }
 
     /* Grids */

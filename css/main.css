@@ -404,108 +404,96 @@ ul {
     transform: translateX(-50%) translateY(-2px);
 }
 
-/* Position each ball - Circular Layout with Increased Spacing */
-/* Arranged in a circular pattern with safe distances to prevent touching */
+/* Position each ball - Left/Right Layout (3 on each side) */
+/* Safe vertical spacing to prevent touching */
 
+/* LEFT SIDE - 3 Balls */
 .ball-1 {
-    /* Top - 0° */
-    top: 8%;
-    left: 50%;
-    transform: translateX(-50%);
+    /* Left Top */
+    top: 18%;
+    left: 10%;
     animation: float-1 8s ease-in-out infinite;
 }
 
-.ball-2 {
-    /* Top-Right - 45° */
-    top: 15%;
-    right: 15%;
-    animation: float-2 9s ease-in-out infinite;
-}
-
-.ball-3 {
-    /* Right - 90° */
-    top: 50%;
-    right: 8%;
-    transform: translateY(-50%);
-    animation: float-3 7s ease-in-out infinite;
-}
-
-.ball-4 {
-    /* Bottom-Right - 135° */
-    bottom: 15%;
-    right: 15%;
-    animation: float-4 8.5s ease-in-out infinite;
-}
-
-.ball-5 {
-    /* Bottom - 180° */
-    bottom: 8%;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: float-5 7.5s ease-in-out infinite;
-}
-
 .ball-6 {
-    /* Bottom-Left - 225° */
-    bottom: 15%;
-    left: 15%;
+    /* Left Middle */
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
     animation: float-6 9s ease-in-out infinite;
 }
 
+.ball-3 {
+    /* Left Bottom */
+    bottom: 18%;
+    left: 10%;
+    animation: float-3 7s ease-in-out infinite;
+}
+
+/* RIGHT SIDE - 3 Balls */
+.ball-2 {
+    /* Right Top */
+    top: 18%;
+    right: 10%;
+    animation: float-2 9s ease-in-out infinite;
+}
+
 .ball-7 {
-    /* Left - 270° */
+    /* Right Middle */
     top: 50%;
-    left: 8%;
+    right: 10%;
     transform: translateY(-50%);
     animation: float-7 8s ease-in-out infinite;
 }
 
-.ball-8 {
-    /* Top-Left - 315° */
-    top: 15%;
-    left: 15%;
-    animation: float-8 7.8s ease-in-out infinite;
+.ball-4 {
+    /* Right Bottom */
+    bottom: 18%;
+    right: 10%;
+    animation: float-4 8.5s ease-in-out infinite;
 }
 
-/* Floating Animations - Ultra-subtle movements, no overlap possible */
+/* HIDDEN BALLS */
+.ball-5,
+.ball-8 {
+    display: none;
+}
+
+/* Floating Animations - Gentle vertical movements, no touching possible */
 @keyframes float-1 {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(-5px); }
+    /* Left Top */
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(0, -8px); }
 }
 
 @keyframes float-2 {
+    /* Right Top */
     0%, 100% { transform: translate(0, 0); }
-    50% { transform: translate(-3px, 4px); }
+    50% { transform: translate(0, -8px); }
 }
 
 @keyframes float-3 {
-    0%, 100% { transform: translateY(-50%) translateX(0); }
-    50% { transform: translateY(-50%) translateX(-5px); }
+    /* Left Bottom */
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(0, 8px); }
 }
 
 @keyframes float-4 {
+    /* Right Bottom */
     0%, 100% { transform: translate(0, 0); }
-    50% { transform: translate(-4px, -3px); }
-}
-
-@keyframes float-5 {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(5px); }
+    50% { transform: translate(0, 8px); }
 }
 
 @keyframes float-6 {
-    0%, 100% { transform: translate(0, 0); }
-    50% { transform: translate(3px, 4px); }
+    /* Left Middle */
+    0%, 100% { transform: translateY(-50%) translateX(0); }
+    50% { transform: translateY(-50%) translateX(8px); }
 }
 
 @keyframes float-7 {
+    /* Right Middle */
     0%, 100% { transform: translateY(-50%) translateX(0); }
-    50% { transform: translateY(-50%) translateX(5px); }
-}
-
-@keyframes float-8 {
-    0%, 100% { transform: translate(0, 0); }
-    50% { transform: translate(4px, -3px); }
+    50% { transform: translateY(-50%) translateX(-8px); }
 }
 
 /* ===================================
