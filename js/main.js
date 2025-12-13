@@ -239,11 +239,11 @@ function initBentoScrollEffects() {
             // Position moves from -50% to 150% creating sweep effect
             const gradientPosition = -50 + (clampedProgress * 200);
 
-            // Calculate brightness shift (subtle pulsing effect)
-            const brightness = 1 + (Math.sin(clampedProgress * Math.PI) * 0.15);
+            // Calculate brightness shift (very subtle pulsing effect)
+            const brightness = 1 + (Math.sin(clampedProgress * Math.PI) * 0.05);
 
-            // Calculate saturation boost
-            const saturation = 1 + (Math.sin(clampedProgress * Math.PI) * 0.2);
+            // Calculate saturation boost (barely noticeable)
+            const saturation = 1 + (Math.sin(clampedProgress * Math.PI) * 0.08);
 
             // Apply shimmer effect using CSS custom properties
             card.style.setProperty('--shimmer-angle', `${shimmerAngle}deg`);
@@ -254,15 +254,15 @@ function initBentoScrollEffects() {
             // Add dynamic gradient overlay that sweeps across
             const placeholder = card.querySelector('.bento-placeholder');
             if (placeholder) {
-                // Create light sweep effect
-                const lightIntensity = Math.sin(clampedProgress * Math.PI * 2) * 0.3;
-                placeholder.style.filter = `brightness(${brightness}) saturate(${saturation}) contrast(${1 + lightIntensity * 0.1})`;
+                // Create subtle light sweep effect
+                const lightIntensity = Math.sin(clampedProgress * Math.PI * 2) * 0.1;
+                placeholder.style.filter = `brightness(${brightness}) saturate(${saturation}) contrast(${1 + lightIntensity * 0.03})`;
             }
 
-            // Add shimmer to overlay text
+            // Add barely noticeable shimmer to overlay text
             const overlay = card.querySelector('.bento-overlay');
             if (overlay) {
-                const overlayOpacity = 0.85 + (Math.sin(clampedProgress * Math.PI) * 0.1);
+                const overlayOpacity = 0.85 + (Math.sin(clampedProgress * Math.PI) * 0.03);
                 overlay.style.setProperty('--overlay-opacity', overlayOpacity);
             }
         });
