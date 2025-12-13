@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initHeaderScroll();
     initContactForm();
     initCardAnimations();
+    initBentoScrollEffects();
 });
 
 /*===================================
@@ -203,6 +204,78 @@ function initCardAnimations() {
             }
         });
     });
+}
+
+/*===================================
+  Bento Cards Scroll Shimmer Effects
+  ===================================*/
+function initBentoScrollEffects() {
+    const bentoCards = document.querySelectorAll('.bento-card');
+
+    if (bentoCards.length === 0) return;
+
+    // Throttled scroll handler for better performance
+    const handleScroll = throttle(function() {
+        const scrollY = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+
+        bentoCards.forEach((card, index) => {
+            const rect = card.getBoundingClientRect();
+            const cardTop = rect.top + scrollY;
+            const cardCenter = cardTop + rect.height / 2;
+
+            // Calculate scroll progress relative to card position
+            // Values range from 0 to 1 as card moves through viewport
+            const scrollProgress = (scrollY + windowHeight / 2 - cardTop) / (windowHeight + rect.height);
+
+            // Ensure values are between 0 and 1
+            const clampedProgress = Math.max(0, Math.min(1, scrollProgress));
+
+            // Calculate shimmer angle that changes with scroll
+            // Angle rotates from -45deg to 135deg as you scroll
+            const shimmerAngle = -45 + (clampedProgress * 180);
+
+            // Calculate gradient position that shifts with scroll
+            // Position moves from -50% to 150% creating sweep effect
+            const gradientPosition = -50 + (clampedProgress * 200);
+
+            // Calculate brightness shift (subtle pulsing effect)
+            const brightness = 1 + (Math.sin(clampedProgress * Math.PI) * 0.15);
+
+            // Calculate saturation boost
+            const saturation = 1 + (Math.sin(clampedProgress * Math.PI) * 0.2);
+
+            // Apply shimmer effect using CSS custom properties
+            card.style.setProperty('--shimmer-angle', `${shimmerAngle}deg`);
+            card.style.setProperty('--shimmer-position', `${gradientPosition}%`);
+            card.style.setProperty('--scroll-brightness', brightness);
+            card.style.setProperty('--scroll-saturation', saturation);
+
+            // Add dynamic gradient overlay that sweeps across
+            const placeholder = card.querySelector('.bento-placeholder');
+            if (placeholder) {
+                // Create light sweep effect
+                const lightIntensity = Math.sin(clampedProgress * Math.PI * 2) * 0.3;
+                placeholder.style.filter = `brightness(${brightness}) saturate(${saturation}) contrast(${1 + lightIntensity * 0.1})`;
+            }
+
+            // Add shimmer to overlay text
+            const overlay = card.querySelector('.bento-overlay');
+            if (overlay) {
+                const overlayOpacity = 0.85 + (Math.sin(clampedProgress * Math.PI) * 0.1);
+                overlay.style.setProperty('--overlay-opacity', overlayOpacity);
+            }
+        });
+    }, 16); // ~60fps
+
+    // Initial call
+    handleScroll();
+
+    // Listen to scroll events
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // Also update on resize
+    window.addEventListener('resize', debounce(handleScroll, 100));
 }
 
 /*===================================
