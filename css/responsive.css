@@ -86,81 +86,69 @@
         font-size: 1.875rem;
     }
 
-    /* Hero Section - Floating Balls */
-    .hero-floating {
-        min-height: 100vh;
-    }
-
-    .hero-main-title {
+    /* Modern Hero Section */
+    .hero-headline {
         font-size: 2.5rem;
     }
 
-    .hero-tagline {
+    .hero-subheading {
+        font-size: 1.125rem;
+    }
+
+    .hero-cta-buttons {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .btn-hero-primary,
+    .btn-hero-secondary {
+        padding: 1rem 2.5rem;
         font-size: 1rem;
-        letter-spacing: 1px;
+        width: 100%;
+        max-width: 300px;
     }
 
-    .floating-balls-container {
-        min-height: 500px;
+    .hero-scroll-indicator {
+        bottom: var(--spacing-md);
+        font-size: 0.75rem;
     }
 
-    /* Smaller balls on mobile */
-    .floating-ball {
-        width: 110px;
-        height: 110px;
+    /* Bento Grid - Stack on Mobile */
+    .bento-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
     }
 
-    .ball-emoji {
-        font-size: 2.25rem;
+    .bento-large,
+    .bento-medium,
+    .bento-small {
+        grid-column: span 1;
+        grid-row: span 1;
+        min-height: 250px;
     }
 
-    .ball-label {
-        font-size: 0.7rem;
-        bottom: 0.75rem;
-        opacity: 0.8;
+    .bento-large {
+        min-height: 320px;
     }
 
-    /* Hide some balls on mobile, reposition others */
-    .ball-3,
-    .ball-5,
-    .ball-8 {
-        display: none;
+    .bento-title {
+        font-size: 1.5rem;
     }
 
-    /* Reposition remaining 5 balls in circular pattern for mobile */
-    .ball-1 {
-        /* Top */
-        top: 15%;
-        left: 50%;
-        transform: translateX(-50%);
+    .bento-description {
+        font-size: 0.95rem;
     }
 
-    .ball-2 {
-        /* Top-Right */
-        top: 30%;
-        right: 15%;
-        transform: none;
+    .bento-large .bento-title {
+        font-size: 1.75rem;
     }
 
-    .ball-4 {
-        /* Bottom-Right */
-        bottom: 20%;
-        right: 20%;
-        transform: none;
+    .bento-icon {
+        font-size: 4rem;
     }
 
-    .ball-6 {
-        /* Bottom-Left */
-        bottom: 20%;
-        left: 20%;
-        transform: none;
-    }
-
-    .ball-7 {
-        /* Top-Left */
-        top: 30%;
-        left: 15%;
-        transform: none;
+    .bento-large .bento-icon {
+        font-size: 5rem;
     }
 
     /* Category Grid */
@@ -271,65 +259,37 @@
         font-size: 1.25rem;
     }
 
-    /* Hero - Floating Balls for very small screens */
-    .hero-main-title {
+    /* Modern Hero for very small screens */
+    .hero-headline {
         font-size: 2rem;
     }
 
-    .hero-tagline {
-        font-size: 0.875rem;
+    .hero-subheading {
+        font-size: 1rem;
     }
 
-    /* Even smaller balls */
-    .floating-ball {
-        width: 90px;
-        height: 90px;
+    .btn-hero-primary,
+    .btn-hero-secondary {
+        padding: 0.875rem 2rem;
+        font-size: 0.95rem;
     }
 
-    .ball-emoji {
-        font-size: 1.875rem;
+    /* Bento Grid - Small mobile adjustments */
+    .bento-large {
+        min-height: 280px;
     }
 
-    .ball-label {
-        font-size: 0.65rem;
-        bottom: 0.5rem;
-        opacity: 0.8;
+    .bento-medium,
+    .bento-small {
+        min-height: 220px;
     }
 
-    /* Adjust positions for very small screens - maintain circular pattern */
-    .ball-1 {
-        /* Top */
-        top: 18%;
-        left: 50%;
-        transform: translateX(-50%);
+    .bento-icon {
+        font-size: 3.5rem;
     }
 
-    .ball-2 {
-        /* Top-Right */
-        top: 32%;
-        right: 12%;
-        transform: none;
-    }
-
-    .ball-4 {
-        /* Bottom-Right */
-        bottom: 22%;
-        right: 18%;
-        transform: none;
-    }
-
-    .ball-6 {
-        /* Bottom-Left */
-        bottom: 22%;
-        left: 18%;
-        transform: none;
-    }
-
-    .ball-7 {
-        /* Top-Left */
-        top: 32%;
-        left: 12%;
-        transform: none;
+    .bento-large .bento-icon {
+        font-size: 4.5rem;
     }
 
     .page-icon {
@@ -394,82 +354,40 @@
    Tablet & Desktop (768px - 1024px)
    =================================== */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-    /* Hero - Floating Balls */
-    .hero-main-title {
+    /* Modern Hero - Tablet */
+    .hero-headline {
         font-size: 3.5rem;
     }
 
-    .hero-tagline {
+    .hero-subheading {
         font-size: 1.25rem;
     }
 
-    /* Medium-sized balls for tablets */
-    .floating-ball {
-        width: 140px;
-        height: 140px;
+    .btn-hero-primary,
+    .btn-hero-secondary {
+        padding: 1.125rem 2.75rem;
+        font-size: 1.0625rem;
     }
 
-    .ball-emoji {
-        font-size: 3.25rem;
+    /* Bento Grid - 2-column layout for tablets */
+    .bento-grid {
+        grid-template-columns: repeat(6, 1fr);
+        gap: var(--spacing-md);
     }
 
-    .ball-label {
-        font-size: 0.8rem;
-        bottom: 1rem;
-        opacity: 0.75;
+    .bento-large {
+        grid-column: span 6;
+        min-height: 350px;
     }
 
-    /* Show 6 balls on tablets - hide 2 */
-    .ball-3,
-    .ball-5 {
-        display: none;
+    .bento-medium {
+        grid-column: span 3;
+        min-height: 260px;
     }
 
-    .ball-8 {
-        display: block;
-    }
-
-    /* Reposition 6 balls in hexagon pattern for tablet */
-    .ball-1 {
-        /* Top */
-        top: 12%;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .ball-2 {
-        /* Top-Right */
-        top: 25%;
-        right: 15%;
-        transform: none;
-    }
-
-    .ball-4 {
-        /* Bottom-Right */
-        bottom: 22%;
-        right: 15%;
-        transform: none;
-    }
-
-    .ball-6 {
-        /* Bottom-Left */
-        bottom: 22%;
-        left: 15%;
-        transform: none;
-    }
-
-    .ball-7 {
-        /* Top-Left */
-        top: 25%;
-        left: 15%;
-        transform: none;
-    }
-
-    .ball-8 {
-        /* Bottom */
-        bottom: 12%;
-        left: 50%;
-        transform: translateX(-50%);
+    .bento-small {
+        grid-column: span 2;
+        min-height: 200px;
     }
 
     /* Grids */
@@ -610,13 +528,13 @@
         transform: none;
     }
 
-    /* Ensure labels are visible on touch devices */
-    .ball-label {
-        opacity: 0.9;
+    /* Ensure bento overlays are visible on touch devices */
+    .bento-overlay {
+        opacity: 1;
     }
 
-    /* Subtle tap effect for floating balls */
-    .floating-ball:active .ball-inner {
+    /* Subtle tap effect for bento cards */
+    .bento-card:active {
         transform: scale(0.98);
     }
 }

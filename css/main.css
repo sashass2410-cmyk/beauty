@@ -211,344 +211,332 @@ ul {
 }
 
 /* ===================================
-   Hero Section - Floating Balls
+   Modern Hero Section
    =================================== */
-.hero-floating {
+.modern-hero {
     margin-top: 80px;
     min-height: 100vh;
     position: relative;
-    background: linear-gradient(135deg,
-        #fff1f2 0%,      /* soft rose */
-        #ffe4e6 25%,     /* light pink */
-        #fecdd3 50%,     /* peach pink */
-        #fef3c7 75%,     /* soft gold */
-        #fffbeb 100%     /* nude cream */
-    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
 }
 
-.hero-overlay {
-    position: relative;
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    min-height: calc(100vh - 80px);
+    background: linear-gradient(135deg,
+        #fff1f2 0%,
+        #ffe4e6 20%,
+        #fecdd3 40%,
+        #fef3c7 70%,
+        #fffbeb 100%
+    );
+    z-index: 1;
 }
 
-.hero-center-text {
+.hero-overlay-gradient {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(233, 30, 99, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+}
+
+.hero-content-wrapper {
+    position: relative;
     z-index: 2;
-    pointer-events: none;
+    text-align: center;
+    padding: var(--spacing-2xl) 0;
 }
 
-.hero-main-title {
+.hero-text-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-headline {
     font-family: var(--font-display);
-    font-size: 4.5rem;
+    font-size: 5rem;
     font-weight: 700;
+    line-height: 1.1;
+    color: var(--gray-900);
     margin-bottom: var(--spacing-md);
-    text-shadow: 0 2px 20px rgba(255, 255, 255, 0.8);
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 20px rgba(255, 255, 255, 0.5);
 }
 
-.gradient-text {
+.hero-accent {
+    display: block;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    font-style: italic;
+    margin-top: 0.25rem;
 }
 
-.hero-tagline {
+.hero-subheading {
     font-size: 1.5rem;
     color: var(--gray-700);
-    font-weight: 300;
-    letter-spacing: 2px;
-    text-shadow: 0 1px 10px rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.6;
 }
 
-/* Floating Balls Container */
-.floating-balls-container {
-    position: relative;
-    width: 100%;
-    height: calc(100vh - 80px);
-    min-height: 600px;
+.hero-cta-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-/* Individual Floating Ball */
-.floating-ball {
-    position: absolute;
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    cursor: pointer;
-    text-decoration: none;
-    z-index: 10;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.ball-inner {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: linear-gradient(135deg,
-        rgba(255, 255, 255, 0.95) 0%,
-        rgba(255, 250, 252, 0.9) 100%
-    );
-    border: 1px solid rgba(255, 255, 255, 0.6);
+.btn-hero-primary {
+    display: inline-block;
+    padding: 1.125rem 3rem;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 1.125rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--white);
     box-shadow:
-        0 8px 32px rgba(233, 30, 99, 0.12),
-        0 4px 16px rgba(212, 175, 55, 0.08),
-        0 2px 8px rgba(0, 0, 0, 0.04),
-        inset 0 -2px 8px rgba(233, 30, 99, 0.05),
-        inset 0 2px 8px rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    overflow: visible;
-    position: relative;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        0 10px 30px rgba(233, 30, 99, 0.3),
+        0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    cursor: pointer;
 }
 
-.ball-inner::before {
-    content: '';
+.btn-hero-primary:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 15px 40px rgba(233, 30, 99, 0.4),
+        0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-hero-secondary {
+    display: inline-block;
+    padding: 1.125rem 3rem;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 1.125rem;
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.btn-hero-secondary:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(233, 30, 99, 0.25);
+}
+
+.hero-scroll-indicator {
     position: absolute;
-    top: 5%;
-    left: 10%;
-    width: 40%;
-    height: 40%;
-    border-radius: 50%;
-    background: radial-gradient(circle at center,
-        rgba(255, 255, 255, 0.6) 0%,
-        rgba(255, 255, 255, 0.2) 50%,
-        transparent 70%
-    );
-    filter: blur(12px);
-    pointer-events: none;
-}
-
-.ball-inner::after {
-    content: '';
-    position: absolute;
-    bottom: 10%;
-    right: 10%;
-    width: 35%;
-    height: 35%;
-    border-radius: 50%;
-    background: radial-gradient(circle at center,
-        rgba(233, 30, 99, 0.08) 0%,
-        transparent 60%
-    );
-    filter: blur(15px);
-    pointer-events: none;
-}
-
-.ball-image {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.ball-emoji {
-    font-size: 4rem;
-    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
-    transition: transform 0.3s ease;
-}
-
-.ball-label {
-    position: absolute;
-    bottom: 1.25rem;
+    bottom: var(--spacing-xl);
     left: 50%;
     transform: translateX(-50%);
-    font-family: var(--font-body);
+    z-index: 2;
+    text-align: center;
+    color: var(--gray-600);
     font-size: 0.875rem;
     font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.scroll-arrow {
+    margin-top: 0.5rem;
+    font-size: 1.5rem;
+    animation: bounce-scroll 2s ease-in-out infinite;
+}
+
+@keyframes bounce-scroll {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateY(8px);
+        opacity: 1;
+    }
+}
+
+/* ===================================
+   Bento-Style Services Grid
+   =================================== */
+.bento-services {
+    padding: var(--spacing-2xl) 0;
+    background: var(--white);
+}
+
+.section-header-minimal {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.section-title-minimal {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--spacing-sm);
+}
+
+.section-subtitle-minimal {
+    font-size: 1.125rem;
     color: var(--gray-600);
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
-    white-space: nowrap;
-    opacity: 0.7;
+    font-weight: 400;
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--spacing-md);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Bento Card Base Styles */
+.bento-card {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-md);
+    text-decoration: none;
+    display: block;
+}
+
+.bento-card:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-xl);
+    z-index: 10;
+}
+
+/* Bento Size Variants */
+.bento-large {
+    grid-column: span 6;
+    grid-row: span 2;
+    min-height: 400px;
+}
+
+.bento-medium {
+    grid-column: span 4;
+    min-height: 280px;
+}
+
+.bento-small {
+    grid-column: span 4;
+    min-height: 200px;
+}
+
+/* Bento Image/Background */
+.bento-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.bento-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--rose-100), var(--gold-100));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bento-icon {
+    font-size: 5rem;
+    opacity: 0.5;
     transition: all 0.3s ease;
-    letter-spacing: 0.5px;
 }
 
-/* Hover Effects */
-.floating-ball:hover {
-    z-index: 100;
+.bento-card:hover .bento-icon {
+    transform: scale(1.1);
+    opacity: 0.7;
 }
 
-.floating-ball:hover .ball-inner {
-    transform: scale(1.15) translateY(-6px);
-    border: 2px solid rgba(233, 30, 99, 0.6);
-    box-shadow:
-        0 0 0 4px rgba(233, 30, 99, 0.2),
-        0 0 20px rgba(233, 30, 99, 0.4),
-        0 20px 60px rgba(233, 30, 99, 0.3),
-        0 10px 30px rgba(212, 175, 55, 0.15),
-        0 5px 15px rgba(0, 0, 0, 0.1),
-        inset 0 -2px 12px rgba(233, 30, 99, 0.1),
-        inset 0 2px 12px rgba(255, 255, 255, 0.95);
+/* Bento Overlay with Glassmorphism */
+.bento-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--spacing-lg);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.floating-ball:hover .ball-emoji {
-    transform: scale(1.08);
+.bento-card:hover .bento-overlay {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(30px) saturate(200%);
+    -webkit-backdrop-filter: blur(30px) saturate(200%);
+    padding: var(--spacing-xl);
 }
 
-.floating-ball:hover .ball-label {
-    opacity: 1;
+.bento-title {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.bento-card:hover .bento-title {
     color: var(--primary-color);
-    transform: translateX(-50%) translateY(-2px);
 }
 
-/* Position each ball - Circular Layout with Increased Spacing */
-/* Arranged in a circular pattern with safe distances to prevent touching */
-
-.ball-1 {
-    /* Top - 0° */
-    top: 8%;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: float-1 6.5s ease-in-out infinite;
+.bento-description {
+    font-size: 1rem;
+    color: var(--gray-600);
+    line-height: 1.6;
+    opacity: 0.9;
 }
 
-.ball-2 {
-    /* Top-Right - 45° */
-    top: 15%;
-    right: 15%;
-    animation: float-2 8.2s ease-in-out infinite;
+/* Specific card adjustments for large cards */
+.bento-large .bento-title {
+    font-size: 2.25rem;
 }
 
-.ball-3 {
-    /* Right - 90° */
-    top: 50%;
-    right: 8%;
-    transform: translateY(-50%);
-    animation: float-3 7.3s ease-in-out infinite;
+.bento-large .bento-description {
+    font-size: 1.125rem;
 }
 
-.ball-4 {
-    /* Bottom-Right - 135° */
-    bottom: 15%;
-    right: 15%;
-    animation: float-4 9.8s ease-in-out infinite;
+.bento-large .bento-icon {
+    font-size: 6rem;
 }
 
-.ball-5 {
-    /* Bottom - 180° */
-    bottom: 8%;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: float-5 5.7s ease-in-out infinite;
+/* Specific card adjustments for small cards */
+.bento-small .bento-title {
+    font-size: 1.375rem;
 }
 
-.ball-6 {
-    /* Bottom-Left - 225° */
-    bottom: 15%;
-    left: 15%;
-    animation: float-6 10.5s ease-in-out infinite;
+.bento-small .bento-description {
+    font-size: 0.9rem;
 }
 
-.ball-7 {
-    /* Left - 270° */
-    top: 50%;
-    left: 8%;
-    transform: translateY(-50%);
-    animation: float-7 6.9s ease-in-out infinite;
-}
-
-.ball-8 {
-    /* Top-Left - 315° */
-    top: 15%;
-    left: 15%;
-    animation: float-8 8.6s ease-in-out infinite;
-}
-
-/* Floating Animations - Chaotic Random Movements */
-/* Each ball moves in a unique random pattern while maintaining safe spacing */
-
-@keyframes float-1 {
-    /* Top ball - circular motion */
-    0% { transform: translateX(-50%) translate(0, 0); }
-    25% { transform: translateX(-50%) translate(15px, -12px); }
-    50% { transform: translateX(-50%) translate(0, -20px); }
-    75% { transform: translateX(-50%) translate(-15px, -12px); }
-    100% { transform: translateX(-50%) translate(0, 0); }
-}
-
-@keyframes float-2 {
-    /* Top-right - diagonal zigzag */
-    0% { transform: translate(0, 0); }
-    20% { transform: translate(-18px, 10px); }
-    40% { transform: translate(12px, -8px); }
-    60% { transform: translate(-10px, -15px); }
-    80% { transform: translate(15px, 12px); }
-    100% { transform: translate(0, 0); }
-}
-
-@keyframes float-3 {
-    /* Right ball - vertical wave */
-    0% { transform: translateY(-50%) translate(0, 0); }
-    33% { transform: translateY(-50%) translate(-20px, -15px); }
-    66% { transform: translateY(-50%) translate(-12px, 18px); }
-    100% { transform: translateY(-50%) translate(0, 0); }
-}
-
-@keyframes float-4 {
-    /* Bottom-right - figure-8 pattern */
-    0% { transform: translate(0, 0); }
-    12.5% { transform: translate(-10px, -8px); }
-    25% { transform: translate(-18px, 0); }
-    37.5% { transform: translate(-10px, 8px); }
-    50% { transform: translate(0, 0); }
-    62.5% { transform: translate(10px, -8px); }
-    75% { transform: translate(18px, 0); }
-    87.5% { transform: translate(10px, 8px); }
-    100% { transform: translate(0, 0); }
-}
-
-@keyframes float-5 {
-    /* Bottom ball - horizontal sway */
-    0% { transform: translateX(-50%) translate(0, 0); }
-    25% { transform: translateX(-50%) translate(-20px, 15px); }
-    50% { transform: translateX(-50%) translate(0, 22px); }
-    75% { transform: translateX(-50%) translate(20px, 15px); }
-    100% { transform: translateX(-50%) translate(0, 0); }
-}
-
-@keyframes float-6 {
-    /* Bottom-left - random chaotic */
-    0% { transform: translate(0, 0); }
-    15% { transform: translate(15px, -10px); }
-    35% { transform: translate(-8px, 12px); }
-    55% { transform: translate(18px, 8px); }
-    75% { transform: translate(-12px, -15px); }
-    90% { transform: translate(10px, 5px); }
-    100% { transform: translate(0, 0); }
-}
-
-@keyframes float-7 {
-    /* Left ball - spiral motion */
-    0% { transform: translateY(-50%) translate(0, 0); }
-    25% { transform: translateY(-50%) translate(20px, -12px); }
-    50% { transform: translateY(-50%) translate(15px, 10px); }
-    75% { transform: translateY(-50%) translate(8px, -18px); }
-    100% { transform: translateY(-50%) translate(0, 0); }
-}
-
-@keyframes float-8 {
-    /* Top-left - erratic bounce */
-    0% { transform: translate(0, 0); }
-    20% { transform: translate(12px, 15px); }
-    40% { transform: translate(-15px, -10px); }
-    60% { transform: translate(18px, -8px); }
-    80% { transform: translate(-10px, 12px); }
-    100% { transform: translate(0, 0); }
+.bento-small .bento-icon {
+    font-size: 3.5rem;
 }
 
 /* ===================================
