@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForm();
     initCardAnimations();
     initBentoScrollEffects();
+    initSearchButton();
 });
 
 /*===================================
@@ -276,6 +277,24 @@ function initBentoScrollEffects() {
 
     // Also update on resize
     window.addEventListener('resize', debounce(handleScroll, 100));
+}
+
+/*===================================
+  Search Button Handler
+  ===================================*/
+function initSearchButton() {
+    const searchBtn = document.getElementById('search-btn');
+
+    if (searchBtn) {
+        searchBtn.addEventListener('click', function() {
+            // Placeholder for search functionality
+            // In a production site, this would open a search modal or redirect to search page
+            alert('Search functionality coming soon!\n\nThis would typically open a search modal or redirect to a search page.');
+
+            // Example: You could implement a search modal here
+            // showSearchModal();
+        });
+    }
 }
 
 /*===================================

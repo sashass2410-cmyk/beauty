@@ -210,6 +210,69 @@ ul {
     cursor: pointer;
 }
 
+/* Nav Action Buttons */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    background: transparent;
+    border: none;
+    color: var(--gray-700);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.nav-action-btn svg {
+    transition: all 0.3s ease;
+}
+
+.nav-action-btn:hover {
+    background: var(--rose-50);
+    color: var(--primary-color);
+    transform: translateY(-1px);
+}
+
+.nav-action-btn:hover svg {
+    transform: scale(1.05);
+}
+
+.nav-action-btn:active {
+    transform: translateY(0);
+}
+
+/* Login/Account Button - Special Styling */
+.nav-login-btn {
+    width: auto;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--white);
+    border-radius: var(--radius-full);
+    box-shadow: 0 2px 8px rgba(233, 30, 99, 0.2);
+}
+
+.nav-login-btn:hover {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+    box-shadow: 0 4px 12px rgba(233, 30, 99, 0.3);
+    transform: translateY(-2px);
+}
+
+.login-text {
+    font-weight: 500;
+    font-size: 0.875rem;
+    letter-spacing: 0.3px;
+}
+
 /* ===================================
    Modern Hero Section
    =================================== */

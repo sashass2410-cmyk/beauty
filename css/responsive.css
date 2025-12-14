@@ -63,6 +63,31 @@
     .nav-toggle.active span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -6px);
     }
+
+    /* Nav Actions - Mobile */
+    .nav-actions {
+        gap: 0.25rem;
+    }
+
+    /* Hide Home and Search buttons on mobile, keep Account button */
+    .nav-action-btn:not(.nav-login-btn) {
+        display: none;
+    }
+
+    /* Adjust Account button for mobile */
+    .nav-login-btn {
+        padding: 0.4rem 0.875rem;
+        font-size: 0.8125rem;
+    }
+
+    .login-text {
+        font-size: 0.8125rem;
+    }
+
+    .nav-login-btn svg {
+        width: 18px;
+        height: 18px;
+    }
 }
 
 /* ===================================
