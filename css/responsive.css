@@ -109,7 +109,7 @@
     }
 
     .hero-scroll-indicator {
-        bottom: var(--spacing-md);
+        bottom: var(--spacing-sm);
         font-size: 0.75rem;
     }
 

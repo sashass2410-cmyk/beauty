@@ -345,7 +345,7 @@ ul {
 
 .hero-scroll-indicator {
     position: absolute;
-    bottom: var(--spacing-xl);
+    bottom: var(--spacing-lg);
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
