@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Radiant Beauty</title>
-    <meta name="description" content="Get in touch with us for personalized beauty advice, recommendations, and questions.">
+    <title>Login / Join - Radiant Beauty</title>
+    <meta name="description" content="Login to your account or join as a beauty professional. Start connecting with clients today.">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,30 +15,23 @@
     <!-- Header -->
     <header class="header" id="header">
         <nav class="nav container">
+            <!-- Logo -->
             <a href="index.html" class="nav-logo">
                 <span class="logo-icon">✨</span>
-                Radiant Beauty
+                <span class="logo-text">Radiant Beauty</span>
             </a>
 
+            <!-- Main Navigation -->
             <div class="nav-menu" id="nav-menu">
                 <ul class="nav-list">
                     <li class="nav-item">
                         <a href="index.html" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="makeup.html" class="nav-link">Makeup</a>
+                        <a href="professionals.html" class="nav-link">Professionals</a>
                     </li>
                     <li class="nav-item">
-                        <a href="hair.html" class="nav-link">Hair</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="nails.html" class="nav-link">Nails</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="skincare.html" class="nav-link">Skincare</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="contact.html" class="nav-link active">Contact</a>
+                        <a href="contact.html" class="nav-link active">Lifehacks</a>
                     </li>
                 </ul>
 
@@ -47,6 +40,24 @@
                 </div>
             </div>
 
+            <!-- Right Actions -->
+            <div class="nav-actions">
+                <button class="nav-action-btn search-btn" id="search-btn" aria-label="Search" title="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <a href="contact.html" class="nav-action-btn account-btn" aria-label="Account" title="Login / Account">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span class="account-text">Account</span>
+                </a>
+            </div>
+
+            <!-- Mobile Toggle -->
             <div class="nav-toggle" id="nav-toggle">
                 <span></span>
                 <span></span>
@@ -59,163 +70,113 @@
     <section class="page-hero">
         <div class="container">
             <div class="page-hero-content">
-                <span class="page-icon">💌</span>
-                <h1 class="page-title">Get in Touch</h1>
-                <p class="page-description">We'd love to hear from you and help with your beauty journey</p>
+                <div class="page-icon">🔐</div>
+                <h1 class="page-title">Welcome</h1>
+                <p class="page-description">Login to your account or join our platform</p>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Auth Section -->
     <section class="contact-section">
         <div class="container">
-            <div class="contact-wrapper">
-                <!-- Contact Info -->
-                <div class="contact-info">
-                    <h2 class="contact-info-title">Let's Connect</h2>
-                    <p class="contact-info-description">
-                        Have a question about beauty tips, product recommendations, or want personalized advice?
-                        We're here to help you look and feel your best.
-                    </p>
+            <div class="auth-wrapper">
+                <!-- Client Login -->
+                <div class="auth-card">
+                    <h2 class="auth-title">Client Login</h2>
+                    <p class="auth-description">Sign in to book appointments and manage your beauty services</p>
 
-                    <div class="contact-details">
-                        <div class="contact-detail">
-                            <span class="contact-icon">📧</span>
-                            <div class="contact-detail-content">
-                                <h3>Email Us</h3>
-                                <p>hello@radiantbeauty.com</p>
-                            </div>
+                    <form class="auth-form" id="client-login-form">
+                        <div class="form-group">
+                            <label for="client-email" class="form-label">Email Address</label>
+                            <input type="email" id="client-email" class="form-input" placeholder="your@email.com" required>
                         </div>
 
-                        <div class="contact-detail">
-                            <span class="contact-icon">📱</span>
-                            <div class="contact-detail-content">
-                                <h3>Call Us</h3>
-                                <p>+1 (555) 123-4567</p>
-                            </div>
+                        <div class="form-group">
+                            <label for="client-password" class="form-label">Password</label>
+                            <input type="password" id="client-password" class="form-input" placeholder="Enter password" required>
                         </div>
 
-                        <div class="contact-detail">
-                            <span class="contact-icon">⏰</span>
-                            <div class="contact-detail-content">
-                                <h3>Working Hours</h3>
-                                <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
-                            </div>
-                        </div>
-                    </div>
+                        <button type="submit" class="btn btn-primary btn-block">Login as Client</button>
 
-                    <div class="social-links-section">
-                        <h3 class="social-title">Follow Us</h3>
-                        <div class="social-links">
-                            <a href="#" class="social-link" aria-label="Instagram">📷</a>
-                            <a href="#" class="social-link" aria-label="Pinterest">📌</a>
-                            <a href="#" class="social-link" aria-label="YouTube">▶️</a>
-                            <a href="#" class="social-link" aria-label="Twitter">🐦</a>
-                        </div>
-                    </div>
+                        <p class="auth-footer-text">Don't have an account? <a href="#" class="auth-link">Sign up</a></p>
+                    </form>
                 </div>
 
-                <!-- Contact Form -->
-                <div class="contact-form-wrapper">
-                    <form class="contact-form" id="contact-form">
-                        <h2 class="form-title">Send Us a Message</h2>
+                <!-- Professional Login/Signup -->
+                <div class="auth-card auth-card-highlight">
+                    <h2 class="auth-title">Beauty Professional</h2>
+                    <p class="auth-description">Join our platform to showcase your work and connect with clients</p>
 
+                    <form class="auth-form" id="professional-signup-form">
                         <div class="form-group">
-                            <label for="name" class="form-label">Your Name</label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                class="form-input"
-                                placeholder="Enter your name"
-                                required
-                            >
+                            <label for="prof-name" class="form-label">Full Name</label>
+                            <input type="text" id="prof-name" class="form-input" placeholder="Your name" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="email" class="form-label">Email Address</label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                class="form-input"
-                                placeholder="your.email@example.com"
-                                required
-                            >
+                            <label for="prof-email" class="form-label">Email Address</label>
+                            <input type="email" id="prof-email" class="form-input" placeholder="your@email.com" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="subject" class="form-label">Subject</label>
-                            <select id="subject" name="subject" class="form-input" required>
-                                <option value="">Select a topic</option>
-                                <option value="makeup">Makeup Advice</option>
-                                <option value="hair">Hair Care Tips</option>
-                                <option value="nails">Nail Art & Care</option>
-                                <option value="skincare">Skincare Routine</option>
-                                <option value="product">Product Recommendations</option>
-                                <option value="other">Other</option>
+                            <label for="prof-specialization" class="form-label">Specialization</label>
+                            <select id="prof-specialization" class="form-input" required>
+                                <option value="">Select your specialty</option>
+                                <option value="makeup">Makeup Artist</option>
+                                <option value="nails">Nail Artist</option>
+                                <option value="hair">Hair Stylist</option>
+                                <option value="skincare">Esthetician</option>
+                                <option value="brows">Brow & Lash Specialist</option>
+                                <option value="cosmetology">Cosmetologist</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="message" class="form-label">Your Message</label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                class="form-input form-textarea"
-                                rows="6"
-                                placeholder="Tell us how we can help you..."
-                                required
-                            ></textarea>
+                            <label for="prof-password" class="form-label">Password</label>
+                            <input type="password" id="prof-password" class="form-input" placeholder="Create password" required>
                         </div>
 
-                        <button type="submit" class="btn btn-primary btn-block">
-                            Send Message
-                        </button>
+                        <button type="submit" class="btn btn-primary btn-block">Join as Professional</button>
 
-                        <div id="form-message" class="form-message"></div>
+                        <p class="auth-footer-text">Already have an account? <a href="#" class="auth-link">Login</a></p>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="faq-section">
+    <!-- Info Section -->
+    <section class="features" style="background: var(--gray-50);">
         <div class="container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="section-header">
+                <h2 class="section-title">Why Join Our Platform?</h2>
+                <p class="section-subtitle">Benefits for beauty professionals</p>
+            </div>
 
-            <div class="faq-grid">
-                <div class="faq-card">
-                    <h3 class="faq-question">How quickly will I receive a response?</h3>
-                    <p class="faq-answer">
-                        We typically respond to all inquiries within 24-48 hours during business days.
-                        For urgent matters, please call us directly.
-                    </p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📸</div>
+                    <h3 class="feature-title">Showcase Your Work</h3>
+                    <p class="feature-description">Build a stunning portfolio to attract new clients</p>
                 </div>
 
-                <div class="faq-card">
-                    <h3 class="faq-question">Do you offer personalized consultations?</h3>
-                    <p class="faq-answer">
-                        Yes! We offer personalized beauty consultations. Contact us to schedule
-                        a one-on-one session with our beauty experts.
-                    </p>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3 class="feature-title">Grow Your Business</h3>
+                    <p class="feature-description">Connect with clients actively seeking your services</p>
                 </div>
 
-                <div class="faq-card">
-                    <h3 class="faq-question">Can you recommend products for my skin type?</h3>
-                    <p class="faq-answer">
-                        Absolutely! Share details about your skin type and concerns in the contact form,
-                        and we'll provide tailored product recommendations.
-                    </p>
+                <div class="feature-card">
+                    <div class="feature-icon">📅</div>
+                    <h3 class="feature-title">Manage Bookings</h3>
+                    <p class="feature-description">Easy calendar and appointment management tools</p>
                 </div>
 
-                <div class="faq-card">
-                    <h3 class="faq-question">Are your tutorials suitable for beginners?</h3>
-                    <p class="faq-answer">
-                        Yes! We offer tutorials for all skill levels, from complete beginners to
-                        advanced beauty enthusiasts. Each tutorial is clearly labeled by difficulty.
-                    </p>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3 class="feature-title">Build Reputation</h3>
+                    <p class="feature-description">Collect reviews and build trust with potential clients</p>
                 </div>
             </div>
         </div>
@@ -231,26 +192,26 @@
                         Radiant Beauty
                     </h3>
                     <p class="footer-description">
-                        Your complete guide to beauty excellence. Explore makeup, hair, nails, and skincare tips.
+                        Connecting clients with talented beauty professionals. Your one-stop platform for all beauty services.
                     </p>
                 </div>
 
                 <div class="footer-section">
-                    <h4 class="footer-heading">Quick Links</h4>
+                    <h4 class="footer-heading">Services</h4>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
                         <li><a href="makeup.html">Makeup</a></li>
-                        <li><a href="hair.html">Hair</a></li>
+                        <li><a href="hair.html">Hair Styling</a></li>
                         <li><a href="nails.html">Nails</a></li>
+                        <li><a href="skincare.html">Skincare</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
-                    <h4 class="footer-heading">More</h4>
+                    <h4 class="footer-heading">Platform</h4>
                     <ul class="footer-links">
-                        <li><a href="skincare.html">Skincare</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="index.html#categories">Categories</a></li>
+                        <li><a href="professionals.html">Find Professionals</a></li>
+                        <li><a href="contact.html">Join as Professional</a></li>
+                        <li><a href="index.html">Home</a></li>
                     </ul>
                 </div>
 
@@ -266,11 +227,12 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2025 Radiant Beauty. All rights reserved.</p>
+                <p>&copy; 2025 Radiant Beauty Platform. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
 </body>
 </html>
