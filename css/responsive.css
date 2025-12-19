@@ -163,19 +163,31 @@
     }
 
     .bento-title {
-        font-size: 1.125rem;
-    }
-
-    .bento-large .bento-title {
-        font-size: 1.5rem;
-    }
-
-    .bento-small .bento-title {
         font-size: 0.9375rem;
     }
 
+    .bento-large .bento-title {
+        font-size: 1.25rem;
+    }
+
+    .bento-small .bento-title {
+        font-size: 0.8125rem;
+    }
+
+    .bento-description {
+        font-size: 0.6875rem;
+    }
+
+    .bento-large .bento-description {
+        font-size: 0.8125rem;
+    }
+
+    .bento-small .bento-description {
+        font-size: 0.625rem;
+    }
+
     .bento-overlay {
-        padding: var(--spacing-sm);
+        padding: 0.625rem 0.875rem;
     }
 
     .bento-icon {
