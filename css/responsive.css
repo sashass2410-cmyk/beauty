@@ -163,15 +163,19 @@
     }
 
     .bento-title {
-        font-size: 1.5rem;
-    }
-
-    .bento-description {
-        font-size: 0.95rem;
+        font-size: 1.125rem;
     }
 
     .bento-large .bento-title {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
+    }
+
+    .bento-small .bento-title {
+        font-size: 0.9375rem;
+    }
+
+    .bento-overlay {
+        padding: var(--spacing-sm);
     }
 
     .bento-icon {
