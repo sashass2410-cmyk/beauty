@@ -3,42 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hair Care & Styling - Radiant Beauty</title>
-    <meta name="description" content="Discover hair care tips, styling techniques, and the latest trends for healthy, beautiful hair.">
+    <title>Hair Styling Professionals - Radiant Beauty</title>
+    <meta name="description" content="Find expert hair stylists and colorists. Browse portfolios, reviews, and book appointments with certified professionals.">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-service="Hair Styling">
     <!-- Header -->
     <header class="header" id="header">
         <nav class="nav container">
+            <!-- Logo -->
             <a href="index.html" class="nav-logo">
                 <span class="logo-icon">✨</span>
-                Radiant Beauty
+                <span class="logo-text">Radiant Beauty</span>
             </a>
 
+            <!-- Main Navigation -->
             <div class="nav-menu" id="nav-menu">
                 <ul class="nav-list">
                     <li class="nav-item">
                         <a href="index.html" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="makeup.html" class="nav-link">Makeup</a>
+                        <a href="professionals.html" class="nav-link">Professionals</a>
                     </li>
                     <li class="nav-item">
-                        <a href="hair.html" class="nav-link active">Hair</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="nails.html" class="nav-link">Nails</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="skincare.html" class="nav-link">Skincare</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="contact.html" class="nav-link">Contact</a>
+                        <a href="contact.html" class="nav-link">Lifehacks</a>
                     </li>
                 </ul>
 
@@ -47,6 +40,24 @@
                 </div>
             </div>
 
+            <!-- Right Actions -->
+            <div class="nav-actions">
+                <button class="nav-action-btn search-btn" id="search-btn" aria-label="Search" title="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <a href="contact.html" class="nav-action-btn account-btn" aria-label="Account" title="Login / Account">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span class="account-text">Account</span>
+                </a>
+            </div>
+
+            <!-- Mobile Toggle -->
             <div class="nav-toggle" id="nav-toggle">
                 <span></span>
                 <span></span>
@@ -59,174 +70,23 @@
     <section class="page-hero">
         <div class="container">
             <div class="page-hero-content">
-                <span class="page-icon">💇</span>
-                <h1 class="page-title">Hair Care & Styling</h1>
-                <p class="page-description">Transform your hair with expert care tips and styling techniques</p>
+                <div class="page-icon">💇</div>
+                <h1 class="page-title">Hair Styling Professionals</h1>
+                <p class="page-description">Expert stylists ready to transform your hair</p>
             </div>
         </div>
     </section>
 
-    <!-- Hair Content -->
+    <!-- Professionals Listing -->
     <section class="content-section">
         <div class="container">
-            <div class="content-grid">
-                <!-- Tutorial Card 1 -->
-                <article class="tutorial-card">
-                    <div class="tutorial-image">
-                        <div class="tutorial-image-placeholder">
-                            <span class="placeholder-icon">🌸</span>
-                        </div>
-                        <span class="tutorial-badge">Hair Care</span>
-                    </div>
-                    <div class="tutorial-content">
-                        <h3 class="tutorial-title">Deep Conditioning Treatment</h3>
-                        <p class="tutorial-description">
-                            Restore moisture and shine to dry, damaged hair with this intensive deep conditioning
-                            routine. Perfect for weekly hair maintenance.
-                        </p>
-                        <div class="tutorial-meta">
-                            <span class="tutorial-time">⏱️ 30 min</span>
-                            <span class="tutorial-level">Easy</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Tutorial Card 2 -->
-                <article class="tutorial-card">
-                    <div class="tutorial-image">
-                        <div class="tutorial-image-placeholder">
-                            <span class="placeholder-icon">✨</span>
-                        </div>
-                        <span class="tutorial-badge">Styling</span>
-                    </div>
-                    <div class="tutorial-content">
-                        <h3 class="tutorial-title">Beach Waves Tutorial</h3>
-                        <p class="tutorial-description">
-                            Create effortless, beachy waves that look like you just came back from vacation.
-                            No heat required for this relaxed style.
-                        </p>
-                        <div class="tutorial-meta">
-                            <span class="tutorial-time">⏱️ 20 min</span>
-                            <span class="tutorial-level">Easy</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Tutorial Card 3 -->
-                <article class="tutorial-card">
-                    <div class="tutorial-image">
-                        <div class="tutorial-image-placeholder">
-                            <span class="placeholder-icon">🌟</span>
-                        </div>
-                        <span class="tutorial-badge">Styling</span>
-                    </div>
-                    <div class="tutorial-content">
-                        <h3 class="tutorial-title">Sleek Ponytail Perfection</h3>
-                        <p class="tutorial-description">
-                            Master the art of the sleek, polished ponytail. This elegant style works for
-                            both professional and evening occasions.
-                        </p>
-                        <div class="tutorial-meta">
-                            <span class="tutorial-time">⏱️ 15 min</span>
-                            <span class="tutorial-level">Medium</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Tutorial Card 4 -->
-                <article class="tutorial-card">
-                    <div class="tutorial-image">
-                        <div class="tutorial-image-placeholder">
-                            <span class="placeholder-icon">💫</span>
-                        </div>
-                        <span class="tutorial-badge">Hair Care</span>
-                    </div>
-                    <div class="tutorial-content">
-                        <h3 class="tutorial-title">Scalp Care Essentials</h3>
-                        <p class="tutorial-description">
-                            Healthy hair starts with a healthy scalp. Learn about scalp massage techniques,
-                            proper cleansing, and treatment options.
-                        </p>
-                        <div class="tutorial-meta">
-                            <span class="tutorial-time">⏱️ 10 min</span>
-                            <span class="tutorial-level">Easy</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Tutorial Card 5 -->
-                <article class="tutorial-card">
-                    <div class="tutorial-image">
-                        <div class="tutorial-image-placeholder">
-                            <span class="placeholder-icon">🎀</span>
-                        </div>
-                        <span class="tutorial-badge">Styling</span>
-                    </div>
-                    <div class="tutorial-content">
-                        <h3 class="tutorial-title">Romantic Braided Updo</h3>
-                        <p class="tutorial-description">
-                            Create a stunning braided updo perfect for weddings, proms, and special events.
-                            Looks complicated but easier than you think!
-                        </p>
-                        <div class="tutorial-meta">
-                            <span class="tutorial-time">⏱️ 35 min</span>
-                            <span class="tutorial-level">Advanced</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Tutorial Card 6 -->
-                <article class="tutorial-card">
-                    <div class="tutorial-image">
-                        <div class="tutorial-image-placeholder">
-                            <span class="placeholder-icon">🌺</span>
-                        </div>
-                        <span class="tutorial-badge">Hair Care</span>
-                    </div>
-                    <div class="tutorial-content">
-                        <h3 class="tutorial-title">Heat Protection Guide</h3>
-                        <p class="tutorial-description">
-                            Protect your hair from heat damage with proper techniques and products.
-                            Essential knowledge for anyone who uses styling tools.
-                        </p>
-                        <div class="tutorial-meta">
-                            <span class="tutorial-time">⏱️ 8 min</span>
-                            <span class="tutorial-level">Easy</span>
-                        </div>
-                    </div>
-                </article>
+            <div class="section-header">
+                <h2 class="section-title">Browse Hair Stylists</h2>
+                <p class="section-subtitle">Find the perfect professional for your needs</p>
             </div>
-        </div>
-    </section>
 
-    <!-- Tips Section -->
-    <section class="tips-section">
-        <div class="container">
-            <h2 class="section-title">Hair Care Pro Tips</h2>
-            <div class="tips-grid">
-                <div class="tip-card">
-                    <span class="tip-number">01</span>
-                    <h3 class="tip-title">Wash Less Often</h3>
-                    <p class="tip-description">Over-washing can strip natural oils. Try washing 2-3 times per week and use dry shampoo between washes.</p>
-                </div>
-
-                <div class="tip-card">
-                    <span class="tip-number">02</span>
-                    <h3 class="tip-title">Cold Water Rinse</h3>
-                    <p class="tip-description">Rinse with cold water to seal the hair cuticle, add shine, and reduce frizz for smoother, healthier-looking hair.</p>
-                </div>
-
-                <div class="tip-card">
-                    <span class="tip-number">03</span>
-                    <h3 class="tip-title">Regular Trims</h3>
-                    <p class="tip-description">Get regular trims every 6-8 weeks to prevent split ends and maintain healthy hair growth.</p>
-                </div>
-
-                <div class="tip-card">
-                    <span class="tip-number">04</span>
-                    <h3 class="tip-title">Sleep on Silk</h3>
-                    <p class="tip-description">Use a silk or satin pillowcase to reduce friction, prevent breakage, and wake up with smoother hair.</p>
-                </div>
+            <div class="professionals-grid" id="service-professionals-grid">
+                <!-- Professionals will be loaded dynamically via JavaScript -->
             </div>
         </div>
     </section>
@@ -235,9 +95,9 @@
     <section class="cta">
         <div class="container">
             <div class="cta-content">
-                <h2 class="cta-title">Need Custom Hair Care Advice?</h2>
-                <p class="cta-description">Get personalized recommendations for your hair type and styling goals</p>
-                <a href="contact.html" class="btn btn-primary btn-large">Contact Us</a>
+                <h2 class="cta-title">Looking for a Different Service?</h2>
+                <p class="cta-description">Explore all beauty services and find professionals in every category</p>
+                <a href="index.html#services" class="btn btn-primary btn-large">View All Services</a>
             </div>
         </div>
     </section>
@@ -252,26 +112,26 @@
                         Radiant Beauty
                     </h3>
                     <p class="footer-description">
-                        Your complete guide to beauty excellence. Explore makeup, hair, nails, and skincare tips.
+                        Connecting clients with talented beauty professionals. Your one-stop platform for all beauty services.
                     </p>
                 </div>
 
                 <div class="footer-section">
-                    <h4 class="footer-heading">Quick Links</h4>
+                    <h4 class="footer-heading">Services</h4>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
                         <li><a href="makeup.html">Makeup</a></li>
-                        <li><a href="hair.html">Hair</a></li>
+                        <li><a href="hair.html">Hair Styling</a></li>
                         <li><a href="nails.html">Nails</a></li>
+                        <li><a href="skincare.html">Skincare</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
-                    <h4 class="footer-heading">More</h4>
+                    <h4 class="footer-heading">Platform</h4>
                     <ul class="footer-links">
-                        <li><a href="skincare.html">Skincare</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="index.html#categories">Categories</a></li>
+                        <li><a href="professionals.html">Find Professionals</a></li>
+                        <li><a href="contact.html">Join as Professional</a></li>
+                        <li><a href="index.html">Home</a></li>
                     </ul>
                 </div>
 
@@ -287,11 +147,12 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2025 Radiant Beauty. All rights reserved.</p>
+                <p>&copy; 2025 Radiant Beauty Platform. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <script src="js/professionals-data.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

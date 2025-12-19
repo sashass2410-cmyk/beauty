@@ -1,0 +1,316 @@
+/* ===================================
+   Professional Profile Page Styles
+   =================================== */
+
+/* Profile Header */
+.profile-header {
+    margin-top: 80px;
+    padding: var(--spacing-2xl) 0;
+    background: linear-gradient(135deg, var(--rose-50), var(--gold-50));
+}
+
+.profile-header-content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+}
+
+.profile-image-large {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+}
+
+.profile-image-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-header-info {
+    padding: var(--spacing-md) 0;
+}
+
+.profile-name {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    color: var(--gray-900);
+    margin-bottom: var(--spacing-sm);
+}
+
+.profile-specializations-large {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+}
+
+.profile-rating-large {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.rating-stars {
+    font-size: 1.25rem;
+}
+
+.rating-text {
+    font-size: 1.125rem;
+    color: var(--gray-700);
+    font-weight: 500;
+}
+
+.profile-location-large {
+    font-size: 1.125rem;
+    color: var(--gray-600);
+    margin-bottom: var(--spacing-lg);
+}
+
+.profile-actions {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+/* Profile Sections */
+.profile-section {
+    padding: var(--spacing-2xl) 0;
+}
+
+.profile-section-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--gray-900);
+    margin-bottom: var(--spacing-lg);
+}
+
+.profile-bio-full {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--gray-700);
+    max-width: 800px;
+}
+
+/* Services List */
+.services-list {
+    display: grid;
+    gap: var(--spacing-md);
+    max-width: 800px;
+}
+
+.service-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-lg);
+    background: var(--white);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--primary-color);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.service-item:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateX(4px);
+}
+
+.service-name {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--gray-900);
+    margin-bottom: 0.25rem;
+}
+
+.service-duration {
+    font-size: 0.9375rem;
+    color: var(--gray-600);
+}
+
+.service-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Portfolio Grid */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.portfolio-item {
+    aspect-ratio: 1;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.03);
+    box-shadow: var(--shadow-lg);
+}
+
+.portfolio-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Calendar Placeholder */
+.calendar-placeholder {
+    max-width: 700px;
+    background: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.calendar-header h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--gray-900);
+}
+
+.calendar-nav {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.calendar-nav-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-sm);
+    border: 2px solid var(--gray-300);
+    background: var(--white);
+    color: var(--gray-700);
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.calendar-nav-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
+}
+
+.calendar-day-header {
+    text-align: center;
+    font-weight: 600;
+    color: var(--gray-600);
+    font-size: 0.875rem;
+    padding: var(--spacing-sm) 0;
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    font-size: 0.9375rem;
+    color: var(--gray-700);
+    border: 1px solid var(--gray-200);
+    cursor: default;
+}
+
+.calendar-day.empty {
+    border: none;
+}
+
+.calendar-day.past {
+    color: var(--gray-400);
+    background: var(--gray-50);
+}
+
+.calendar-day.today {
+    border-color: var(--primary-color);
+    font-weight: 700;
+}
+
+.calendar-day.available {
+    background: var(--rose-50);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.calendar-day.available:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: scale(1.1);
+}
+
+.calendar-note {
+    text-align: center;
+    color: var(--gray-600);
+    font-size: 0.9375rem;
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .profile-header-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        text-align: center;
+    }
+
+    .profile-image-large {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .profile-name {
+        font-size: 2rem;
+    }
+
+    .profile-actions {
+        flex-direction: column;
+    }
+
+    .profile-actions .btn {
+        width: 100%;
+    }
+
+    .service-item {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-sm);
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .calendar-grid {
+        gap: 2px;
+    }
+
+    .calendar-day {
+        font-size: 0.875rem;
+    }
+}

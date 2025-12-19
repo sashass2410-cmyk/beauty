@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nail Professionals - Radiant Beauty</title>
-    <meta name="description" content="Find expert nail artists and manicurists. Browse portfolios, reviews, and book appointments with certified professionals.">
+    <title>Professional Profile - Radiant Beauty</title>
+    <meta name="description" content="View professional profile, portfolio, services, and availability. Book your beauty appointment today.">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/professional-profile.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
-<body data-service="Nails">
+<body>
     <!-- Header -->
     <header class="header" id="header">
         <nav class="nav container">
@@ -66,41 +67,14 @@
         </nav>
     </header>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
-        <div class="container">
-            <div class="page-hero-content">
-                <div class="page-icon">💅</div>
-                <h1 class="page-title">Nail Professionals</h1>
-                <p class="page-description">Expert nail artists ready to perfect your manicure</p>
-            </div>
+    <!-- Profile Content (will be populated by JavaScript) -->
+    <div id="profile-content">
+        <!-- Loading spinner -->
+        <div class="loading-container" style="text-align: center; padding: var(--spacing-2xl);">
+            <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">⏳</div>
+            <p style="color: var(--gray-600);">Loading professional profile...</p>
         </div>
-    </section>
-
-    <!-- Professionals Listing -->
-    <section class="content-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Browse Nail Artists</h2>
-                <p class="section-subtitle">Find the perfect professional for your needs</p>
-            </div>
-
-            <div class="professionals-grid" id="service-professionals-grid">
-                <!-- Professionals will be loaded dynamically via JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <div class="cta-content">
-                <h2 class="cta-title">Looking for a Different Service?</h2>
-                <p class="cta-description">Explore all beauty services and find professionals in every category</p>
-                <a href="index.html#services" class="btn btn-primary btn-large">View All Services</a>
-            </div>
-        </div>
-    </section>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -153,6 +127,7 @@
     </footer>
 
     <script src="js/professionals-data.js"></script>
+    <script src="js/professional-profile.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

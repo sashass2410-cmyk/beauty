@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initCardAnimations();
     initBentoScrollEffects();
     initSearchButton();
+    initFeaturedProfessionals();
+    initServiceProfessionals();
 });
 
 /*===================================
@@ -475,8 +477,70 @@ function checkBrowserSupport() {
 checkBrowserSupport();
 
 /*===================================
+  Featured Professionals on Homepage
+  ===================================*/
+function initFeaturedProfessionals() {
+    const grid = document.getElementById('featured-professionals-grid');
+
+    if (!grid || typeof professionals === 'undefined') return;
+
+    // Show first 4 professionals as featured
+    const featured = professionals.slice(0, 4);
+
+    grid.innerHTML = featured.map(prof => createProfessionalCard(prof)).join('');
+}
+
+/*===================================
+  Service-Specific Professionals
+  ===================================*/
+function initServiceProfessionals() {
+    const grid = document.getElementById('service-professionals-grid');
+
+    if (!grid || typeof getProfessionalsByService === 'undefined') return;
+
+    // Get service name from page (set via data attribute or global variable)
+    const serviceName = document.body.dataset.service;
+
+    if (!serviceName) return;
+
+    const serviceProfessionals = getProfessionalsByService(serviceName);
+
+    if (serviceProfessionals.length === 0) {
+        grid.innerHTML = '<p class="text-center" style="grid-column: 1/-1; padding: var(--spacing-xl); color: var(--gray-600);">No professionals found for this service yet. Check back soon!</p>';
+        return;
+    }
+
+    grid.innerHTML = serviceProfessionals.map(prof => createProfessionalCard(prof)).join('');
+}
+
+/*===================================
+  Create Professional Card HTML
+  ===================================*/
+function createProfessionalCard(prof) {
+    return `
+        <div class="professional-card" data-id="${prof.id}">
+            <div class="professional-image">
+                <img src="${prof.photo}" alt="${prof.name}" class="professional-img">
+                <div class="professional-rating">
+                    <span class="rating-star">⭐</span>
+                    <span class="rating-value">${prof.rating}</span>
+                    <span class="rating-count">(${prof.reviewCount})</span>
+                </div>
+            </div>
+            <div class="professional-info">
+                <h3 class="professional-name">${prof.name}</h3>
+                <p class="professional-specializations">${prof.specializations.join(' • ')}</p>
+                <p class="professional-bio">${prof.bio.substring(0, 100)}...</p>
+                <p class="professional-location">📍 ${prof.location}</p>
+                <a href="professional.html?id=${prof.id}" class="btn btn-secondary btn-block">View Profile</a>
+            </div>
+        </div>
+    `;
+}
+
+/*===================================
   Console Art (Easter Egg)
   ===================================*/
 console.log('%c✨ Radiant Beauty ✨', 'font-size: 20px; color: #e91e63; font-weight: bold;');
-console.log('%cWelcome to Radiant Beauty! 💄', 'font-size: 14px; color: #d4af37;');
-console.log('%cExplore our beauty tips and tutorials!', 'font-size: 12px; color: #666;');
+console.log('%cWelcome to Radiant Beauty Platform! 💄', 'font-size: 14px; color: #d4af37;');
+console.log('%cConnect with beauty professionals or showcase your expertise!', 'font-size: 12px; color: #666;');
