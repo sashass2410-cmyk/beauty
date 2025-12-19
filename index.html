@@ -15,26 +15,53 @@
     <!-- Header -->
     <header class="header" id="header">
         <nav class="nav container">
+            <!-- Logo -->
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">✨</span>
+                <span class="logo-text">Radiant Beauty</span>
+            </a>
+
+            <!-- Main Navigation -->
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Professionals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Lifehacks</a>
+                    </li>
+                </ul>
+
+                <div class="nav-close" id="nav-close">
+                    <span>&times;</span>
+                </div>
+            </div>
+
+            <!-- Right Actions -->
             <div class="nav-actions">
-                <a href="index.html" class="nav-action-btn" aria-label="Home" title="Home">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                    </svg>
-                </a>
-                <button class="nav-action-btn" id="search-btn" aria-label="Search" title="Search">
+                <button class="nav-action-btn search-btn" id="search-btn" aria-label="Search" title="Search">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="11" cy="11" r="8"></circle>
                         <path d="m21 21-4.35-4.35"></path>
                     </svg>
                 </button>
-                <a href="contact.html" class="nav-action-btn nav-login-btn" aria-label="Account" title="Login / Account">
+                <a href="contact.html" class="nav-action-btn account-btn" aria-label="Account" title="Login / Account">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                         <circle cx="12" cy="7" r="4"></circle>
                     </svg>
-                    <span class="login-text">Account</span>
+                    <span class="account-text">Account</span>
                 </a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </nav>
     </header>
