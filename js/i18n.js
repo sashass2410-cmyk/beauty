@@ -276,7 +276,9 @@ const translations = {
             article5Excerpt: "Not all skincare products work the same at different times of day. Learn when to use which products for maximum effectiveness.",
             article6Title: "Natural Ways to Grow Longer Lashes",
             article6Excerpt: "Want longer, fuller lashes without extensions? Discover natural remedies and serums that actually work to boost your lash growth.",
-            readMore: "Read More →"
+            readMore: "Read More →",
+            worksTitle: "Professional Works",
+            worksSubtitle: "Inspiring creations from our talented beauty professionals"
         }
     },
 
@@ -552,7 +554,9 @@ const translations = {
             article5Excerpt: "Не все продукты для кожи работают одинаково в разное время суток. Узнайте, когда использовать какие продукты для максимальной эффективности.",
             article6Title: "Натуральные Способы Отрастить Длинные Ресницы",
             article6Excerpt: "Хотите длинные, густые ресницы без наращивания? Откройте натуральные средства и сыворотки, которые действительно работают.",
-            readMore: "Читать Далее →"
+            readMore: "Читать Далее →",
+            worksTitle: "Работы Профессионалов",
+            worksSubtitle: "Вдохновляющие творения от наших талантливых мастеров красоты"
         }
     },
 
@@ -828,7 +832,9 @@ const translations = {
             article5Excerpt: "Barcha teri parvarish mahsulotlari kunning turli vaqtlarida bir xil ishlamaydi. Maksimal samaradorlik uchun qaysi mahsulotlarni qachon ishlatishni bilib oling.",
             article6Title: "Uzunroq Kipriklar O'stirishning Tabiiy Usullari",
             article6Excerpt: "Uzaytirmasiz uzun, to'la kipriklar xohlaysizmi? Kiprik o'sishini rag'batlantirishda haqiqatan ham ishlaydigan tabiiy vositalar va serumlarni kashf eting.",
-            readMore: "Batafsil →"
+            readMore: "Batafsil →",
+            worksTitle: "Mutaxassislar Ishlari",
+            worksSubtitle: "Iqtidorli go'zallik mutaxassislarimizning ilhomlantiruvchi ijodlari"
         }
     }
 };

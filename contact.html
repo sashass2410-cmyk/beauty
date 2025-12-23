@@ -294,6 +294,48 @@
         </div>
     </section>
 
+    <!-- Professional Works Showcase -->
+    <section class="professional-works-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="beautyContent.worksTitle">Professional Works</h2>
+                <p class="section-subtitle" data-i18n="beautyContent.worksSubtitle">Inspiring creations from our talented beauty professionals</p>
+            </div>
+
+            <div class="works-grid" id="works-grid">
+                <!-- Works will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Detail Modal -->
+    <div class="work-modal" id="work-modal">
+        <div class="modal-overlay" id="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <div class="modal-media" id="modal-media">
+                <!-- Media content will be inserted here -->
+            </div>
+            <div class="modal-info">
+                <div class="modal-category" id="modal-category"></div>
+                <h3 class="modal-professional" id="modal-professional"></h3>
+                <p class="modal-description" id="modal-description"></p>
+            </div>
+            <div class="modal-navigation">
+                <button class="modal-nav-btn modal-prev" id="modal-prev">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <button class="modal-nav-btn modal-next" id="modal-next">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -348,5 +390,6 @@
     <script src="js/language-switcher.js"></script>
     <script src="js/main.js"></script>
     <script src="js/beauty-content.js"></script>
+    <script src="js/professional-works.js"></script>
 </body>
 </html>
