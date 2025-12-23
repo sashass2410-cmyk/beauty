@@ -33,6 +33,12 @@ function displayProfessionals(profsToDisplay) {
     }
 
     grid.innerHTML = profsToDisplay.map(prof => createProfessionalCard(prof)).join('');
+
+    // Apply translations to dynamically loaded cards
+    if (typeof applyTranslations === 'function') {
+        const currentLang = typeof getLanguage === 'function' ? getLanguage() : 'en';
+        applyTranslations(currentLang);
+    }
 }
 
 // Initialize filter buttons

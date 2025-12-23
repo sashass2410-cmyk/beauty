@@ -488,6 +488,12 @@ function initFeaturedProfessionals() {
     const featured = professionals.slice(0, 4);
 
     grid.innerHTML = featured.map(prof => createProfessionalCard(prof)).join('');
+
+    // Apply translations to dynamically loaded cards
+    if (typeof applyTranslations === 'function') {
+        const currentLang = typeof getLanguage === 'function' ? getLanguage() : 'en';
+        applyTranslations(currentLang);
+    }
 }
 
 /*===================================
@@ -511,6 +517,12 @@ function initServiceProfessionals() {
     }
 
     grid.innerHTML = serviceProfessionals.map(prof => createProfessionalCard(prof)).join('');
+
+    // Apply translations to dynamically loaded cards
+    if (typeof applyTranslations === 'function') {
+        const currentLang = typeof getLanguage === 'function' ? getLanguage() : 'en';
+        applyTranslations(currentLang);
+    }
 }
 
 /*===================================
@@ -532,7 +544,7 @@ function createProfessionalCard(prof) {
                 <p class="professional-specializations">${prof.specializations.join(' • ')}</p>
                 <p class="professional-bio">${prof.bio.substring(0, 100)}...</p>
                 <p class="professional-location">📍 ${prof.location}</p>
-                <a href="professional.html?id=${prof.id}" class="btn btn-secondary btn-block">View Profile</a>
+                <a href="professional.html?id=${prof.id}" class="btn btn-secondary btn-block" data-i18n="professionals.viewProfile">View Profile</a>
             </div>
         </div>
     `;
