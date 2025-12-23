@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login / Join - Radiant Beauty</title>
-    <meta name="description" content="Login to your account or join as a beauty professional. Start connecting with clients today.">
+    <title>BeYouTy - Beauty Tips & Tutorials - Radiant Beauty</title>
+    <meta name="description" content="Discover expert beauty tips, tutorials, and lifehacks for makeup, skincare, hair care, nails, and more.">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,7 +48,7 @@
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="10"></circle>
                             <line x1="2" y1="12" x2="22" y2="12"></line>
-                            <path d="M12 2a 15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
                         </svg>
                         <span class="language-text" id="current-language">EN</span>
                     </button>
@@ -87,113 +87,208 @@
     <section class="page-hero">
         <div class="container">
             <div class="page-hero-content">
-                <div class="page-icon">🔐</div>
-                <h1 class="page-title" data-i18n="contact.pageTitle">Welcome</h1>
-                <p class="page-description" data-i18n="contact.pageDescription">Login to your account or join our platform</p>
+                <div class="page-icon">💄</div>
+                <h1 class="page-title" data-i18n="beautyContent.pageTitle">BeYouTy</h1>
+                <p class="page-description" data-i18n="beautyContent.pageDescription">Expert beauty tips, tutorials & lifehacks to enhance your beauty journey</p>
             </div>
         </div>
     </section>
 
-    <!-- Auth Section -->
-    <section class="contact-section">
+    <!-- Content Filters -->
+    <section class="content-filters-section">
         <div class="container">
-            <div class="auth-wrapper">
-                <!-- Client Login -->
-                <div class="auth-card">
-                    <h2 class="auth-title" data-i18n="contact.clientTitle">Client Login</h2>
-                    <p class="auth-description" data-i18n="contact.clientDescription">Sign in to book appointments and manage your beauty services</p>
-
-                    <form class="auth-form" id="client-login-form">
-                        <div class="form-group">
-                            <label for="client-email" class="form-label" data-i18n="contact.emailLabel">Email Address</label>
-                            <input type="email" id="client-email" class="form-input" placeholder="your@email.com" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="client-password" class="form-label" data-i18n="contact.passwordLabel">Password</label>
-                            <input type="password" id="client-password" class="form-input" placeholder="Enter password" required>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary btn-block" data-i18n="contact.clientLoginButton">Login as Client</button>
-
-                        <p class="auth-footer-text" data-i18n="contact.clientFooter">Don't have an account? <a href="#" class="auth-link">Sign up</a></p>
-                    </form>
-                </div>
-
-                <!-- Professional Login/Signup -->
-                <div class="auth-card auth-card-highlight">
-                    <h2 class="auth-title" data-i18n="contact.professionalTitle">Beauty Professional</h2>
-                    <p class="auth-description" data-i18n="contact.professionalDescription">Join our platform to showcase your work and connect with clients</p>
-
-                    <form class="auth-form" id="professional-signup-form">
-                        <div class="form-group">
-                            <label for="prof-name" class="form-label" data-i18n="contact.nameLabel">Full Name</label>
-                            <input type="text" id="prof-name" class="form-input" placeholder="Your name" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="prof-email" class="form-label" data-i18n="contact.emailLabel">Email Address</label>
-                            <input type="email" id="prof-email" class="form-input" placeholder="your@email.com" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="prof-specialization" class="form-label" data-i18n="contact.specializationLabel">Specialization</label>
-                            <select id="prof-specialization" class="form-input" required>
-                                <option value="" data-i18n="contact.selectSpecialty">Select your specialty</option>
-                                <option value="makeup" data-i18n="contact.specialtyMakeup">Makeup Artist</option>
-                                <option value="nails" data-i18n="contact.specialtyNails">Nail Artist</option>
-                                <option value="hair" data-i18n="contact.specialtyHair">Hair Stylist</option>
-                                <option value="skincare" data-i18n="contact.specialtySkincare">Esthetician</option>
-                                <option value="brows" data-i18n="contact.specialtyBrows">Brow & Lash Specialist</option>
-                                <option value="cosmetology" data-i18n="contact.specialtyCosmetology">Cosmetologist</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="prof-password" class="form-label" data-i18n="contact.passwordLabel">Password</label>
-                            <input type="password" id="prof-password" class="form-input" placeholder="Create password" required>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary btn-block" data-i18n="contact.professionalJoinButton">Join as Professional</button>
-
-                        <p class="auth-footer-text" data-i18n="contact.professionalFooter">Already have an account? <a href="#" class="auth-link">Login</a></p>
-                    </form>
-                </div>
+            <div class="content-filters">
+                <button class="filter-btn active" data-category="all" data-i18n="beautyContent.filterAll">All</button>
+                <button class="filter-btn" data-category="skincare" data-i18n="beautyContent.filterSkincare">Skincare</button>
+                <button class="filter-btn" data-category="makeup" data-i18n="beautyContent.filterMakeup">Makeup</button>
+                <button class="filter-btn" data-category="hair" data-i18n="beautyContent.filterHair">Hair Care</button>
+                <button class="filter-btn" data-category="nails" data-i18n="beautyContent.filterNails">Nails</button>
+                <button class="filter-btn" data-category="brows" data-i18n="beautyContent.filterBrows">Brows & Lashes</button>
             </div>
         </div>
     </section>
 
-    <!-- Info Section -->
-    <section class="features" style="background: var(--gray-50);">
+    <!-- Featured Videos Section -->
+    <section class="beauty-content-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" data-i18n="contact.benefitsTitle">Why Join Our Platform?</h2>
-                <p class="section-subtitle" data-i18n="contact.benefitsSubtitle">Benefits for beauty professionals</p>
+                <h2 class="section-title" data-i18n="beautyContent.videosTitle">Video Tutorials</h2>
+                <p class="section-subtitle" data-i18n="beautyContent.videosSubtitle">Learn from expert beauty professionals</p>
             </div>
 
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📸</div>
-                    <h3 class="feature-title" data-i18n="contact.benefit1Title">Showcase Your Work</h3>
-                    <p class="feature-description" data-i18n="contact.benefit1Description">Build a stunning portfolio to attract new clients</p>
+            <div class="videos-grid">
+                <!-- Video Card 1 -->
+                <div class="video-card" data-category="skincare">
+                    <div class="video-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80" alt="Skincare routine">
+                        <div class="video-play-icon">▶</div>
+                        <span class="video-duration">5:24</span>
+                    </div>
+                    <div class="video-content">
+                        <span class="video-category" data-i18n="beautyContent.categorySkincare">Skincare</span>
+                        <h3 class="video-title" data-i18n="beautyContent.video1Title">10-Step Korean Skincare Routine</h3>
+                        <p class="video-description" data-i18n="beautyContent.video1Desc">Discover the secrets of glowing skin with this complete guide to Korean skincare</p>
+                    </div>
                 </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon">👥</div>
-                    <h3 class="feature-title" data-i18n="contact.benefit2Title">Grow Your Business</h3>
-                    <p class="feature-description" data-i18n="contact.benefit2Description">Connect with clients actively seeking your services</p>
+                <!-- Video Card 2 -->
+                <div class="video-card" data-category="makeup">
+                    <div class="video-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=600&q=80" alt="Makeup tutorial">
+                        <div class="video-play-icon">▶</div>
+                        <span class="video-duration">8:15</span>
+                    </div>
+                    <div class="video-content">
+                        <span class="video-category" data-i18n="beautyContent.categoryMakeup">Makeup</span>
+                        <h3 class="video-title" data-i18n="beautyContent.video2Title">Natural Everyday Makeup Look</h3>
+                        <p class="video-description" data-i18n="beautyContent.video2Desc">Achieve a flawless, natural look perfect for everyday wear</p>
+                    </div>
                 </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon">📅</div>
-                    <h3 class="feature-title" data-i18n="contact.benefit3Title">Manage Bookings</h3>
-                    <p class="feature-description" data-i18n="contact.benefit3Description">Easy calendar and appointment management tools</p>
+                <!-- Video Card 3 -->
+                <div class="video-card" data-category="hair">
+                    <div class="video-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80" alt="Hair styling">
+                        <div class="video-play-icon">▶</div>
+                        <span class="video-duration">6:40</span>
+                    </div>
+                    <div class="video-content">
+                        <span class="video-category" data-i18n="beautyContent.categoryHair">Hair Care</span>
+                        <h3 class="video-title" data-i18n="beautyContent.video3Title">5 Easy Hairstyles for Busy Mornings</h3>
+                        <p class="video-description" data-i18n="beautyContent.video3Desc">Quick and stylish hairstyles you can do in under 5 minutes</p>
+                    </div>
                 </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon">💬</div>
-                    <h3 class="feature-title" data-i18n="contact.benefit4Title">Build Reputation</h3>
-                    <p class="feature-description" data-i18n="contact.benefit4Description">Collect reviews and build trust with potential clients</p>
+                <!-- Video Card 4 -->
+                <div class="video-card" data-category="nails">
+                    <div class="video-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=600&q=80" alt="Nail art">
+                        <div class="video-play-icon">▶</div>
+                        <span class="video-duration">7:30</span>
+                    </div>
+                    <div class="video-content">
+                        <span class="video-category" data-i18n="beautyContent.categoryNails">Nails</span>
+                        <h3 class="video-title" data-i18n="beautyContent.video4Title">Trendy Nail Art Designs at Home</h3>
+                        <p class="video-description" data-i18n="beautyContent.video4Desc">Create salon-worthy nail art with simple tools you already have</p>
+                    </div>
+                </div>
+
+                <!-- Video Card 5 -->
+                <div class="video-card" data-category="brows">
+                    <div class="video-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=600&q=80" alt="Brow shaping">
+                        <div class="video-play-icon">▶</div>
+                        <span class="video-duration">4:50</span>
+                    </div>
+                    <div class="video-content">
+                        <span class="video-category" data-i18n="beautyContent.categoryBrows">Brows & Lashes</span>
+                        <h3 class="video-title" data-i18n="beautyContent.video5Title">Perfect Brow Shaping Tutorial</h3>
+                        <p class="video-description" data-i18n="beautyContent.video5Desc">Learn how to shape and fill your brows like a pro</p>
+                    </div>
+                </div>
+
+                <!-- Video Card 6 -->
+                <div class="video-card" data-category="makeup">
+                    <div class="video-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1596704017254-9b121068ec31?auto=format&fit=crop&w=600&q=80" alt="Evening makeup">
+                        <div class="video-play-icon">▶</div>
+                        <span class="video-duration">10:20</span>
+                    </div>
+                    <div class="video-content">
+                        <span class="video-category" data-i18n="beautyContent.categoryMakeup">Makeup</span>
+                        <h3 class="video-title" data-i18n="beautyContent.video6Title">Glamorous Evening Makeup</h3>
+                        <p class="video-description" data-i18n="beautyContent.video6Desc">Step-by-step guide to a stunning evening look</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section class="beauty-articles-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="beautyContent.articlesTitle">Beauty Articles & Tips</h2>
+                <p class="section-subtitle" data-i18n="beautyContent.articlesSubtitle">Expert advice and lifehacks for your beauty routine</p>
+            </div>
+
+            <div class="articles-grid">
+                <!-- Article Card 1 -->
+                <div class="article-card" data-category="skincare">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80" alt="Skincare ingredients">
+                    </div>
+                    <div class="article-content">
+                        <span class="article-category" data-i18n="beautyContent.categorySkincare">Skincare</span>
+                        <h3 class="article-title" data-i18n="beautyContent.article1Title">The Ultimate Guide to Skincare Ingredients</h3>
+                        <p class="article-excerpt" data-i18n="beautyContent.article1Excerpt">Learn what ingredients to look for and which to avoid for your skin type. From retinol to hyaluronic acid, we break down everything you need to know.</p>
+                        <a href="#" class="article-link" data-i18n="beautyContent.readMore">Read More →</a>
+                    </div>
+                </div>
+
+                <!-- Article Card 2 -->
+                <div class="article-card" data-category="makeup">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=600&q=80" alt="Makeup brushes">
+                    </div>
+                    <div class="article-content">
+                        <span class="article-category" data-i18n="beautyContent.categoryMakeup">Makeup</span>
+                        <h3 class="article-title" data-i18n="beautyContent.article2Title">Essential Makeup Brushes Every Beginner Needs</h3>
+                        <p class="article-excerpt" data-i18n="beautyContent.article2Excerpt">Confused about which brushes to buy? Here's your complete guide to building the perfect makeup brush collection without breaking the bank.</p>
+                        <a href="#" class="article-link" data-i18n="beautyContent.readMore">Read More →</a>
+                    </div>
+                </div>
+
+                <!-- Article Card 3 -->
+                <div class="article-card" data-category="hair">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=80" alt="Hair care">
+                    </div>
+                    <div class="article-content">
+                        <span class="article-category" data-i18n="beautyContent.categoryHair">Hair Care</span>
+                        <h3 class="article-title" data-i18n="beautyContent.article3Title">Hair Care Mistakes You're Probably Making</h3>
+                        <p class="article-excerpt" data-i18n="beautyContent.article3Excerpt">Are you damaging your hair without realizing it? Discover the most common hair care mistakes and how to fix them for healthier, shinier hair.</p>
+                        <a href="#" class="article-link" data-i18n="beautyContent.readMore">Read More →</a>
+                    </div>
+                </div>
+
+                <!-- Article Card 4 -->
+                <div class="article-card" data-category="nails">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?auto=format&fit=crop&w=600&q=80" alt="Nail care">
+                    </div>
+                    <div class="article-content">
+                        <span class="article-category" data-i18n="beautyContent.categoryNails">Nails</span>
+                        <h3 class="article-title" data-i18n="beautyContent.article4Title">How to Make Your Manicure Last Longer</h3>
+                        <p class="article-excerpt" data-i18n="beautyContent.article4Excerpt">Tired of chipped nail polish after just a few days? Learn the professional secrets to extending the life of your manicure to two weeks or more.</p>
+                        <a href="#" class="article-link" data-i18n="beautyContent.readMore">Read More →</a>
+                    </div>
+                </div>
+
+                <!-- Article Card 5 -->
+                <div class="article-card" data-category="skincare">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=600&q=80" alt="Morning routine">
+                    </div>
+                    <div class="article-content">
+                        <span class="article-category" data-i18n="beautyContent.categorySkincare">Skincare</span>
+                        <h3 class="article-title" data-i18n="beautyContent.article5Title">Morning vs. Night Skincare Routines</h3>
+                        <p class="article-excerpt" data-i18n="beautyContent.article5Excerpt">Not all skincare products work the same at different times of day. Learn when to use which products for maximum effectiveness.</p>
+                        <a href="#" class="article-link" data-i18n="beautyContent.readMore">Read More →</a>
+                    </div>
+                </div>
+
+                <!-- Article Card 6 -->
+                <div class="article-card" data-category="brows">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1508186225823-0963cf9ab0de?auto=format&fit=crop&w=600&q=80" alt="Lash care">
+                    </div>
+                    <div class="article-content">
+                        <span class="article-category" data-i18n="beautyContent.categoryBrows">Brows & Lashes</span>
+                        <h3 class="article-title" data-i18n="beautyContent.article6Title">Natural Ways to Grow Longer Lashes</h3>
+                        <p class="article-excerpt" data-i18n="beautyContent.article6Excerpt">Want longer, fuller lashes without extensions? Discover natural remedies and serums that actually work to boost your lash growth.</p>
+                        <a href="#" class="article-link" data-i18n="beautyContent.readMore">Read More →</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -227,7 +322,7 @@
                     <h4 class="footer-heading" data-i18n="footer.platformTitle">Platform</h4>
                     <ul class="footer-links">
                         <li><a href="professionals.html" data-i18n="footer.findProfessionals">Find Professionals</a></li>
-                        <li><a href="contact.html" data-i18n="footer.joinProfessional">Join as Professional</a></li>
+                        <li><a href="contact.html" data-i18n="nav.beautyPage">BeYouTy</a></li>
                         <li><a href="index.html" data-i18n="footer.home">Home</a></li>
                     </ul>
                 </div>
@@ -252,6 +347,6 @@
     <script src="js/i18n.js"></script>
     <script src="js/language-switcher.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/auth.js"></script>
+    <script src="js/beauty-content.js"></script>
 </body>
 </html>
