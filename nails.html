@@ -25,13 +25,13 @@
             <div class="nav-menu" id="nav-menu">
                 <ul class="nav-list">
                     <li class="nav-item">
-                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="professionals.html" class="nav-link">Professionals</a>
+                        <a href="professionals.html" class="nav-link" data-i18n="nav.professionals">Professionals</a>
                     </li>
                     <li class="nav-item">
-                        <a href="contact.html" class="nav-link">BeYouTy</a>
+                        <a href="contact.html" class="nav-link" data-i18n="nav.beautyPage">BeYouTy</a>
                     </li>
                 </ul>
 
@@ -42,6 +42,23 @@
 
             <!-- Right Actions -->
             <div class="nav-actions">
+                <!-- Language Switcher -->
+                <div class="language-switcher">
+                    <button class="language-btn" id="language-btn" aria-label="Select Language" title="Language">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a 15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                        <span class="language-text" id="current-language">EN</span>
+                    </button>
+                    <div class="language-dropdown" id="language-dropdown">
+                        <button class="language-option" data-lang="en">English</button>
+                        <button class="language-option" data-lang="ru">Русский</button>
+                        <button class="language-option" data-lang="uz">O'zbek</button>
+                    </div>
+                </div>
+
                 <button class="nav-action-btn search-btn" id="search-btn" aria-label="Search" title="Search">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="11" cy="11" r="8"></circle>
@@ -53,7 +70,7 @@
                         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                         <circle cx="12" cy="7" r="4"></circle>
                     </svg>
-                    <span class="account-text">Account</span>
+                    <span class="account-text" data-i18n="nav.account">Account</span>
                 </a>
             </div>
 
@@ -71,8 +88,8 @@
         <div class="container">
             <div class="page-hero-content">
                 <div class="page-icon">💅</div>
-                <h1 class="page-title">Nail Professionals</h1>
-                <p class="page-description">Expert nail artists ready to perfect your manicure</p>
+                <h1 class="page-title" data-i18n="nails.pageTitle">Nail Professionals</h1>
+                <p class="page-description" data-i18n="nails.pageDescription">Expert nail artists ready to perfect your manicure</p>
             </div>
         </div>
     </section>
@@ -81,8 +98,8 @@
     <section class="content-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Browse Nail Artists</h2>
-                <p class="section-subtitle">Find the perfect professional for your needs</p>
+                <h2 class="section-title" data-i18n="nails.browseTitle">Browse Nail Artists</h2>
+                <p class="section-subtitle" data-i18n="nails.browseSubtitle">Find the perfect professional for your needs</p>
             </div>
 
             <div class="professionals-grid" id="service-professionals-grid">
@@ -95,9 +112,9 @@
     <section class="cta">
         <div class="container">
             <div class="cta-content">
-                <h2 class="cta-title">Looking for a Different Service?</h2>
-                <p class="cta-description">Explore all beauty services and find professionals in every category</p>
-                <a href="index.html#services" class="btn btn-primary btn-large">View All Services</a>
+                <h2 class="cta-title" data-i18n="nails.ctaTitle">Looking for a Different Service?</h2>
+                <p class="cta-description" data-i18n="nails.ctaDescription">Explore all beauty services and find professionals in every category</p>
+                <a href="index.html#services" class="btn btn-primary btn-large" data-i18n="nails.ctaButton">View All Services</a>
             </div>
         </div>
     </section>
@@ -111,32 +128,32 @@
                         <span class="logo-icon">✨</span>
                         Radiant Beauty
                     </h3>
-                    <p class="footer-description">
+                    <p class="footer-description" data-i18n="footer.description">
                         Connecting clients with talented beauty professionals. Your one-stop platform for all beauty services.
                     </p>
                 </div>
 
                 <div class="footer-section">
-                    <h4 class="footer-heading">Services</h4>
+                    <h4 class="footer-heading" data-i18n="footer.servicesTitle">Services</h4>
                     <ul class="footer-links">
-                        <li><a href="makeup.html">Makeup</a></li>
-                        <li><a href="hair.html">Hair Styling</a></li>
-                        <li><a href="nails.html">Nails</a></li>
-                        <li><a href="skincare.html">Skincare</a></li>
+                        <li><a href="makeup.html" data-i18n="footer.makeup">Makeup</a></li>
+                        <li><a href="hair.html" data-i18n="footer.hairStyling">Hair Styling</a></li>
+                        <li><a href="nails.html" data-i18n="footer.nails">Nails</a></li>
+                        <li><a href="skincare.html" data-i18n="footer.skincare">Skincare</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
-                    <h4 class="footer-heading">Platform</h4>
+                    <h4 class="footer-heading" data-i18n="footer.platformTitle">Platform</h4>
                     <ul class="footer-links">
-                        <li><a href="professionals.html">Find Professionals</a></li>
-                        <li><a href="contact.html">Join as Professional</a></li>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="professionals.html" data-i18n="footer.findProfessionals">Find Professionals</a></li>
+                        <li><a href="contact.html" data-i18n="footer.joinProfessional">Join as Professional</a></li>
+                        <li><a href="index.html" data-i18n="footer.home">Home</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
-                    <h4 class="footer-heading">Connect</h4>
+                    <h4 class="footer-heading" data-i18n="footer.connectTitle">Connect</h4>
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="Instagram">📷</a>
                         <a href="#" class="social-link" aria-label="Pinterest">📌</a>
@@ -147,11 +164,13 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2025 Radiant Beauty Platform. All rights reserved.</p>
+                <p data-i18n="footer.copyright">&copy; 2025 Radiant Beauty Platform. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <script src="js/i18n.js"></script>
+    <script src="js/language-switcher.js"></script>
     <script src="js/professionals-data.js"></script>
     <script src="js/main.js"></script>
 </body>
