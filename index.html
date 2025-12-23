@@ -25,13 +25,13 @@
             <div class="nav-menu" id="nav-menu">
                 <ul class="nav-list">
                     <li class="nav-item">
-                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="professionals.html" class="nav-link">Professionals</a>
+                        <a href="professionals.html" class="nav-link" data-i18n="nav.professionals">Professionals</a>
                     </li>
                     <li class="nav-item">
-                        <a href="contact.html" class="nav-link">BeYouTy</a>
+                        <a href="contact.html" class="nav-link" data-i18n="nav.beautyPage">BeYouTy</a>
                     </li>
                 </ul>
 
@@ -42,6 +42,23 @@
 
             <!-- Right Actions -->
             <div class="nav-actions">
+                <!-- Language Switcher -->
+                <div class="language-switcher">
+                    <button class="language-btn" id="language-btn" aria-label="Select Language" title="Language">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                        <span class="language-text" id="current-language">EN</span>
+                    </button>
+                    <div class="language-dropdown" id="language-dropdown">
+                        <button class="language-option" data-lang="en">English</button>
+                        <button class="language-option" data-lang="ru">Русский</button>
+                        <button class="language-option" data-lang="uz">O'zbek</button>
+                    </div>
+                </div>
+
                 <button class="nav-action-btn search-btn" id="search-btn" aria-label="Search" title="Search">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="11" cy="11" r="8"></circle>
@@ -53,7 +70,7 @@
                         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                         <circle cx="12" cy="7" r="4"></circle>
                     </svg>
-                    <span class="account-text">Account</span>
+                    <span class="account-text" data-i18n="nav.account">Account</span>
                 </a>
             </div>
 
@@ -75,20 +92,20 @@
         <div class="hero-content-wrapper container">
             <div class="hero-text-content">
                 <h1 class="hero-headline">
-                    Professional Beauty Services
-                    <span class="hero-accent">Perfected</span>
+                    <span data-i18n="hero.headline">Professional Beauty Services</span>
+                    <span class="hero-accent" data-i18n="hero.accent">Perfected</span>
                 </h1>
-                <p class="hero-subheading">
+                <p class="hero-subheading" data-i18n="hero.subheading">
                     Makeup, Nails, Brow Art, Aesthetics & More
                 </p>
                 <div class="hero-cta-buttons">
-                    <a href="contact.html" class="btn btn-hero-primary">Book a Service</a>
-                    <a href="#services" class="btn btn-hero-secondary">Explore Services</a>
+                    <a href="contact.html" class="btn btn-hero-primary" data-i18n="hero.bookService">Book a Service</a>
+                    <a href="#services" class="btn btn-hero-secondary" data-i18n="hero.exploreServices">Explore Services</a>
                 </div>
             </div>
         </div>
         <div class="hero-scroll-indicator">
-            <span>Scroll to explore</span>
+            <span data-i18n="hero.scrollToExplore">Scroll to explore</span>
             <div class="scroll-arrow">↓</div>
         </div>
     </section>
@@ -97,8 +114,8 @@
     <section class="bento-services" id="services">
         <div class="container">
             <div class="section-header-minimal">
-                <h2 class="section-title-minimal">Our Services</h2>
-                <p class="section-subtitle-minimal">Click a service to learn more</p>
+                <h2 class="section-title-minimal" data-i18n="services.title">Our Services</h2>
+                <p class="section-subtitle-minimal" data-i18n="services.subtitle">Click a service to learn more</p>
             </div>
 
             <div class="bento-grid">
@@ -108,8 +125,8 @@
                         <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=800&q=80" alt="Professional makeup brushes and products" class="bento-img">
                     </div>
                     <div class="bento-overlay">
-                        <h3 class="bento-title">Makeup</h3>
-                        <p class="bento-description">Professional artistry</p>
+                        <h3 class="bento-title" data-i18n="services.makeup">Makeup</h3>
+                        <p class="bento-description" data-i18n="services.makeupDesc">Professional artistry</p>
                     </div>
                 </a>
 
@@ -119,8 +136,8 @@
                         <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&q=80" alt="Nail art and manicure" class="bento-img">
                     </div>
                     <div class="bento-overlay">
-                        <h3 class="bento-title">Nails</h3>
-                        <p class="bento-description">Manicure & art</p>
+                        <h3 class="bento-title" data-i18n="services.nails">Nails</h3>
+                        <p class="bento-description" data-i18n="services.nailsDesc">Manicure & art</p>
                     </div>
                 </a>
 
@@ -130,8 +147,8 @@
                         <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=800&q=80" alt="Eyebrow shaping and lamination" class="bento-img">
                     </div>
                     <div class="bento-overlay">
-                        <h3 class="bento-title">Brows</h3>
-                        <p class="bento-description">Shaping & lamination</p>
+                        <h3 class="bento-title" data-i18n="services.brows">Brows</h3>
+                        <p class="bento-description" data-i18n="services.browsDesc">Shaping & lamination</p>
                     </div>
                 </a>
 
@@ -141,8 +158,8 @@
                         <img src="https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&w=800&q=80" alt="Eyelash extensions" class="bento-img">
                     </div>
                     <div class="bento-overlay">
-                        <h3 class="bento-title">Lashes</h3>
-                        <p class="bento-description">Extensions</p>
+                        <h3 class="bento-title" data-i18n="services.lashes">Lashes</h3>
+                        <p class="bento-description" data-i18n="services.lashesDesc">Extensions</p>
                     </div>
                 </a>
 
@@ -152,8 +169,8 @@
                         <img src="https://images.unsplash.com/photo-1515688594390-b649af70d282?auto=format&fit=crop&w=800&q=80" alt="Lip care and enhancement" class="bento-img">
                     </div>
                     <div class="bento-overlay">
-                        <h3 class="bento-title">Lips</h3>
-                        <p class="bento-description">Enhancement</p>
+                        <h3 class="bento-title" data-i18n="services.lips">Lips</h3>
+                        <p class="bento-description" data-i18n="services.lipsDesc">Enhancement</p>
                     </div>
                 </a>
 
@@ -163,8 +180,8 @@
                         <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80" alt="Skincare and facial treatments" class="bento-img">
                     </div>
                     <div class="bento-overlay">
-                        <h3 class="bento-title">Skincare</h3>
-                        <p class="bento-description">Facial treatments</p>
+                        <h3 class="bento-title" data-i18n="services.skincare">Skincare</h3>
+                        <p class="bento-description" data-i18n="services.skincareDesc">Facial treatments</p>
                     </div>
                 </a>
 
@@ -174,8 +191,8 @@
                         <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=80" alt="Hair styling and coloring" class="bento-img">
                     </div>
                     <div class="bento-overlay">
-                        <h3 class="bento-title">Hair</h3>
-                        <p class="bento-description">Styling & color</p>
+                        <h3 class="bento-title" data-i18n="services.hair">Hair</h3>
+                        <p class="bento-description" data-i18n="services.hairDesc">Styling & color</p>
                     </div>
                 </a>
 
@@ -185,8 +202,8 @@
                         <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=800&q=80" alt="Complete beauty care" class="bento-img">
                     </div>
                     <div class="bento-overlay">
-                        <h3 class="bento-title">Beauty</h3>
-                        <p class="bento-description">Complete care</p>
+                        <h3 class="bento-title" data-i18n="services.beauty">Beauty</h3>
+                        <p class="bento-description" data-i18n="services.beautyDesc">Complete care</p>
                     </div>
                 </a>
             </div>
@@ -197,8 +214,8 @@
     <section class="featured-professionals" id="professionals">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Featured Beauty Professionals</h2>
-                <p class="section-subtitle">Discover talented experts ready to serve you</p>
+                <h2 class="section-title" data-i18n="professionals.title">Featured Beauty Professionals</h2>
+                <p class="section-subtitle" data-i18n="professionals.subtitle">Discover talented experts ready to serve you</p>
             </div>
 
             <div class="professionals-grid" id="featured-professionals-grid">
@@ -206,7 +223,7 @@
             </div>
 
             <div class="text-center" style="margin-top: var(--spacing-xl);">
-                <a href="professionals.html" class="btn btn-primary btn-large">View All Professionals</a>
+                <a href="professionals.html" class="btn btn-primary btn-large" data-i18n="professionals.viewAll">View All Professionals</a>
             </div>
         </div>
     </section>
@@ -215,33 +232,33 @@
     <section class="features">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Why Choose Our Platform?</h2>
-                <p class="section-subtitle">Connecting clients with talented beauty professionals</p>
+                <h2 class="section-title" data-i18n="features.title">Why Choose Our Platform?</h2>
+                <p class="section-subtitle" data-i18n="features.subtitle">Connecting clients with talented beauty professionals</p>
             </div>
 
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">👩‍🎨</div>
-                    <h3 class="feature-title">Verified Professionals</h3>
-                    <p class="feature-description">Browse portfolios of certified and experienced beauty experts</p>
+                    <h3 class="feature-title" data-i18n="features.verified">Verified Professionals</h3>
+                    <p class="feature-description" data-i18n="features.verifiedDesc">Browse portfolios of certified and experienced beauty experts</p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">📅</div>
-                    <h3 class="feature-title">Easy Booking</h3>
-                    <p class="feature-description">View availability and book appointments that fit your schedule</p>
+                    <h3 class="feature-title" data-i18n="features.booking">Easy Booking</h3>
+                    <p class="feature-description" data-i18n="features.bookingDesc">View availability and book appointments that fit your schedule</p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">⭐</div>
-                    <h3 class="feature-title">Trusted Reviews</h3>
-                    <p class="feature-description">Read real reviews from clients to find the perfect match</p>
+                    <h3 class="feature-title" data-i18n="features.reviews">Trusted Reviews</h3>
+                    <p class="feature-description" data-i18n="features.reviewsDesc">Read real reviews from clients to find the perfect match</p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">💼</div>
-                    <h3 class="feature-title">All Services</h3>
-                    <p class="feature-description">Find professionals for any beauty service in one place</p>
+                    <h3 class="feature-title" data-i18n="features.allServices">All Services</h3>
+                    <p class="feature-description" data-i18n="features.allServicesDesc">Find professionals for any beauty service in one place</p>
                 </div>
             </div>
         </div>
@@ -251,9 +268,9 @@
     <section class="cta">
         <div class="container">
             <div class="cta-content">
-                <h2 class="cta-title">Are You a Beauty Professional?</h2>
-                <p class="cta-description">Join our platform and connect with clients looking for your expertise. Showcase your portfolio and grow your business.</p>
-                <a href="contact.html" class="btn btn-primary btn-large">Join as a Professional</a>
+                <h2 class="cta-title" data-i18n="cta.title">Are You a Beauty Professional?</h2>
+                <p class="cta-description" data-i18n="cta.description">Join our platform and connect with clients looking for your expertise. Showcase your portfolio and grow your business.</p>
+                <a href="contact.html" class="btn btn-primary btn-large" data-i18n="cta.joinButton">Join as a Professional</a>
             </div>
         </div>
     </section>
@@ -267,32 +284,32 @@
                         <span class="logo-icon">✨</span>
                         Radiant Beauty
                     </h3>
-                    <p class="footer-description">
+                    <p class="footer-description" data-i18n="footer.description">
                         Connecting clients with talented beauty professionals. Your one-stop platform for all beauty services.
                     </p>
                 </div>
 
                 <div class="footer-section">
-                    <h4 class="footer-heading">Services</h4>
+                    <h4 class="footer-heading" data-i18n="footer.servicesTitle">Services</h4>
                     <ul class="footer-links">
-                        <li><a href="makeup.html">Makeup</a></li>
-                        <li><a href="hair.html">Hair Styling</a></li>
-                        <li><a href="nails.html">Nails</a></li>
-                        <li><a href="skincare.html">Skincare</a></li>
+                        <li><a href="makeup.html" data-i18n="footer.makeup">Makeup</a></li>
+                        <li><a href="hair.html" data-i18n="footer.hairStyling">Hair Styling</a></li>
+                        <li><a href="nails.html" data-i18n="footer.nails">Nails</a></li>
+                        <li><a href="skincare.html" data-i18n="footer.skincare">Skincare</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
-                    <h4 class="footer-heading">Platform</h4>
+                    <h4 class="footer-heading" data-i18n="footer.platformTitle">Platform</h4>
                     <ul class="footer-links">
-                        <li><a href="professionals.html">Find Professionals</a></li>
-                        <li><a href="contact.html">Join as Professional</a></li>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="professionals.html" data-i18n="footer.findProfessionals">Find Professionals</a></li>
+                        <li><a href="contact.html" data-i18n="footer.joinProfessional">Join as Professional</a></li>
+                        <li><a href="index.html" data-i18n="footer.home">Home</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
-                    <h4 class="footer-heading">Connect</h4>
+                    <h4 class="footer-heading" data-i18n="footer.connectTitle">Connect</h4>
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="Instagram">📷</a>
                         <a href="#" class="social-link" aria-label="Pinterest">📌</a>
@@ -303,11 +320,13 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2025 Radiant Beauty Platform. All rights reserved.</p>
+                <p data-i18n="footer.copyright">&copy; 2025 Radiant Beauty Platform. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <script src="js/i18n.js"></script>
+    <script src="js/language-switcher.js"></script>
     <script src="js/professionals-data.js"></script>
     <script src="js/main.js"></script>
 </body>
