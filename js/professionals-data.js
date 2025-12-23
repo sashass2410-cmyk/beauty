@@ -171,9 +171,21 @@ const professionals = [
         id: 6,
         name: "Ava Williams",
         photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
-        specializations: ["Nails", "Pedicure"],
-        bio: "Nail care specialist with a focus on nail health and beautiful designs. Creating art on your fingertips with care and precision.",
-        location: "Polished Nails Salon, Boston",
+        specializations: {
+            en: ["Nails", "Pedicure"],
+            ru: ["Ногти", "Педикюр"],
+            uz: ["Tirnoqlar", "Pedikur"]
+        },
+        bio: {
+            en: "Nail care specialist with a focus on nail health and beautiful designs. Creating art on your fingertips with care and precision.",
+            ru: "Специалист по уходу за ногтями с акцентом на здоровье ногтей и красивые дизайны. Создаю искусство на ваших пальцах с заботой и точностью.",
+            uz: "Tirnoq salomatligi va chiroyli dizaynlarga e'tibor qaratadigan tirnoq parvarishi mutaxassisi. Barmoqlaringizda g'amxo'rlik va aniqlik bilan san'at yarataman."
+        },
+        location: {
+            en: "Polished Nails Salon, Boston",
+            ru: "Polished Nails Salon, Бостон",
+            uz: "Polished Nails Salon, Boston"
+        },
         services: [
             { name: "Spa Pedicure", price: "$70", duration: "60 min" },
             { name: "Deluxe Manicure", price: "$55", duration: "50 min" },
@@ -191,9 +203,21 @@ const professionals = [
         id: 7,
         name: "Lily Parker",
         photo: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=400&q=80",
-        specializations: ["Makeup", "Special Effects"],
-        bio: "Makeup artist specializing in editorial, fashion, and special effects makeup. Pushing creative boundaries to create stunning looks.",
-        location: "Artistry Makeup Studio, NYC",
+        specializations: {
+            en: ["Makeup", "Special Effects"],
+            ru: ["Макияж", "Спецэффекты"],
+            uz: ["Makiyaj", "Maxsus Effektlar"]
+        },
+        bio: {
+            en: "Makeup artist specializing in editorial, fashion, and special effects makeup. Pushing creative boundaries to create stunning looks.",
+            ru: "Визажист, специализирующийся на редакционном, модном макияже и спецэффектах. Раздвигаю творческие границы для создания потрясающих образов.",
+            uz: "Tahririyat, moda va maxsus effektlar makiyajiga mutaxassis bo'yanuvchi. Ajoyib ko'rinishlar yaratish uchun ijodiy chegaralarni kengaytiraman."
+        },
+        location: {
+            en: "Artistry Makeup Studio, NYC",
+            ru: "Artistry Makeup Studio, Нью-Йорк",
+            uz: "Artistry Makeup Studio, Nyu-York"
+        },
         services: [
             { name: "Editorial Makeup", price: "$180", duration: "90 min" },
             { name: "Fashion Show Makeup", price: "$150", duration: "60 min" },
@@ -211,9 +235,21 @@ const professionals = [
         id: 8,
         name: "Chloe Davis",
         photo: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80",
-        specializations: ["Cosmetology", "Full Beauty Services"],
-        bio: "Full-service beauty professional offering comprehensive beauty care. From hair to nails, providing all your beauty needs in one place.",
-        location: "Complete Beauty Center, Austin",
+        specializations: {
+            en: ["Cosmetology", "Full Beauty Services"],
+            ru: ["Косметология", "Полный спектр услуг"],
+            uz: ["Kosmetologiya", "To'liq Go'zallik Xizmatlari"]
+        },
+        bio: {
+            en: "Full-service beauty professional offering comprehensive beauty care. From hair to nails, providing all your beauty needs in one place.",
+            ru: "Профессионал полного цикла, предлагающий комплексный уход за красотой. От волос до ногтей - все ваши потребности в красоте в одном месте.",
+            uz: "To'liq xizmat ko'rsatadigan go'zallik mutaxassisi. Sochdan tortib tirnoqlargacha - barcha go'zallik ehtiyojlaringiz bir joyda."
+        },
+        location: {
+            en: "Complete Beauty Center, Austin",
+            ru: "Complete Beauty Center, Остин",
+            uz: "Complete Beauty Center, Ostin"
+        },
         services: [
             { name: "Hair & Makeup Package", price: "$220", duration: "150 min" },
             { name: "Full Styling Service", price: "$180", duration: "120 min" },

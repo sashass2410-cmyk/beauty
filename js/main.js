@@ -529,6 +529,17 @@ function initServiceProfessionals() {
   Create Professional Card HTML
   ===================================*/
 function createProfessionalCard(prof) {
+    // Get current language for translations
+    const currentLang = typeof getLanguage === 'function' ? getLanguage() : 'en';
+
+    // Get localized content
+    const specializations = prof.specializations[currentLang] || prof.specializations.en || prof.specializations;
+    const bio = prof.bio[currentLang] || prof.bio.en || prof.bio;
+    const location = prof.location[currentLang] || prof.location.en || prof.location;
+
+    // Handle both array and string specializations
+    const specializationsText = Array.isArray(specializations) ? specializations.join(' • ') : specializations;
+
     return `
         <div class="professional-card" data-id="${prof.id}">
             <div class="professional-image">
@@ -541,9 +552,9 @@ function createProfessionalCard(prof) {
             </div>
             <div class="professional-info">
                 <h3 class="professional-name">${prof.name}</h3>
-                <p class="professional-specializations">${prof.specializations.join(' • ')}</p>
-                <p class="professional-bio">${prof.bio.substring(0, 100)}...</p>
-                <p class="professional-location">📍 ${prof.location}</p>
+                <p class="professional-specializations">${specializationsText}</p>
+                <p class="professional-bio">${bio.substring(0, 100)}...</p>
+                <p class="professional-location">📍 ${location}</p>
                 <a href="professional.html?id=${prof.id}" class="btn btn-secondary btn-block" data-i18n="professionals.viewProfile">View Profile</a>
             </div>
         </div>

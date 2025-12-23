@@ -75,6 +75,40 @@ function getLanguage() {
 function setLanguage(lang) {
     localStorage.setItem('selectedLanguage', lang);
     applyTranslations(lang);
+
+    // Re-render professional cards if they exist (for dynamic content translation)
+    reRenderProfessionalCards();
+}
+
+// Re-render professional cards to reflect language change
+function reRenderProfessionalCards() {
+    // Featured professionals on homepage
+    if (typeof initFeaturedProfessionals === 'function') {
+        initFeaturedProfessionals();
+    }
+
+    // Service-specific professionals
+    if (typeof initServiceProfessionals === 'function') {
+        initServiceProfessionals();
+    }
+
+    // All professionals page
+    if (typeof displayProfessionals === 'function' && typeof professionals !== 'undefined') {
+        // Get current filter
+        const activeFilter = document.querySelector('.filter-btn.active');
+        const filterValue = activeFilter ? activeFilter.getAttribute('data-filter') : 'all';
+
+        // Re-display with current filter
+        if (filterValue === 'all') {
+            displayProfessionals(professionals);
+        } else {
+            const filtered = professionals.filter(prof => {
+                const specs = prof.specializations.en || prof.specializations;
+                return Array.isArray(specs) ? specs.includes(filterValue) : specs === filterValue;
+            });
+            displayProfessionals(filtered);
+        }
+    }
 }
 
 // Update current language display
