@@ -160,6 +160,16 @@ function applyTranslations(lang) {
         }
     });
 
+    // Handle placeholder translations separately
+    const placeholderElements = document.querySelectorAll('[data-i18n-placeholder]');
+    placeholderElements.forEach(element => {
+        const key = element.getAttribute('data-i18n-placeholder');
+        const translation = getNestedTranslation(currentTranslations, key);
+        if (translation) {
+            element.setAttribute('placeholder', translation);
+        }
+    });
+
     // Update HTML lang attribute
     document.documentElement.lang = lang;
 }

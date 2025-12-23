@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Radiant Beauty</title>
+    <meta name="description" content="Your Radiant Beauty account dashboard.">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <!-- Logo -->
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">✨</span>
+                <span class="logo-text">Radiant Beauty</span>
+            </a>
+
+            <!-- Main Navigation -->
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="professionals.html" class="nav-link" data-i18n="nav.professionals">Professionals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link" data-i18n="nav.beautyPage">BeYouTy</a>
+                    </li>
+                </ul>
+
+                <div class="nav-close" id="nav-close">
+                    <span>&times;</span>
+                </div>
+            </div>
+
+            <!-- Right Actions -->
+            <div class="nav-actions">
+                <!-- Language Switcher -->
+                <div class="language-switcher">
+                    <button class="language-btn" id="language-btn" aria-label="Select Language" title="Language">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                        <span class="language-text" id="current-language">EN</span>
+                    </button>
+                    <div class="language-dropdown" id="language-dropdown">
+                        <button class="language-option" data-lang="en">English</button>
+                        <button class="language-option" data-lang="ru">Русский</button>
+                        <button class="language-option" data-lang="uz">O'zbek</button>
+                    </div>
+                </div>
+
+                <button class="nav-action-btn search-btn" id="search-btn" aria-label="Search" title="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <a href="dashboard.html" class="nav-action-btn account-btn" aria-label="Account" title="Account">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span class="account-text" data-i18n="nav.account">Account</span>
+                </a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard-section">
+        <div class="container">
+            <div class="dashboard-container">
+                <!-- Dashboard Header -->
+                <div class="dashboard-header">
+                    <div class="user-welcome">
+                        <img src="" alt="Profile" class="user-avatar" id="user-avatar">
+                        <div class="user-info">
+                            <h1 class="user-greeting">
+                                <span data-i18n="dashboard.welcome">Welcome back,</span>
+                                <span id="user-name">User</span>!
+                            </h1>
+                            <p class="user-email" id="user-email">user@example.com</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary" id="logout-btn" data-i18n="dashboard.logout">Logout</button>
+                </div>
+
+                <!-- Dashboard Content -->
+                <div class="dashboard-grid">
+                    <!-- Account Info Card -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h2 class="card-title" data-i18n="dashboard.accountInfo">Account Information</h2>
+                        </div>
+                        <div class="card-content">
+                            <div class="info-row">
+                                <span class="info-label" data-i18n="dashboard.nameLabel">Name:</span>
+                                <span class="info-value" id="info-name">-</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label" data-i18n="dashboard.emailLabel">Email:</span>
+                                <span class="info-value" id="info-email">-</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label" data-i18n="dashboard.memberSince">Member Since:</span>
+                                <span class="info-value" id="member-since">-</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label" data-i18n="dashboard.authProvider">Sign-in Method:</span>
+                                <span class="info-value" id="auth-provider">-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions Card -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h2 class="card-title" data-i18n="dashboard.quickActions">Quick Actions</h2>
+                        </div>
+                        <div class="card-content">
+                            <a href="contact.html" class="action-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                <span data-i18n="dashboard.bookService">Book a Service</span>
+                            </a>
+                            <a href="professionals.html" class="action-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                                <span data-i18n="dashboard.browseProfessionals">Browse Professionals</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-icon">✨</span>
+                        <span class="logo-text">Radiant Beauty</span>
+                    </div>
+                    <p class="footer-description" data-i18n="footer.description">
+                        Your complete beauty guide for makeup, hair, nails, and skincare.
+                    </p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3 class="footer-title" data-i18n="footer.quickLinks">Quick Links</h3>
+                        <ul class="footer-list">
+                            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                            <li><a href="professionals.html" data-i18n="nav.professionals">Professionals</a></li>
+                            <li><a href="contact.html" data-i18n="nav.beautyPage">BeYouTy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Radiant Beauty. <span data-i18n="footer.rights">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/i18n.js"></script>
+    <script src="js/language-switcher.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

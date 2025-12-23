@@ -189,6 +189,48 @@ const translations = {
             benefit3Description: "Showcase your portfolio and grow your reputation",
             benefit4Title: "Flexible Working",
             benefit4Description: "Work on your own schedule and set your own rates"
+        },
+
+        // Authentication
+        auth: {
+            loginTitle: "Welcome Back",
+            loginSubtitle: "Sign in to your account to continue",
+            signUpTitle: "Create Account",
+            signUpSubtitle: "Join Radiant Beauty to get started",
+            emailLabel: "Email Address",
+            emailPlaceholder: "your.email@example.com",
+            passwordLabel: "Password",
+            passwordPlaceholder: "••••••••",
+            nameLabel: "Full Name",
+            namePlaceholder: "John Doe",
+            rememberMe: "Remember me",
+            forgotPassword: "Forgot password?",
+            signInButton: "Sign In",
+            createAccountButton: "Create Account",
+            continueWithGoogle: "Continue with Google",
+            orContinueWith: "Or continue with",
+            noAccount: "Don't have an account?",
+            haveAccount: "Already have an account?",
+            signUpLink: "Sign up",
+            signInLink: "Sign in",
+            termsPrefix: "By signing up, you agree to our",
+            termsLink: "Terms of Service",
+            termsAnd: "and",
+            privacyLink: "Privacy Policy"
+        },
+
+        // Dashboard
+        dashboard: {
+            welcome: "Welcome back,",
+            logout: "Logout",
+            accountInfo: "Account Information",
+            nameLabel: "Name:",
+            emailLabel: "Email:",
+            memberSince: "Member Since:",
+            authProvider: "Sign-in Method:",
+            quickActions: "Quick Actions",
+            bookService: "Book a Service",
+            browseProfessionals: "Browse Professionals"
         }
     },
 
@@ -377,6 +419,48 @@ const translations = {
             benefit3Description: "Покажите портфолио и развивайте репутацию",
             benefit4Title: "Гибкий График",
             benefit4Description: "Работайте в удобное время и устанавливайте цены"
+        },
+
+        // Аутентификация
+        auth: {
+            loginTitle: "С Возвращением",
+            loginSubtitle: "Войдите в свой аккаунт для продолжения",
+            signUpTitle: "Создать Аккаунт",
+            signUpSubtitle: "Присоединяйтесь к Radiant Beauty",
+            emailLabel: "Email Адрес",
+            emailPlaceholder: "your.email@example.com",
+            passwordLabel: "Пароль",
+            passwordPlaceholder: "••••••••",
+            nameLabel: "Полное Имя",
+            namePlaceholder: "Иван Иванов",
+            rememberMe: "Запомнить меня",
+            forgotPassword: "Забыли пароль?",
+            signInButton: "Войти",
+            createAccountButton: "Создать Аккаунт",
+            continueWithGoogle: "Продолжить с Google",
+            orContinueWith: "Или продолжить с",
+            noAccount: "Нет аккаунта?",
+            haveAccount: "Уже есть аккаунт?",
+            signUpLink: "Зарегистрироваться",
+            signInLink: "Войти",
+            termsPrefix: "Регистрируясь, вы соглашаетесь с нашими",
+            termsLink: "Условиями Использования",
+            termsAnd: "и",
+            privacyLink: "Политикой Конфиденциальности"
+        },
+
+        // Панель управления
+        dashboard: {
+            welcome: "С возвращением,",
+            logout: "Выйти",
+            accountInfo: "Информация об Аккаунте",
+            nameLabel: "Имя:",
+            emailLabel: "Email:",
+            memberSince: "Участник С:",
+            authProvider: "Метод Входа:",
+            quickActions: "Быстрые Действия",
+            bookService: "Записаться на Услугу",
+            browseProfessionals: "Просмотр Специалистов"
         }
     },
 
@@ -565,6 +649,48 @@ const translations = {
             benefit3Description: "Portfolioni ko'rsating va obro'ingizni oshiring",
             benefit4Title: "Moslashuvchan Jadval",
             benefit4Description: "O'z vaqtingizda ishlang va narxlarni belgilang"
+        },
+
+        // Autentifikatsiya
+        auth: {
+            loginTitle: "Xush Kelibsiz",
+            loginSubtitle: "Davom etish uchun hisobingizga kiring",
+            signUpTitle: "Hisob Yaratish",
+            signUpSubtitle: "Radiant Beauty'ga qo'shiling",
+            emailLabel: "Email Manzil",
+            emailPlaceholder: "your.email@example.com",
+            passwordLabel: "Parol",
+            passwordPlaceholder: "••••••••",
+            nameLabel: "To'liq Ism",
+            namePlaceholder: "Ismi Familiya",
+            rememberMe: "Meni eslab qol",
+            forgotPassword: "Parolni unutdingizmi?",
+            signInButton: "Kirish",
+            createAccountButton: "Hisob Yaratish",
+            continueWithGoogle: "Google bilan davom etish",
+            orContinueWith: "Yoki davom etish",
+            noAccount: "Hisobingiz yo'qmi?",
+            haveAccount: "Hisobingiz bormi?",
+            signUpLink: "Ro'yxatdan o'tish",
+            signInLink: "Kirish",
+            termsPrefix: "Ro'yxatdan o'tish orqali siz bizning",
+            termsLink: "Foydalanish Shartlarimiz",
+            termsAnd: "va",
+            privacyLink: "Maxfiylik Siyosatimiz"
+        },
+
+        // Boshqaruv paneli
+        dashboard: {
+            welcome: "Xush kelibsiz,",
+            logout: "Chiqish",
+            accountInfo: "Hisob Ma'lumotlari",
+            nameLabel: "Ism:",
+            emailLabel: "Email:",
+            memberSince: "A'zo bo'lgan sana:",
+            authProvider: "Kirish Usuli:",
+            quickActions: "Tez Amallar",
+            bookService: "Xizmat Buyurtma Qilish",
+            browseProfessionals: "Mutaxassislarni Ko'rish"
         }
     }
 };
