@@ -8,9 +8,21 @@ const professionals = [
         id: 1,
         name: "Sofia Martinez",
         photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80",
-        specializations: ["Nails", "Nail Art"],
-        bio: "Certified nail artist with 8+ years of experience. Specializing in intricate nail art designs and long-lasting gel applications.",
-        location: "Downtown Beauty Studio, NYC",
+        specializations: {
+            en: ["Nails", "Nail Art"],
+            ru: ["Ногти", "Нейл-арт"],
+            uz: ["Tirnoqlar", "Tirnoq San'ati"]
+        },
+        bio: {
+            en: "Certified nail artist with 8+ years of experience. Specializing in intricate nail art designs and long-lasting gel applications.",
+            ru: "Сертифицированный мастер маникюра с опытом работы более 8 лет. Специализируюсь на сложных дизайнах и долговечных гель-покрытиях.",
+            uz: "8+ yillik tajribaga ega sertifikatlangan tirnoq ustasi. Murakkab dizaynlar va uzoq davom etuvchi gel qoplamalar bo'yicha mutaxassis."
+        },
+        location: {
+            en: "Downtown Beauty Studio, NYC",
+            ru: "Студия красоты Downtown, Нью-Йорк",
+            uz: "Downtown Beauty Studio, Nyu-York"
+        },
         services: [
             { name: "Classic Manicure", price: "$45", duration: "45 min" },
             { name: "Gel Manicure", price: "$65", duration: "60 min" },
@@ -30,9 +42,21 @@ const professionals = [
         id: 2,
         name: "Isabella Chen",
         photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80",
-        specializations: ["Makeup", "Bridal Makeup"],
-        bio: "Professional makeup artist specializing in bridal and special occasion makeup. Creating timeless, elegant looks that enhance natural beauty.",
-        location: "Luxury Beauty Lounge, LA",
+        specializations: {
+            en: ["Makeup", "Bridal Makeup"],
+            ru: ["Макияж", "Свадебный макияж"],
+            uz: ["Makiyaj", "To'y Makiyaji"]
+        },
+        bio: {
+            en: "Professional makeup artist specializing in bridal and special occasion makeup. Creating timeless, elegant looks that enhance natural beauty.",
+            ru: "Профессиональный визажист, специализирующийся на свадебном и праздничном макияже. Создаю элегантные образы, подчеркивающие естественную красоту.",
+            uz: "To'y va tantanali tadbirlarga mutaxassis professional bo'yanuvchi. Tabiiy go'zallikni ta'kidlaydigan zamonaviy ko'rinishlar yarataman."
+        },
+        location: {
+            en: "Luxury Beauty Lounge, LA",
+            ru: "Luxury Beauty Lounge, Лос-Анджелес",
+            uz: "Luxury Beauty Lounge, Los-Anjeles"
+        },
         services: [
             { name: "Natural Makeup", price: "$120", duration: "60 min" },
             { name: "Evening/Glam Makeup", price: "$150", duration: "90 min" },
@@ -51,9 +75,21 @@ const professionals = [
         id: 3,
         name: "Emma Rodriguez",
         photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=400&q=80",
-        specializations: ["Brow Lamination", "Eyelashes"],
-        bio: "Brow and lash specialist. Expert in brow lamination, tinting, and eyelash extensions. Enhancing your natural features with precision.",
-        location: "Beauty Bar, Miami",
+        specializations: {
+            en: ["Brow Lamination", "Eyelashes"],
+            ru: ["Ламинирование бровей", "Ресницы"],
+            uz: ["Qosh Laminatsiyasi", "Kipriklar"]
+        },
+        bio: {
+            en: "Brow and lash specialist. Expert in brow lamination, tinting, and eyelash extensions. Enhancing your natural features with precision.",
+            ru: "Специалист по бровям и ресницам. Эксперт в ламинировании, окрашивании бровей и наращивании ресниц. Подчеркиваю вашу естественную красоту с точностью.",
+            uz: "Qosh va kiprik mutaxassisi. Qosh laminatsiyasi, bo'yash va kiprik uzaytirish bo'yicha ekspert. Tabiiy xususiyatlaringizni aniqlik bilan ta'kidlayman."
+        },
+        location: {
+            en: "Beauty Bar, Miami",
+            ru: "Beauty Bar, Майами",
+            uz: "Beauty Bar, Mayami"
+        },
         services: [
             { name: "Brow Lamination", price: "$85", duration: "60 min" },
             { name: "Brow Tinting", price: "$35", duration: "30 min" },
@@ -71,9 +107,21 @@ const professionals = [
         id: 4,
         name: "Olivia Thompson",
         photo: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=400&q=80",
-        specializations: ["Hair Styling", "Hair Coloring"],
-        bio: "Creative hair stylist and colorist. Specializing in balayage, vivid colors, and modern cuts. Let's bring your hair dreams to life!",
-        location: "Chic Hair Studio, Chicago",
+        specializations: {
+            en: ["Hair Styling", "Hair Coloring"],
+            ru: ["Укладка волос", "Окрашивание"],
+            uz: ["Soch Turmagi", "Soch Bo'yash"]
+        },
+        bio: {
+            en: "Creative hair stylist and colorist. Specializing in balayage, vivid colors, and modern cuts. Let's bring your hair dreams to life!",
+            ru: "Креативный стилист-колорист. Специализируюсь на балаяже, ярких цветах и современных стрижках. Воплощу ваши мечты о волосах в реальность!",
+            uz: "Ijodiy soch stilisti va koloristi. Balayaj, yorqin ranglar va zamonaviy soch turmaklar bo'yicha mutaxassis. Soch haqidagi orzularingizni amalga oshiramiz!"
+        },
+        location: {
+            en: "Chic Hair Studio, Chicago",
+            ru: "Chic Hair Studio, Чикаго",
+            uz: "Chic Hair Studio, Chikago"
+        },
         services: [
             { name: "Women's Haircut", price: "$85", duration: "60 min" },
             { name: "Balayage/Highlights", price: "$250+", duration: "180 min" },
@@ -91,9 +139,21 @@ const professionals = [
         id: 5,
         name: "Mia Anderson",
         photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
-        specializations: ["Skincare", "Facial Treatments"],
-        bio: "Licensed esthetician passionate about skincare. Specializing in anti-aging treatments, acne solutions, and radiant skin maintenance.",
-        location: "Serenity Spa, Seattle",
+        specializations: {
+            en: ["Skincare", "Facial Treatments"],
+            ru: ["Уход за кожей", "Процедуры для лица"],
+            uz: ["Teri Parvarishi", "Yuz Muolajalari"]
+        },
+        bio: {
+            en: "Licensed esthetician passionate about skincare. Specializing in anti-aging treatments, acne solutions, and radiant skin maintenance.",
+            ru: "Лицензированный косметолог, увлеченный уходом за кожей. Специализируюсь на антивозрастных процедурах, решении проблем акне и поддержании сияния кожи.",
+            uz: "Teri parvarishi bo'yicha litsenziyalangan mutaxassis. Qarishga qarshi muolajalar, akne yechimlari va teri nurlanishini saqlash bo'yicha mutaxassis."
+        },
+        location: {
+            en: "Serenity Spa, Seattle",
+            ru: "Serenity Spa, Сиэтл",
+            uz: "Serenity Spa, Sietl"
+        },
         services: [
             { name: "Classic Facial", price: "$100", duration: "60 min" },
             { name: "Deep Cleansing Facial", price: "$130", duration: "75 min" },
