@@ -76,12 +76,25 @@ function filterProfessionals(filter) {
         return;
     }
 
+    // Get current language
+    const currentLang = typeof getLanguage === 'function' ? getLanguage() : 'en';
+
     // Filter by specialization
-    const filtered = allProfs.filter(prof =>
-        prof.specializations.some(spec =>
-            spec.toLowerCase().includes(filter.toLowerCase())
-        )
-    );
+    const filtered = allProfs.filter(prof => {
+        // Get specializations for current language
+        const specializations = prof.specializations[currentLang] || prof.specializations.en || prof.specializations;
+
+        // Handle both array and string specializations
+        if (Array.isArray(specializations)) {
+            return specializations.some(spec =>
+                spec.toLowerCase().includes(filter.toLowerCase())
+            );
+        } else if (typeof specializations === 'string') {
+            return specializations.toLowerCase().includes(filter.toLowerCase());
+        }
+
+        return false;
+    });
 
     displayProfessionals(filtered);
 }

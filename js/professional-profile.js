@@ -29,6 +29,17 @@ function loadProfessionalProfile() {
 function renderProfile(prof) {
     const container = document.getElementById('profile-content');
 
+    // Get current language for translations
+    const currentLang = typeof getLanguage === 'function' ? getLanguage() : 'en';
+
+    // Get localized content
+    const specializations = prof.specializations[currentLang] || prof.specializations.en || prof.specializations;
+    const bio = prof.bio[currentLang] || prof.bio.en || prof.bio;
+    const location = prof.location[currentLang] || prof.location.en || prof.location;
+
+    // Handle both array and string specializations
+    const specializationsText = Array.isArray(specializations) ? specializations.join(' • ') : specializations;
+
     const profileHTML = `
         <!-- Profile Header -->
         <section class="profile-header">
@@ -39,12 +50,12 @@ function renderProfile(prof) {
                     </div>
                     <div class="profile-header-info">
                         <h1 class="profile-name">${prof.name}</h1>
-                        <p class="profile-specializations-large">${prof.specializations.join(' • ')}</p>
+                        <p class="profile-specializations-large">${specializationsText}</p>
                         <div class="profile-rating-large">
                             <span class="rating-stars">⭐⭐⭐⭐⭐</span>
                             <span class="rating-text">${prof.rating} (${prof.reviewCount} reviews)</span>
                         </div>
-                        <p class="profile-location-large">📍 ${prof.location}</p>
+                        <p class="profile-location-large">📍 ${location}</p>
                         <div class="profile-actions">
                             <button class="btn btn-primary btn-large">Book Appointment</button>
                             <button class="btn btn-secondary btn-large">Message</button>
@@ -58,7 +69,7 @@ function renderProfile(prof) {
         <section class="profile-section">
             <div class="container">
                 <h2 class="profile-section-title">About</h2>
-                <p class="profile-bio-full">${prof.bio}</p>
+                <p class="profile-bio-full">${bio}</p>
             </div>
         </section>
 
