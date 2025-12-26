@@ -160,6 +160,31 @@ const translations = {
             loading: "Loading professional profile..."
         },
 
+        // Profile Page
+        profile: {
+            verified: "Verified",
+            yearsExp: "years experience",
+            reviews: "reviews",
+            requestBooking: "Request Booking",
+            message: "Message",
+            aboutTitle: "About",
+            servicesTitle: "Services & Pricing",
+            portfolioTitle: "Portfolio",
+            reviewsTitle: "Reviews",
+            basedOn: "Based on",
+            readyToBook: "Ready to Book?",
+            ctaDescription: "Schedule your appointment with {name} today!",
+            yourName: "Your Name",
+            email: "Email",
+            phone: "Phone",
+            selectService: "Select Service",
+            preferredDate: "Preferred Date",
+            submitRequest: "Submit Request",
+            notFound: "Professional Not Found",
+            notFoundDesc: "The professional you're looking for doesn't exist or has been removed.",
+            browseAll: "Browse All Professionals"
+        },
+
         // Contact/Login Page
         contact: {
             pageTitle: "Welcome",
@@ -442,6 +467,31 @@ const translations = {
             loading: "Загрузка профиля..."
         },
 
+        // Страница профиля
+        profile: {
+            verified: "Подтверждён",
+            yearsExp: "лет опыта",
+            reviews: "отзывов",
+            requestBooking: "Запросить Бронирование",
+            message: "Сообщение",
+            aboutTitle: "О специалисте",
+            servicesTitle: "Услуги и Цены",
+            portfolioTitle: "Портфолио",
+            reviewsTitle: "Отзывы",
+            basedOn: "На основе",
+            readyToBook: "Готовы Записаться?",
+            ctaDescription: "Запишитесь на прием к {name} сегодня!",
+            yourName: "Ваше Имя",
+            email: "Email",
+            phone: "Телефон",
+            selectService: "Выберите Услугу",
+            preferredDate: "Предпочтительная Дата",
+            submitRequest: "Отправить Запрос",
+            notFound: "Специалист не найден",
+            notFoundDesc: "Специалист, которого вы ищете, не существует или был удалён.",
+            browseAll: "Все Специалисты"
+        },
+
         // Страница контактов/входа
         contact: {
             pageTitle: "Добро Пожаловать",
@@ -722,6 +772,31 @@ const translations = {
         // Alohida mutaxassis sahifasi
         professional: {
             loading: "Profil yuklanmoqda..."
+        },
+
+        // Profil sahifasi
+        profile: {
+            verified: "Tasdiqlangan",
+            yearsExp: "yillik tajriba",
+            reviews: "sharhlar",
+            requestBooking: "Bronlash So'rovi",
+            message: "Xabar",
+            aboutTitle: "Haqida",
+            servicesTitle: "Xizmatlar va Narxlar",
+            portfolioTitle: "Portfolio",
+            reviewsTitle: "Sharhlar",
+            basedOn: "Asosida",
+            readyToBook: "Bronlashga Tayyormisiz?",
+            ctaDescription: "{name} bilan bugun uchrashuvni belgilang!",
+            yourName: "Ismingiz",
+            email: "Email",
+            phone: "Telefon",
+            selectService: "Xizmatni Tanlang",
+            preferredDate: "Afzal Qilingan Sana",
+            submitRequest: "So'rov Yuborish",
+            notFound: "Mutaxassis Topilmadi",
+            notFoundDesc: "Siz qidirayotgan mutaxassis mavjud emas yoki o'chirilgan.",
+            browseAll: "Barcha Mutaxassislar"
         },
 
         // Aloqa/Kirish sahifasi

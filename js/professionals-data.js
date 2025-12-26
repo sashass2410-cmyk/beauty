@@ -37,6 +37,31 @@ const professionals = [
         ],
         rating: 4.9,
         reviewCount: 127,
+        verified: true,
+        yearsOfExperience: 8,
+        reviews: [
+            {
+                id: 1,
+                clientName: "Emily Johnson",
+                rating: 5,
+                comment: "Sofia is amazing! Her nail art is truly stunning. I've been coming to her for over a year and she never disappoints.",
+                date: "2025-12-20"
+            },
+            {
+                id: 2,
+                clientName: "Maria Garcia",
+                rating: 5,
+                comment: "Best nail artist in NYC! The gel manicure lasted 3 weeks without chipping. Highly recommend!",
+                date: "2025-12-15"
+            },
+            {
+                id: 3,
+                clientName: "Jessica Lee",
+                rating: 4,
+                comment: "Great work and very professional. The designs are beautiful, though sometimes appointments run a bit late.",
+                date: "2025-12-10"
+            }
+        ],
         calendar: [
             { date: "2025-12-26", availableSlots: 2 },
             { date: "2025-12-27", availableSlots: 4 },
@@ -76,6 +101,31 @@ const professionals = [
         ],
         rating: 5.0,
         reviewCount: 203,
+        verified: true,
+        yearsOfExperience: 12,
+        reviews: [
+            {
+                id: 1,
+                clientName: "Sarah Williams",
+                rating: 5,
+                comment: "Isabella did my bridal makeup and I looked absolutely stunning! She's a true artist and so professional.",
+                date: "2025-12-18"
+            },
+            {
+                id: 2,
+                clientName: "Amanda Brown",
+                rating: 5,
+                comment: "The best makeup artist I've ever worked with. She really knows how to enhance your natural beauty.",
+                date: "2025-12-12"
+            },
+            {
+                id: 3,
+                clientName: "Rachel Green",
+                rating: 5,
+                comment: "Flawless makeup that lasted all day and looked perfect in photos. Worth every penny!",
+                date: "2025-12-08"
+            }
+        ],
         calendar: [
             { date: "2025-12-26", availableSlots: 0 },
             { date: "2025-12-27", availableSlots: 1 },
@@ -114,6 +164,31 @@ const professionals = [
         ],
         rating: 4.8,
         reviewCount: 156,
+        verified: true,
+        yearsOfExperience: 6,
+        reviews: [
+            {
+                id: 1,
+                clientName: "Nicole Taylor",
+                rating: 5,
+                comment: "Emma's brow lamination is life-changing! My brows look perfect every morning without any effort.",
+                date: "2025-12-19"
+            },
+            {
+                id: 2,
+                clientName: "Sophia Martinez",
+                rating: 5,
+                comment: "Amazing lash extensions that look so natural. She's very gentle and professional.",
+                date: "2025-12-14"
+            },
+            {
+                id: 3,
+                clientName: "Lisa Anderson",
+                rating: 4,
+                comment: "Great results! The brow lamination looked fantastic. Only minor issue was scheduling availability.",
+                date: "2025-12-09"
+            }
+        ],
         calendar: [
             { date: "2025-12-26", availableSlots: 5 },
             { date: "2025-12-27", availableSlots: 3 },
@@ -152,6 +227,31 @@ const professionals = [
         ],
         rating: 4.9,
         reviewCount: 184,
+        verified: true,
+        yearsOfExperience: 10,
+        reviews: [
+            {
+                id: 1,
+                clientName: "Jennifer Davis",
+                rating: 5,
+                comment: "Olivia gave me the most amazing balayage! The color blending is perfect. I get compliments everywhere I go!",
+                date: "2025-12-17"
+            },
+            {
+                id: 2,
+                clientName: "Michelle Wilson",
+                rating: 5,
+                comment: "Incredibly talented colorist. She transformed my hair and it looks so healthy and vibrant.",
+                date: "2025-12-11"
+            },
+            {
+                id: 3,
+                clientName: "Ashley Moore",
+                rating: 4,
+                comment: "Beautiful haircut and color. Very creative stylist. The appointment took longer than expected but results were worth it.",
+                date: "2025-12-06"
+            }
+        ],
         calendar: [
             { date: "2025-12-26", availableSlots: 0 },
             { date: "2025-12-27", availableSlots: 0 },
@@ -190,6 +290,31 @@ const professionals = [
         ],
         rating: 5.0,
         reviewCount: 142,
+        verified: true,
+        yearsOfExperience: 9,
+        reviews: [
+            {
+                id: 1,
+                clientName: "Laura Thompson",
+                rating: 5,
+                comment: "Mia's facials are incredible! My skin has never looked better. She really knows her stuff about skincare.",
+                date: "2025-12-21"
+            },
+            {
+                id: 2,
+                clientName: "Kimberly White",
+                rating: 5,
+                comment: "The anti-aging treatment worked wonders! Very knowledgeable and uses great products.",
+                date: "2025-12-16"
+            },
+            {
+                id: 3,
+                clientName: "Christina Harris",
+                rating: 5,
+                comment: "Best esthetician in Seattle! The facial was so relaxing and my skin is glowing.",
+                date: "2025-12-13"
+            }
+        ],
         calendar: [
             { date: "2025-12-26", availableSlots: 3 },
             { date: "2025-12-27", availableSlots: 2 },
@@ -228,6 +353,31 @@ const professionals = [
         ],
         rating: 4.7,
         reviewCount: 98,
+        verified: false,
+        yearsOfExperience: 5,
+        reviews: [
+            {
+                id: 1,
+                clientName: "Patricia Clark",
+                rating: 5,
+                comment: "Ava does beautiful pedicures! The spa pedicure was so relaxing and my feet look amazing.",
+                date: "2025-12-22"
+            },
+            {
+                id: 2,
+                clientName: "Barbara Lewis",
+                rating: 4,
+                comment: "Good nail service and attention to detail. The salon is clean and comfortable.",
+                date: "2025-12-18"
+            },
+            {
+                id: 3,
+                clientName: "Nancy Robinson",
+                rating: 5,
+                comment: "Great manicure that lasted two weeks! Very professional and friendly.",
+                date: "2025-12-14"
+            }
+        ],
         calendar: [
             { date: "2025-12-26", availableSlots: 0 },
             { date: "2025-12-27", availableSlots: 0 },
@@ -266,6 +416,31 @@ const professionals = [
         ],
         rating: 4.9,
         reviewCount: 167,
+        verified: true,
+        yearsOfExperience: 11,
+        reviews: [
+            {
+                id: 1,
+                clientName: "Karen Walker",
+                rating: 5,
+                comment: "Lily did my fashion week makeup and I looked absolutely amazing! She's incredibly creative and talented.",
+                date: "2025-12-19"
+            },
+            {
+                id: 2,
+                clientName: "Betty Hall",
+                rating: 5,
+                comment: "Best editorial makeup artist in NYC! Her work is art. Highly recommend for any special event.",
+                date: "2025-12-15"
+            },
+            {
+                id: 3,
+                clientName: "Dorothy Allen",
+                rating: 4,
+                comment: "Amazing special effects makeup for Halloween! Very creative and professional.",
+                date: "2025-12-10"
+            }
+        ],
         calendar: [
             { date: "2025-12-26", availableSlots: 1 },
             { date: "2025-12-27", availableSlots: 3 },
@@ -304,6 +479,31 @@ const professionals = [
         ],
         rating: 4.8,
         reviewCount: 211,
+        verified: true,
+        yearsOfExperience: 15,
+        reviews: [
+            {
+                id: 1,
+                clientName: "Sandra Young",
+                rating: 5,
+                comment: "Chloe is a one-stop beauty expert! Got my hair and makeup done for my wedding - absolutely perfect!",
+                date: "2025-12-20"
+            },
+            {
+                id: 2,
+                clientName: "Carol King",
+                rating: 5,
+                comment: "Very talented and offers such a wide range of services. The event package was worth every dollar!",
+                date: "2025-12-17"
+            },
+            {
+                id: 3,
+                clientName: "Donna Wright",
+                rating: 4,
+                comment: "Great full-service experience. She did my hair, makeup and nails all in one place. Very convenient!",
+                date: "2025-12-12"
+            }
+        ],
         calendar: [
             { date: "2025-12-26", availableSlots: 2 },
             { date: "2025-12-27", availableSlots: 1 },
