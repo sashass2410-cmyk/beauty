@@ -33,8 +33,112 @@ function saveUser(userData) {
 function logout() {
     localStorage.removeItem('user');
     localStorage.removeItem('authProvider');
+    localStorage.removeItem('userRole');
     window.location.href = 'index.html';
 }
+
+/*===================================
+  Role Management System
+  ===================================*/
+
+// Get user role
+function getUserRole() {
+    return localStorage.getItem('userRole');
+}
+
+// Set user role
+function setUserRole(role) {
+    if (role !== 'client' && role !== 'professional') {
+        throw new Error('Invalid role. Must be "client" or "professional"');
+    }
+    localStorage.setItem('userRole', role);
+
+    // Update user object with role
+    const user = getCurrentUser();
+    if (user) {
+        user.role = role;
+        saveUser(user);
+    }
+}
+
+// Check if user has completed onboarding (selected a role)
+function hasCompletedOnboarding() {
+    return !!getUserRole();
+}
+
+// Redirect to appropriate dashboard based on role
+function redirectToDashboard() {
+    const role = getUserRole();
+    if (!role) {
+        window.location.href = 'onboarding.html';
+        return;
+    }
+
+    if (role === 'client') {
+        window.location.href = 'client-dashboard.html';
+    } else if (role === 'professional') {
+        window.location.href = 'professional-dashboard.html';
+    }
+}
+
+// Handle post-login flow
+function handlePostLogin() {
+    if (!isLoggedIn()) {
+        window.location.href = 'login.html';
+        return;
+    }
+
+    if (!hasCompletedOnboarding()) {
+        window.location.href = 'onboarding.html';
+        return;
+    }
+
+    redirectToDashboard();
+}
+
+// Require onboarding - redirect if role not set
+function requireOnboarding(redirectUrl = 'onboarding.html') {
+    if (!hasCompletedOnboarding()) {
+        window.location.href = redirectUrl;
+        return false;
+    }
+    return true;
+}
+
+// Require specific role
+function requireRole(role, fallbackUrl) {
+    const userRole = getUserRole();
+    if (userRole !== role) {
+        if (fallbackUrl) {
+            window.location.href = fallbackUrl;
+        } else {
+            redirectToDashboard();
+        }
+        return false;
+    }
+    return true;
+}
+
+// Protect page - ensure user is logged in and has correct role
+function protectPage(requiredRole = null) {
+    if (!isLoggedIn()) {
+        window.location.href = 'login.html';
+        return false;
+    }
+
+    if (!hasCompletedOnboarding()) {
+        window.location.href = 'onboarding.html';
+        return false;
+    }
+
+    if (requiredRole && getUserRole() !== requiredRole) {
+        redirectToDashboard();
+        return false;
+    }
+
+    return true;
+}
+
 
 /*===================================
   Google Sign-In Integration
@@ -83,8 +187,8 @@ function handleGoogleSignIn(response) {
         // Save user data
         saveUser(userData);
 
-        // Redirect to dashboard
-        window.location.href = 'dashboard.html';
+        // Redirect to onboarding or dashboard
+        handlePostLogin();
     } catch (error) {
         console.error('Error handling Google Sign-In:', error);
         showError('Failed to sign in with Google. Please try again.');
@@ -143,7 +247,7 @@ function handleLogin(event) {
         };
 
         saveUser(userData);
-        window.location.href = 'dashboard.html';
+        handlePostLogin();
     } else {
         showError('Invalid email or password');
     }
@@ -199,7 +303,7 @@ function handleRegister(event) {
     };
 
     saveUser(userData);
-    window.location.href = 'dashboard.html';
+    handlePostLogin();
 }
 
 /*===================================

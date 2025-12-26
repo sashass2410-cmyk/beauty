@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Choose Your Role - Radiant Beauty</title>
+    <meta name="description" content="Choose your role to get started with Radiant Beauty Platform.">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="onboarding-page">
+    <!-- Minimal Header -->
+    <header class="header" id="header" style="background: transparent; box-shadow: none;">
+        <nav class="nav container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">✨</span>
+                <span class="logo-text">Radiant Beauty</span>
+            </a>
+        </nav>
+    </header>
+
+    <!-- Onboarding Section -->
+    <section class="onboarding-section">
+        <div class="container">
+            <div class="onboarding-content">
+                <div class="onboarding-header">
+                    <h1 class="onboarding-title" data-i18n="onboarding.title">Welcome! Let's get you started</h1>
+                    <p class="onboarding-subtitle" data-i18n="onboarding.subtitle">Choose your role to personalize your experience</p>
+                </div>
+
+                <div class="role-selection">
+                    <!-- Client Role Card -->
+                    <div class="role-card" id="client-role-card">
+                        <div class="role-icon">
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h2 class="role-title" data-i18n="onboarding.clientTitle">I'm a Client</h2>
+                        <p class="role-description" data-i18n="onboarding.clientDesc">Book beauty services and manage appointments</p>
+                        <ul class="role-features">
+                            <li data-i18n="onboarding.clientFeature1">Browse beauty professionals</li>
+                            <li data-i18n="onboarding.clientFeature2">Book appointments</li>
+                            <li data-i18n="onboarding.clientFeature3">Save favorites</li>
+                            <li data-i18n="onboarding.clientFeature4">Leave reviews</li>
+                        </ul>
+                        <button class="btn btn-primary btn-large btn-block select-role-btn" data-role="client">
+                            <span data-i18n="onboarding.continueAsClient">Continue as Client</span>
+                        </button>
+                    </div>
+
+                    <!-- Professional Role Card -->
+                    <div class="role-card" id="professional-role-card">
+                        <div class="role-icon">
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                            </svg>
+                        </div>
+                        <h2 class="role-title" data-i18n="onboarding.professionalTitle">I'm a Professional</h2>
+                        <p class="role-description" data-i18n="onboarding.professionalDesc">Offer beauty services and grow your business</p>
+                        <ul class="role-features">
+                            <li data-i18n="onboarding.professionalFeature1">Create professional profile</li>
+                            <li data-i18n="onboarding.professionalFeature2">Manage services & pricing</li>
+                            <li data-i18n="onboarding.professionalFeature3">Control availability</li>
+                            <li data-i18n="onboarding.professionalFeature4">Accept bookings</li>
+                        </ul>
+                        <button class="btn btn-primary btn-large btn-block select-role-btn" data-role="professional">
+                            <span data-i18n="onboarding.continueAsProfessional">Continue as Professional</span>
+                        </button>
+                    </div>
+                </div>
+
+                <p class="onboarding-note" data-i18n="onboarding.note">You can change your role later in settings</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/language-switcher.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        // Protect page - require authentication
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user is logged in
+            if (!isLoggedIn()) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            // Check if user already has a role (skip onboarding)
+            if (hasCompletedOnboarding()) {
+                redirectToDashboard();
+                return;
+            }
+
+            // Initialize role selection
+            initRoleSelection();
+        });
+
+        function initRoleSelection() {
+            const roleCards = document.querySelectorAll('.role-card');
+            const selectBtns = document.querySelectorAll('.select-role-btn');
+
+            // Add hover effect
+            roleCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.classList.add('hover');
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.classList.remove('hover');
+                });
+            });
+
+            // Handle role selection
+            selectBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const role = this.dataset.role;
+                    selectRole(role);
+                });
+            });
+        }
+
+        function selectRole(role) {
+            try {
+                // Set role
+                setUserRole(role);
+
+                // Show success feedback
+                showRoleSelected(role);
+
+                // Redirect to appropriate dashboard after short delay
+                setTimeout(() => {
+                    redirectToDashboard();
+                }, 1500);
+            } catch (error) {
+                console.error('Error setting role:', error);
+                alert('Failed to set role. Please try again.');
+            }
+        }
+
+        function showRoleSelected(role) {
+            const selectedCard = document.querySelector(`[data-role="${role}"]`).closest('.role-card');
+            selectedCard.classList.add('selected');
+
+            const btn = selectedCard.querySelector('.select-role-btn');
+            btn.innerHTML = '<span>✓ Role Selected</span>';
+            btn.disabled = true;
+        }
+    </script>
+</body>
+</html>
