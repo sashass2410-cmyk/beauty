@@ -526,6 +526,81 @@ function initServiceProfessionals() {
 }
 
 /*===================================
+  Helper Functions for Professional Cards
+  ===================================*/
+
+// Generate star rating HTML
+function generateStarRating(rating) {
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 >= 0.5;
+    const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+
+    let stars = '';
+    for (let i = 0; i < fullStars; i++) {
+        stars += '<span class="star-icon filled">★</span>';
+    }
+    if (hasHalfStar) {
+        stars += '<span class="star-icon half">★</span>';
+    }
+    for (let i = 0; i < emptyStars; i++) {
+        stars += '<span class="star-icon empty">☆</span>';
+    }
+    return stars;
+}
+
+// Get minimum price from services
+function getMinimumPrice(services) {
+    if (!services || services.length === 0) return null;
+
+    const prices = services.map(service => {
+        const priceStr = service.price.replace(/[^0-9]/g, '');
+        return parseInt(priceStr, 10);
+    }).filter(price => !isNaN(price));
+
+    if (prices.length === 0) return null;
+    return Math.min(...prices);
+}
+
+// Get availability status
+function getAvailabilityStatus(calendar, currentLang = 'en') {
+    if (!calendar || calendar.length === 0) {
+        return { type: 'unavailable', label: getTranslation('professionals.fullyBooked', currentLang) };
+    }
+
+    const today = new Date().toISOString().split('T')[0];
+
+    // Check if available today
+    const todaySlot = calendar.find(slot => slot.date === today);
+    if (todaySlot && todaySlot.availableSlots > 0) {
+        return { type: 'today', label: getTranslation('professionals.availableToday', currentLang) };
+    }
+
+    // Find next available date
+    const sortedCalendar = calendar
+        .filter(slot => slot.date >= today && slot.availableSlots > 0)
+        .sort((a, b) => new Date(a.date) - new Date(b.date));
+
+    if (sortedCalendar.length > 0) {
+        const nextDate = new Date(sortedCalendar[0].date);
+        const dayName = nextDate.toLocaleDateString(currentLang === 'ru' ? 'ru-RU' : currentLang === 'uz' ? 'uz-UZ' : 'en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+        return { type: 'upcoming', label: `${getTranslation('professionals.nextSlot', currentLang)}: ${dayName}` };
+    }
+
+    return { type: 'unavailable', label: getTranslation('professionals.fullyBooked', currentLang) };
+}
+
+// Get translation helper
+function getTranslation(key, lang = 'en') {
+    if (typeof translations === 'undefined') return key;
+    const keys = key.split('.');
+    let value = translations[lang];
+    for (const k of keys) {
+        value = value?.[k];
+    }
+    return value || key;
+}
+
+/*===================================
   Create Professional Card HTML
   ===================================*/
 function createProfessionalCard(prof) {
@@ -540,21 +615,49 @@ function createProfessionalCard(prof) {
     // Handle both array and string specializations
     const specializationsText = Array.isArray(specializations) ? specializations.join(' • ') : specializations;
 
+    // Generate star rating
+    const starRating = generateStarRating(prof.rating);
+
+    // Get minimum price
+    const minPrice = getMinimumPrice(prof.services);
+    const priceHTML = minPrice ? `<span class="price-from" data-i18n="professionals.priceFrom">From</span> $${minPrice}` : '';
+
+    // Get availability status
+    const availability = getAvailabilityStatus(prof.calendar, currentLang);
+
+    // Get works preview (up to 3 thumbnails)
+    const worksPreview = (prof.portfolio || []).slice(0, 3);
+
     return `
         <div class="professional-card" data-id="${prof.id}">
             <div class="professional-image">
-                <img src="${prof.photo}" alt="${prof.name}" class="professional-img">
-                <div class="professional-rating">
-                    <span class="rating-star">⭐</span>
-                    <span class="rating-value">${prof.rating}</span>
-                    <span class="rating-count">(${prof.reviewCount})</span>
-                </div>
+                <img src="${prof.photo}" alt="${prof.name}" class="professional-img" loading="lazy">
+                ${availability.type !== 'unavailable' ? `<div class="availability-badge availability-${availability.type}">${availability.label}</div>` : ''}
             </div>
+
+            ${worksPreview.length > 0 ? `
+            <div class="works-preview">
+                ${worksPreview.map((work, index) => `
+                    <div class="work-preview-item">
+                        <img src="${work.url}" alt="Work preview ${index + 1}" loading="lazy">
+                        ${work.type === 'video' ? '<div class="work-play-icon">▶</div>' : ''}
+                    </div>
+                `).join('')}
+            </div>
+            ` : ''}
+
             <div class="professional-info">
                 <h3 class="professional-name">${prof.name}</h3>
                 <p class="professional-specializations">${specializationsText}</p>
-                <p class="professional-bio">${bio.substring(0, 100)}...</p>
+
+                <div class="professional-rating-row">
+                    <div class="star-rating">${starRating}</div>
+                    <span class="rating-text">${prof.rating} <span class="rating-count">(${prof.reviewCount})</span></span>
+                </div>
+
+                ${priceHTML ? `<p class="professional-price">${priceHTML}</p>` : ''}
                 <p class="professional-location">📍 ${location}</p>
+
                 <a href="professional.html?id=${prof.id}" class="btn btn-secondary btn-block" data-i18n="professionals.viewProfile">View Profile</a>
             </div>
         </div>

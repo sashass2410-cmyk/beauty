@@ -50,7 +50,11 @@ const translations = {
             title: "Featured Beauty Professionals",
             subtitle: "Discover talented experts ready to serve you",
             viewAll: "View All Professionals",
-            viewProfile: "View Profile"
+            viewProfile: "View Profile",
+            priceFrom: "From",
+            availableToday: "Available today",
+            nextSlot: "Next slot",
+            fullyBooked: "Fully booked"
         },
 
         // Features Section
@@ -328,7 +332,11 @@ const translations = {
             title: "Лучшие Бьюти Мастера",
             subtitle: "Откройте для себя талантливых экспертов, готовых вам помочь",
             viewAll: "Все Специалисты",
-            viewProfile: "Профиль"
+            viewProfile: "Профиль",
+            priceFrom: "От",
+            availableToday: "Доступен сегодня",
+            nextSlot: "Следующий слот",
+            fullyBooked: "Полностью занят"
         },
 
         // Раздел преимуществ
@@ -606,7 +614,11 @@ const translations = {
             title: "Eng Yaxshi Go'zallik Ustalar",
             subtitle: "Sizga xizmat qilishga tayyor iste'dodli mutaxassislarni toping",
             viewAll: "Barcha Mutaxassislar",
-            viewProfile: "Profilni Ko'rish"
+            viewProfile: "Profilni Ko'rish",
+            priceFrom: "Dan",
+            availableToday: "Bugun mavjud",
+            nextSlot: "Keyingi slot",
+            fullyBooked: "To'liq band"
         },
 
         // Xususiyatlar bo'limi

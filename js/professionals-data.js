@@ -36,7 +36,13 @@ const professionals = [
             { type: "image", url: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=600&q=80" }
         ],
         rating: 4.9,
-        reviewCount: 127
+        reviewCount: 127,
+        calendar: [
+            { date: "2025-12-26", availableSlots: 2 },
+            { date: "2025-12-27", availableSlots: 4 },
+            { date: "2025-12-28", availableSlots: 0 },
+            { date: "2025-12-29", availableSlots: 3 }
+        ]
     },
     {
         id: 2,
@@ -69,7 +75,13 @@ const professionals = [
             { type: "image", url: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=600&q=80" }
         ],
         rating: 5.0,
-        reviewCount: 203
+        reviewCount: 203,
+        calendar: [
+            { date: "2025-12-26", availableSlots: 0 },
+            { date: "2025-12-27", availableSlots: 1 },
+            { date: "2025-12-28", availableSlots: 2 },
+            { date: "2025-12-30", availableSlots: 3 }
+        ]
     },
     {
         id: 3,
@@ -101,7 +113,13 @@ const professionals = [
             { type: "image", url: "https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&w=600&q=80" }
         ],
         rating: 4.8,
-        reviewCount: 156
+        reviewCount: 156,
+        calendar: [
+            { date: "2025-12-26", availableSlots: 5 },
+            { date: "2025-12-27", availableSlots: 3 },
+            { date: "2025-12-28", availableSlots: 4 },
+            { date: "2025-12-29", availableSlots: 2 }
+        ]
     },
     {
         id: 4,
@@ -133,7 +151,13 @@ const professionals = [
             { type: "image", url: "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=600&q=80" }
         ],
         rating: 4.9,
-        reviewCount: 184
+        reviewCount: 184,
+        calendar: [
+            { date: "2025-12-26", availableSlots: 0 },
+            { date: "2025-12-27", availableSlots: 0 },
+            { date: "2025-12-28", availableSlots: 1 },
+            { date: "2025-12-31", availableSlots: 2 }
+        ]
     },
     {
         id: 5,
@@ -165,7 +189,13 @@ const professionals = [
             { type: "image", url: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80" }
         ],
         rating: 5.0,
-        reviewCount: 142
+        reviewCount: 142,
+        calendar: [
+            { date: "2025-12-26", availableSlots: 3 },
+            { date: "2025-12-27", availableSlots: 2 },
+            { date: "2025-12-28", availableSlots: 4 },
+            { date: "2025-12-29", availableSlots: 1 }
+        ]
     },
     {
         id: 6,
@@ -197,7 +227,13 @@ const professionals = [
             { type: "image", url: "https://images.unsplash.com/photo-1610992015732-2449b76344bc?auto=format&fit=crop&w=600&q=80" }
         ],
         rating: 4.7,
-        reviewCount: 98
+        reviewCount: 98,
+        calendar: [
+            { date: "2025-12-26", availableSlots: 0 },
+            { date: "2025-12-27", availableSlots: 0 },
+            { date: "2025-12-28", availableSlots: 0 },
+            { date: "2026-01-02", availableSlots: 2 }
+        ]
     },
     {
         id: 7,
@@ -229,7 +265,13 @@ const professionals = [
             { type: "image", url: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=600&q=80" }
         ],
         rating: 4.9,
-        reviewCount: 167
+        reviewCount: 167,
+        calendar: [
+            { date: "2025-12-26", availableSlots: 1 },
+            { date: "2025-12-27", availableSlots: 3 },
+            { date: "2025-12-28", availableSlots: 2 },
+            { date: "2025-12-29", availableSlots: 4 }
+        ]
     },
     {
         id: 8,
@@ -261,7 +303,13 @@ const professionals = [
             { type: "image", url: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=80" }
         ],
         rating: 4.8,
-        reviewCount: 211
+        reviewCount: 211,
+        calendar: [
+            { date: "2025-12-26", availableSlots: 2 },
+            { date: "2025-12-27", availableSlots: 1 },
+            { date: "2025-12-28", availableSlots: 3 },
+            { date: "2025-12-29", availableSlots: 2 }
+        ]
     }
 ];
 

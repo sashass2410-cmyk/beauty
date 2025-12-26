@@ -1669,6 +1669,130 @@ ul {
     margin-bottom: var(--spacing-md);
 }
 
+/* Availability Badge */
+.availability-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    backdrop-filter: blur(8px);
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.availability-today {
+    background: rgba(34, 197, 94, 0.95);
+    color: white;
+}
+
+.availability-upcoming {
+    background: rgba(59, 130, 246, 0.95);
+    color: white;
+}
+
+/* Works Preview */
+.works-preview {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    padding: 0;
+    margin: 0;
+}
+
+.work-preview-item {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: var(--gray-100);
+}
+
+.work-preview-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.work-preview-item:hover img {
+    transform: scale(1.1);
+}
+
+.work-play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: var(--primary-color);
+    pointer-events: none;
+}
+
+/* Star Rating */
+.professional-rating-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.star-rating {
+    display: inline-flex;
+    gap: 2px;
+}
+
+.star-icon {
+    font-size: 14px;
+    line-height: 1;
+}
+
+.star-icon.filled {
+    color: #fbbf24;
+}
+
+.star-icon.half {
+    color: #fbbf24;
+    opacity: 0.6;
+}
+
+.star-icon.empty {
+    color: #d1d5db;
+}
+
+.rating-text {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--gray-700);
+}
+
+.rating-count {
+    font-weight: 400;
+    color: var(--gray-500);
+}
+
+/* Professional Price */
+.professional-price {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.price-from {
+    font-weight: 400;
+    font-size: 0.875rem;
+    color: var(--gray-600);
+}
+
 /* ===================================
    Auth Pages
    =================================== */
