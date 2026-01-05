@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Dashboard - Radiant Beauty</title>
+    <meta name="description" content="Manage your beauty business, bookings, and client relationships.">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <!-- Logo -->
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">✨</span>
+                <span class="logo-text">Radiant Beauty</span>
+            </a>
+
+            <!-- Main Navigation -->
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="professionals.html" class="nav-link" data-i18n="nav.professionals">Professionals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link" data-i18n="nav.beautyPage">BeYouTy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="professional-dashboard.html" class="nav-link active" data-i18n="nav.dashboard">Dashboard</a>
+                    </li>
+                </ul>
+
+                <div class="nav-close" id="nav-close">
+                    <span>&times;</span>
+                </div>
+            </div>
+
+            <!-- Right Actions -->
+            <div class="nav-actions">
+                <!-- Language Switcher -->
+                <div class="language-switcher">
+                    <button class="language-btn" id="language-btn" aria-label="Select Language" title="Language">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a 15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                        <span class="language-text" id="current-language">EN</span>
+                    </button>
+                    <div class="language-dropdown" id="language-dropdown">
+                        <button class="language-option" data-lang="en">English</button>
+                        <button class="language-option" data-lang="ru">Русский</button>
+                        <button class="language-option" data-lang="uz">O'zbek</button>
+                    </div>
+                </div>
+
+                <button class="nav-action-btn search-btn" id="search-btn" aria-label="Search" title="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <button class="nav-action-btn account-btn" id="user-menu-btn" aria-label="Account" title="Account">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span class="account-text" id="user-name-display">Account</span>
+                </button>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Dashboard Content -->
+    <section class="dashboard-section">
+        <div class="container">
+            <!-- Dashboard Header -->
+            <div class="dashboard-header">
+                <div class="dashboard-greeting">
+                    <h1 class="dashboard-title">
+                        <span data-i18n="professionalDashboard.greeting">Welcome back</span>, <span id="user-first-name">Professional</span>!
+                    </h1>
+                    <p class="dashboard-subtitle" data-i18n="professionalDashboard.subtitle">Manage your bookings, services, and grow your beauty business</p>
+                </div>
+                <div class="dashboard-quick-actions-top">
+                    <button class="btn btn-primary" id="add-availability-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        <span data-i18n="professionalDashboard.setAvailability">Set Availability</span>
+                    </button>
+                    <button class="btn btn-secondary" id="view-profile-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                        <span data-i18n="professionalDashboard.viewProfile">View Profile</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Business Overview -->
+            <div class="dashboard-section-block">
+                <h2 class="section-title" data-i18n="professionalDashboard.businessOverview">Business Overview</h2>
+
+                <div class="business-metrics">
+                    <div class="metric-card">
+                        <div class="metric-icon metric-icon-blue">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                        </div>
+                        <div class="metric-info">
+                            <h3 class="metric-value">5</h3>
+                            <p class="metric-label" data-i18n="professionalDashboard.todayBookings">Today's Bookings</p>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon metric-icon-green">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <div class="metric-info">
+                            <h3 class="metric-value">$2,450</h3>
+                            <p class="metric-label" data-i18n="professionalDashboard.weeklyIncome">Weekly Income</p>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon metric-icon-orange">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div class="metric-info">
+                            <h3 class="metric-value">3</h3>
+                            <p class="metric-label" data-i18n="professionalDashboard.pendingRequests">Pending Requests</p>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon metric-icon-purple">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="metric-info">
+                            <h3 class="metric-value">1,234</h3>
+                            <p class="metric-label" data-i18n="professionalDashboard.profileViews">Profile Views</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Booking Requests (PRIORITY) -->
+            <div class="dashboard-section-block">
+                <div class="section-header-row">
+                    <h2 class="section-title" data-i18n="professionalDashboard.bookingRequests">Booking Requests</h2>
+                    <span class="badge-count">3</span>
+                </div>
+
+                <div class="booking-requests-list">
+                    <!-- Request 1 -->
+                    <div class="booking-request-card">
+                        <div class="request-header">
+                            <div class="request-client">
+                                <div class="client-avatar">E</div>
+                                <div class="client-info">
+                                    <h3 class="client-name">Emily Johnson</h3>
+                                    <p class="client-email">emily.johnson@email.com</p>
+                                </div>
+                            </div>
+                            <span class="request-time">2 hours ago</span>
+                        </div>
+                        <div class="request-details">
+                            <div class="request-detail">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                <span>Gel Manicure (60 min)</span>
+                            </div>
+                            <div class="request-detail">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                <span>December 30, 2025 at 3:00 PM</span>
+                            </div>
+                        </div>
+                        <div class="request-message">
+                            <p>"Hi! I'd love to book a gel manicure with nail art. Do you have availability this week?"</p>
+                        </div>
+                        <div class="request-actions">
+                            <button class="btn btn-primary btn-sm" data-i18n="professionalDashboard.accept">Accept</button>
+                            <button class="btn btn-outline btn-sm" data-i18n="professionalDashboard.decline">Decline</button>
+                            <button class="btn btn-secondary btn-sm" data-i18n="professionalDashboard.message">Message</button>
+                        </div>
+                    </div>
+
+                    <!-- Request 2 -->
+                    <div class="booking-request-card">
+                        <div class="request-header">
+                            <div class="request-client">
+                                <div class="client-avatar">S</div>
+                                <div class="client-info">
+                                    <h3 class="client-name">Sarah Miller</h3>
+                                    <p class="client-email">sarah.m@email.com</p>
+                                </div>
+                            </div>
+                            <span class="request-time">5 hours ago</span>
+                        </div>
+                        <div class="request-details">
+                            <div class="request-detail">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                <span>Classic Manicure (45 min)</span>
+                            </div>
+                            <div class="request-detail">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                <span>January 2, 2026 at 11:00 AM</span>
+                            </div>
+                        </div>
+                        <div class="request-message">
+                            <p>"Looking for a quick manicure refresh. Available on January 2nd?"</p>
+                        </div>
+                        <div class="request-actions">
+                            <button class="btn btn-primary btn-sm" data-i18n="professionalDashboard.accept">Accept</button>
+                            <button class="btn btn-outline btn-sm" data-i18n="professionalDashboard.decline">Decline</button>
+                            <button class="btn btn-secondary btn-sm" data-i18n="professionalDashboard.message">Message</button>
+                        </div>
+                    </div>
+
+                    <!-- Request 3 -->
+                    <div class="booking-request-card">
+                        <div class="request-header">
+                            <div class="request-client">
+                                <div class="client-avatar">J</div>
+                                <div class="client-info">
+                                    <h3 class="client-name">Jessica Brown</h3>
+                                    <p class="client-email">jess.brown@email.com</p>
+                                </div>
+                            </div>
+                            <span class="request-time">1 day ago</span>
+                        </div>
+                        <div class="request-details">
+                            <div class="request-detail">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                <span>Pedicure (60 min)</span>
+                            </div>
+                            <div class="request-detail">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                <span>December 29, 2025 at 4:00 PM</span>
+                            </div>
+                        </div>
+                        <div class="request-message">
+                            <p>"Would love to book a relaxing pedicure session!"</p>
+                        </div>
+                        <div class="request-actions">
+                            <button class="btn btn-primary btn-sm" data-i18n="professionalDashboard.accept">Accept</button>
+                            <button class="btn btn-outline btn-sm" data-i18n="professionalDashboard.decline">Decline</button>
+                            <button class="btn btn-secondary btn-sm" data-i18n="professionalDashboard.message">Message</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calendar Section (CORE) -->
+            <div class="dashboard-section-block">
+                <div class="section-header-row">
+                    <h2 class="section-title" data-i18n="professionalDashboard.calendar">Calendar</h2>
+                    <div class="calendar-controls">
+                        <button class="calendar-nav-btn" id="prev-week">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>
+                        </button>
+                        <span class="calendar-week-label" id="week-label">Dec 26 - Jan 1, 2026</span>
+                        <button class="calendar-nav-btn" id="next-week">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="calendar-grid">
+                    <!-- Calendar Days Header -->
+                    <div class="calendar-days-header">
+                        <div class="calendar-day-header">
+                            <span class="day-name" data-i18n="professionalDashboard.monday">Mon</span>
+                            <span class="day-date">26</span>
+                        </div>
+                        <div class="calendar-day-header">
+                            <span class="day-name" data-i18n="professionalDashboard.tuesday">Tue</span>
+                            <span class="day-date">27</span>
+                        </div>
+                        <div class="calendar-day-header">
+                            <span class="day-name" data-i18n="professionalDashboard.wednesday">Wed</span>
+                            <span class="day-date">28</span>
+                        </div>
+                        <div class="calendar-day-header">
+                            <span class="day-name" data-i18n="professionalDashboard.thursday">Thu</span>
+                            <span class="day-date">29</span>
+                        </div>
+                        <div class="calendar-day-header">
+                            <span class="day-name" data-i18n="professionalDashboard.friday">Fri</span>
+                            <span class="day-date">30</span>
+                        </div>
+                        <div class="calendar-day-header">
+                            <span class="day-name" data-i18n="professionalDashboard.saturday">Sat</span>
+                            <span class="day-date">31</span>
+                        </div>
+                        <div class="calendar-day-header">
+                            <span class="day-name" data-i18n="professionalDashboard.sunday">Sun</span>
+                            <span class="day-date">1</span>
+                        </div>
+                    </div>
+
+                    <!-- Calendar Time Slots -->
+                    <div class="calendar-time-slots">
+                        <!-- Day 1 (Monday) -->
+                        <div class="calendar-day-column">
+                            <div class="time-slot slot-available" data-time="09:00">09:00</div>
+                            <div class="time-slot slot-available" data-time="10:00">10:00</div>
+                            <div class="time-slot slot-booked" data-time="11:00">
+                                <div class="booking-info">
+                                    <span class="booking-client">Emily J.</span>
+                                    <span class="booking-service">Gel Manicure</span>
+                                </div>
+                            </div>
+                            <div class="time-slot slot-available" data-time="13:00">13:00</div>
+                            <div class="time-slot slot-available" data-time="14:00">14:00</div>
+                            <div class="time-slot slot-blocked" data-time="15:00">
+                                <span data-i18n="professionalDashboard.blocked">Blocked</span>
+                            </div>
+                        </div>
+
+                        <!-- Day 2 (Tuesday) -->
+                        <div class="calendar-day-column">
+                            <div class="time-slot slot-available" data-time="09:00">09:00</div>
+                            <div class="time-slot slot-booked" data-time="10:00">
+                                <div class="booking-info">
+                                    <span class="booking-client">Sarah M.</span>
+                                    <span class="booking-service">Classic Manicure</span>
+                                </div>
+                            </div>
+                            <div class="time-slot slot-available" data-time="11:00">11:00</div>
+                            <div class="time-slot slot-booked" data-time="13:00">
+                                <div class="booking-info">
+                                    <span class="booking-client">Lisa K.</span>
+                                    <span class="booking-service">Pedicure</span>
+                                </div>
+                            </div>
+                            <div class="time-slot slot-available" data-time="14:00">14:00</div>
+                            <div class="time-slot slot-available" data-time="15:00">15:00</div>
+                        </div>
+
+                        <!-- Day 3 (Wednesday) -->
+                        <div class="calendar-day-column">
+                            <div class="time-slot slot-blocked" data-time="09:00">
+                                <span data-i18n="professionalDashboard.blocked">Blocked</span>
+                            </div>
+                            <div class="time-slot slot-blocked" data-time="10:00">
+                                <span data-i18n="professionalDashboard.blocked">Blocked</span>
+                            </div>
+                            <div class="time-slot slot-blocked" data-time="11:00">
+                                <span data-i18n="professionalDashboard.blocked">Blocked</span>
+                            </div>
+                            <div class="time-slot slot-blocked" data-time="13:00">
+                                <span data-i18n="professionalDashboard.blocked">Blocked</span>
+                            </div>
+                            <div class="time-slot slot-blocked" data-time="14:00">
+                                <span data-i18n="professionalDashboard.blocked">Blocked</span>
+                            </div>
+                            <div class="time-slot slot-blocked" data-time="15:00">
+                                <span data-i18n="professionalDashboard.blocked">Blocked</span>
+                            </div>
+                        </div>
+
+                        <!-- Day 4 (Thursday) -->
+                        <div class="calendar-day-column">
+                            <div class="time-slot slot-available" data-time="09:00">09:00</div>
+                            <div class="time-slot slot-available" data-time="10:00">10:00</div>
+                            <div class="time-slot slot-available" data-time="11:00">11:00</div>
+                            <div class="time-slot slot-available" data-time="13:00">13:00</div>
+                            <div class="time-slot slot-booked" data-time="14:00">
+                                <div class="booking-info">
+                                    <span class="booking-client">Anna P.</span>
+                                    <span class="booking-service">Nail Art</span>
+                                </div>
+                            </div>
+                            <div class="time-slot slot-available" data-time="15:00">15:00</div>
+                        </div>
+
+                        <!-- Day 5 (Friday) -->
+                        <div class="calendar-day-column">
+                            <div class="time-slot slot-booked" data-time="09:00">
+                                <div class="booking-info">
+                                    <span class="booking-client">Rachel T.</span>
+                                    <span class="booking-service">Gel Manicure</span>
+                                </div>
+                            </div>
+                            <div class="time-slot slot-booked" data-time="10:00">
+                                <div class="booking-info">
+                                    <span class="booking-client">Maria L.</span>
+                                    <span class="booking-service">Pedicure</span>
+                                </div>
+                            </div>
+                            <div class="time-slot slot-available" data-time="11:00">11:00</div>
+                            <div class="time-slot slot-booked" data-time="13:00">
+                                <div class="booking-info">
+                                    <span class="booking-client">Kate W.</span>
+                                    <span class="booking-service">Classic Manicure</span>
+                                </div>
+                            </div>
+                            <div class="time-slot slot-available" data-time="14:00">14:00</div>
+                            <div class="time-slot slot-available" data-time="15:00">15:00</div>
+                        </div>
+
+                        <!-- Day 6 (Saturday) -->
+                        <div class="calendar-day-column">
+                            <div class="time-slot slot-available" data-time="09:00">09:00</div>
+                            <div class="time-slot slot-available" data-time="10:00">10:00</div>
+                            <div class="time-slot slot-available" data-time="11:00">11:00</div>
+                            <div class="time-slot slot-available" data-time="13:00">13:00</div>
+                            <div class="time-slot slot-available" data-time="14:00">14:00</div>
+                            <div class="time-slot slot-available" data-time="15:00">15:00</div>
+                        </div>
+
+                        <!-- Day 7 (Sunday) -->
+                        <div class="calendar-day-column">
+                            <div class="time-slot slot-blocked" data-time="09:00">
+                                <span data-i18n="professionalDashboard.blocked">Blocked</span>
+                            </div>
+                            <div class="time-slot slot-blocked" data-time="10:00">
+                                <span data-i18n="professionalDashboard.blocked">Blocked</span>
+                            </div>
+                            <div class="time-slot slot-blocked" data-time="11:00">
+                                <span data-i18n="professionalDashboard.blocked">Blocked</span>
+                            </div>
+                            <div class="time-slot slot-blocked" data-time="13:00">
+                                <span data-i18n="professionalDashboard.blocked">Blocked</span>
+                            </div>
+                            <div class="time-slot slot-blocked" data-time="14:00">
+                                <span data-i18n="professionalDashboard.blocked">Blocked</span>
+                            </div>
+                            <div class="time-slot slot-blocked" data-time="15:00">
+                                <span data-i18n="professionalDashboard.blocked">Blocked</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calendar-legend">
+                    <div class="legend-item">
+                        <span class="legend-dot legend-available"></span>
+                        <span data-i18n="professionalDashboard.available">Available</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot legend-booked"></span>
+                        <span data-i18n="professionalDashboard.booked">Booked</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot legend-blocked"></span>
+                        <span data-i18n="professionalDashboard.blocked">Blocked</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services Management -->
+            <div class="dashboard-section-block">
+                <div class="section-header-row">
+                    <h2 class="section-title" data-i18n="professionalDashboard.servicesManagement">Services Management</h2>
+                    <button class="btn btn-primary btn-sm" id="add-service-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                        <span data-i18n="professionalDashboard.addService">Add Service</span>
+                    </button>
+                </div>
+
+                <div class="services-management-list">
+                    <!-- Service Item 1 -->
+                    <div class="service-item-manage">
+                        <div class="service-drag-handle">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="3" y1="12" x2="21" y2="12"></line>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <line x1="3" y1="18" x2="21" y2="18"></line>
+                            </svg>
+                        </div>
+                        <div class="service-details-manage">
+                            <h3 class="service-name-manage">Gel Manicure</h3>
+                            <p class="service-meta">60 min • $45</p>
+                        </div>
+                        <div class="service-status-toggle">
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <span class="status-label" data-i18n="professionalDashboard.active">Active</span>
+                        </div>
+                        <div class="service-actions-manage">
+                            <button class="btn-icon" title="Edit">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                </svg>
+                            </button>
+                            <button class="btn-icon btn-icon-danger" title="Delete">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Service Item 2 -->
+                    <div class="service-item-manage">
+                        <div class="service-drag-handle">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="3" y1="12" x2="21" y2="12"></line>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <line x1="3" y1="18" x2="21" y2="18"></line>
+                            </svg>
+                        </div>
+                        <div class="service-details-manage">
+                            <h3 class="service-name-manage">Classic Manicure</h3>
+                            <p class="service-meta">45 min • $35</p>
+                        </div>
+                        <div class="service-status-toggle">
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <span class="status-label" data-i18n="professionalDashboard.active">Active</span>
+                        </div>
+                        <div class="service-actions-manage">
+                            <button class="btn-icon" title="Edit">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                </svg>
+                            </button>
+                            <button class="btn-icon btn-icon-danger" title="Delete">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Service Item 3 -->
+                    <div class="service-item-manage">
+                        <div class="service-drag-handle">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="3" y1="12" x2="21" y2="12"></line>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <line x1="3" y1="18" x2="21" y2="18"></line>
+                            </svg>
+                        </div>
+                        <div class="service-details-manage">
+                            <h3 class="service-name-manage">Pedicure</h3>
+                            <p class="service-meta">60 min • $50</p>
+                        </div>
+                        <div class="service-status-toggle">
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <span class="status-label" data-i18n="professionalDashboard.active">Active</span>
+                        </div>
+                        <div class="service-actions-manage">
+                            <button class="btn-icon" title="Edit">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                </svg>
+                            </button>
+                            <button class="btn-icon btn-icon-danger" title="Delete">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Service Item 4 (Inactive) -->
+                    <div class="service-item-manage service-inactive">
+                        <div class="service-drag-handle">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="3" y1="12" x2="21" y2="12"></line>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <line x1="3" y1="18" x2="21" y2="18"></line>
+                            </svg>
+                        </div>
+                        <div class="service-details-manage">
+                            <h3 class="service-name-manage">Nail Art Design</h3>
+                            <p class="service-meta">90 min • $75</p>
+                        </div>
+                        <div class="service-status-toggle">
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <span class="status-label" data-i18n="professionalDashboard.inactive">Inactive</span>
+                        </div>
+                        <div class="service-actions-manage">
+                            <button class="btn-icon" title="Edit">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                </svg>
+                            </button>
+                            <button class="btn-icon btn-icon-danger" title="Delete">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Works Gallery Manager -->
+            <div class="dashboard-section-block">
+                <div class="section-header-row">
+                    <h2 class="section-title" data-i18n="professionalDashboard.worksGallery">Works Gallery</h2>
+                    <button class="btn btn-primary btn-sm" id="upload-work-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <span data-i18n="professionalDashboard.uploadWork">Upload Work</span>
+                    </button>
+                </div>
+
+                <div class="works-gallery-manage">
+                    <!-- Work Item 1 -->
+                    <div class="work-item-manage">
+                        <img src="images/works/nails-1.jpg" alt="Nail Art Work" class="work-preview">
+                        <div class="work-overlay">
+                            <button class="btn-icon-light" title="Edit">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                </svg>
+                            </button>
+                            <button class="btn-icon-light btn-icon-danger" title="Delete">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <span class="work-category">Nail Art</span>
+                    </div>
+
+                    <!-- Work Item 2 -->
+                    <div class="work-item-manage">
+                        <img src="images/works/nails-2.jpg" alt="Gel Manicure" class="work-preview">
+                        <div class="work-overlay">
+                            <button class="btn-icon-light" title="Edit">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                </svg>
+                            </button>
+                            <button class="btn-icon-light btn-icon-danger" title="Delete">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <span class="work-category">Manicure</span>
+                    </div>
+
+                    <!-- Work Item 3 -->
+                    <div class="work-item-manage">
+                        <img src="images/works/nails-3.jpg" alt="Pedicure" class="work-preview">
+                        <div class="work-overlay">
+                            <button class="btn-icon-light" title="Edit">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                </svg>
+                            </button>
+                            <button class="btn-icon-light btn-icon-danger" title="Delete">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <span class="work-category">Pedicure</span>
+                    </div>
+
+                    <!-- Work Item 4 -->
+                    <div class="work-item-manage">
+                        <img src="images/works/nails-4.jpg" alt="French Manicure" class="work-preview">
+                        <div class="work-overlay">
+                            <button class="btn-icon-light" title="Edit">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                </svg>
+                            </button>
+                            <button class="btn-icon-light btn-icon-danger" title="Delete">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <span class="work-category">French Manicure</span>
+                    </div>
+
+                    <!-- Work Item 5 -->
+                    <div class="work-item-manage">
+                        <img src="images/works/nails-5.jpg" alt="Gel Nails" class="work-preview">
+                        <div class="work-overlay">
+                            <button class="btn-icon-light" title="Edit">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                </svg>
+                            </button>
+                            <button class="btn-icon-light btn-icon-danger" title="Delete">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <span class="work-category">Gel Nails</span>
+                    </div>
+
+                    <!-- Work Item 6 -->
+                    <div class="work-item-manage">
+                        <img src="images/works/nails-6.jpg" alt="Nail Design" class="work-preview">
+                        <div class="work-overlay">
+                            <button class="btn-icon-light" title="Edit">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                </svg>
+                            </button>
+                            <button class="btn-icon-light btn-icon-danger" title="Delete">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <span class="work-category">Nail Design</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reviews & Reputation -->
+            <div class="dashboard-section-block">
+                <div class="section-header-row">
+                    <h2 class="section-title" data-i18n="professionalDashboard.reviewsReputation">Reviews & Reputation</h2>
+                    <div class="rating-summary">
+                        <span class="star-icon filled large">★</span>
+                        <span class="rating-number">4.9</span>
+                        <span class="rating-total">(127 reviews)</span>
+                    </div>
+                </div>
+
+                <div class="reviews-list-professional">
+                    <!-- Review 1 -->
+                    <div class="review-item-professional">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">E</div>
+                                <div class="reviewer-details">
+                                    <h3 class="reviewer-name">Emily Johnson</h3>
+                                    <div class="review-stars-small">
+                                        <span class="star-icon filled">★</span>
+                                        <span class="star-icon filled">★</span>
+                                        <span class="star-icon filled">★</span>
+                                        <span class="star-icon filled">★</span>
+                                        <span class="star-icon filled">★</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="review-date-small">2 days ago</span>
+                        </div>
+                        <p class="review-text">"Sofia is amazing! Her nail art is truly stunning. I've been coming to her for over a year and she never disappoints. Highly recommend!"</p>
+                        <div class="review-reply-section">
+                            <button class="btn btn-sm btn-outline" data-i18n="professionalDashboard.reply">Reply</button>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="review-item-professional">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">S</div>
+                                <div class="reviewer-details">
+                                    <h3 class="reviewer-name">Sarah Miller</h3>
+                                    <div class="review-stars-small">
+                                        <span class="star-icon filled">★</span>
+                                        <span class="star-icon filled">★</span>
+                                        <span class="star-icon filled">★</span>
+                                        <span class="star-icon filled">★</span>
+                                        <span class="star-icon filled">★</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="review-date-small">1 week ago</span>
+                        </div>
+                        <p class="review-text">"Best manicure experience! Very professional and the results last for weeks. Will definitely return!"</p>
+                        <div class="review-reply-section">
+                            <div class="reply-existing">
+                                <p class="reply-label" data-i18n="professionalDashboard.yourReply">Your reply:</p>
+                                <p class="reply-text">"Thank you so much Sarah! I'm so glad you loved it. Looking forward to seeing you again! 💅"</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="review-item-professional">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">L</div>
+                                <div class="reviewer-details">
+                                    <h3 class="reviewer-name">Lisa Taylor</h3>
+                                    <div class="review-stars-small">
+                                        <span class="star-icon filled">★</span>
+                                        <span class="star-icon filled">★</span>
+                                        <span class="star-icon filled">★</span>
+                                        <span class="star-icon filled">★</span>
+                                        <span class="star-icon empty">☆</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="review-date-small">2 weeks ago</span>
+                        </div>
+                        <p class="review-text">"Great work! The gel polish lasted 3 weeks without chipping. Only minor issue was slight wait time."</p>
+                        <div class="review-reply-section">
+                            <button class="btn btn-sm btn-outline" data-i18n="professionalDashboard.reply">Reply</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Settings -->
+            <div class="dashboard-section-block">
+                <h2 class="section-title" data-i18n="professionalDashboard.profileSettings">Profile Settings</h2>
+
+                <div class="settings-grid">
+                    <a href="#" class="setting-card">
+                        <div class="setting-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h3 class="setting-title" data-i18n="professionalDashboard.profileInfo">Profile Information</h3>
+                        <p class="setting-description" data-i18n="professionalDashboard.profileInfoDesc">Update bio, specializations, and location</p>
+                    </a>
+
+                    <a href="#" class="setting-card">
+                        <div class="setting-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="setting-title" data-i18n="professionalDashboard.verification">Verification Badge</h3>
+                        <p class="setting-description" data-i18n="professionalDashboard.verificationDesc">Get verified to build trust</p>
+                    </a>
+
+                    <a href="#" class="setting-card">
+                        <div class="setting-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect>
+                                <polyline points="17 2 12 7 7 2"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="setting-title" data-i18n="professionalDashboard.portfolio">Portfolio & Media</h3>
+                        <p class="setting-description" data-i18n="professionalDashboard.portfolioDesc">Showcase your best work</p>
+                    </a>
+
+                    <a href="#" class="setting-card">
+                        <div class="setting-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                            </svg>
+                        </div>
+                        <h3 class="setting-title" data-i18n="professionalDashboard.notifications">Notifications</h3>
+                        <p class="setting-description" data-i18n="professionalDashboard.notificationsDesc">Manage booking and message alerts</p>
+                    </a>
+
+                    <a href="#" class="setting-card">
+                        <div class="setting-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="setting-title" data-i18n="professionalDashboard.security">Security & Privacy</h3>
+                        <p class="setting-description" data-i18n="professionalDashboard.securityDesc">Password and account security</p>
+                    </a>
+
+                    <button class="setting-card logout-card" id="logout-btn">
+                        <div class="setting-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                <polyline points="16 17 21 12 16 7"></polyline>
+                                <line x1="21" y1="12" x2="9" y2="12"></line>
+                            </svg>
+                        </div>
+                        <h3 class="setting-title" data-i18n="professionalDashboard.logout">Logout</h3>
+                        <p class="setting-description" data-i18n="professionalDashboard.logoutDesc">Sign out of your account</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">
+                        <span class="logo-icon">✨</span>
+                        Radiant Beauty
+                    </h3>
+                    <p class="footer-description" data-i18n="footer.description">
+                        Connecting clients with talented beauty professionals. Your one-stop platform for all beauty services.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-heading" data-i18n="footer.servicesTitle">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="makeup.html" data-i18n="footer.makeup">Makeup</a></li>
+                        <li><a href="hair.html" data-i18n="footer.hairStyling">Hair Styling</a></li>
+                        <li><a href="nails.html" data-i18n="footer.nails">Nails</a></li>
+                        <li><a href="skincare.html" data-i18n="footer.skincare">Skincare</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-heading" data-i18n="footer.platformTitle">Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="professionals.html" data-i18n="footer.findProfessionals">Find Professionals</a></li>
+                        <li><a href="contact.html" data-i18n="footer.joinProfessional">Join as Professional</a></li>
+                        <li><a href="index.html" data-i18n="footer.home">Home</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-heading" data-i18n="footer.connectTitle">Connect</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-link" aria-label="Pinterest">📌</a>
+                        <a href="#" class="social-link" aria-label="YouTube">▶️</a>
+                        <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-i18n="footer.copyright">&copy; 2025 Radiant Beauty Platform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/language-switcher.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        // Protect page - only allow professionals
+        protectPage('professional');
+
+        // Display user name in dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            const user = getCurrentUser();
+            if (user) {
+                const firstName = user.name.split(' ')[0];
+                document.getElementById('user-first-name').textContent = firstName;
+                document.getElementById('user-name-display').textContent = firstName;
+            }
+
+            // Logout button
+            const logoutBtn = document.getElementById('logout-btn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function() {
+                    if (confirm('Are you sure you want to logout?')) {
+                        logout();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

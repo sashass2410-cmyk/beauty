@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard - Radiant Beauty</title>
+    <meta name="description" content="Manage your beauty appointments, saved professionals, and reviews.">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <!-- Logo -->
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">✨</span>
+                <span class="logo-text">Radiant Beauty</span>
+            </a>
+
+            <!-- Main Navigation -->
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="professionals.html" class="nav-link" data-i18n="nav.professionals">Professionals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link" data-i18n="nav.beautyPage">BeYouTy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="client-dashboard.html" class="nav-link active" data-i18n="nav.dashboard">Dashboard</a>
+                    </li>
+                </ul>
+
+                <div class="nav-close" id="nav-close">
+                    <span>&times;</span>
+                </div>
+            </div>
+
+            <!-- Right Actions -->
+            <div class="nav-actions">
+                <!-- Language Switcher -->
+                <div class="language-switcher">
+                    <button class="language-btn" id="language-btn" aria-label="Select Language" title="Language">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a 15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                        <span class="language-text" id="current-language">EN</span>
+                    </button>
+                    <div class="language-dropdown" id="language-dropdown">
+                        <button class="language-option" data-lang="en">English</button>
+                        <button class="language-option" data-lang="ru">Русский</button>
+                        <button class="language-option" data-lang="uz">O'zbek</button>
+                    </div>
+                </div>
+
+                <button class="nav-action-btn search-btn" id="search-btn" aria-label="Search" title="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <button class="nav-action-btn account-btn" id="user-menu-btn" aria-label="Account" title="Account">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span class="account-text" id="user-name-display">Account</span>
+                </button>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Dashboard Content -->
+    <section class="dashboard-section">
+        <div class="container">
+            <!-- Dashboard Header -->
+            <div class="dashboard-header">
+                <div class="dashboard-greeting">
+                    <h1 class="dashboard-title">
+                        <span data-i18n="clientDashboard.greeting">Welcome back</span>, <span id="user-first-name">User</span>!
+                    </h1>
+                    <p class="dashboard-subtitle" data-i18n="clientDashboard.subtitle">Manage your appointments and discover new beauty professionals</p>
+                </div>
+                <div class="dashboard-search">
+                    <input type="text" class="dashboard-search-input" placeholder="Search professionals, services..." data-i18n-placeholder="clientDashboard.searchPlaceholder">
+                    <button class="dashboard-search-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <a href="professionals.html" class="quick-action-card">
+                    <div class="quick-action-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3 class="quick-action-title" data-i18n="clientDashboard.browseProfessionals">Browse Professionals</h3>
+                    <p class="quick-action-desc" data-i18n="clientDashboard.browseProfessionalsDesc">Discover talented beauty experts</p>
+                </a>
+
+                <a href="professionals.html" class="quick-action-card">
+                    <div class="quick-action-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                    </div>
+                    <h3 class="quick-action-title" data-i18n="clientDashboard.bookService">Book a Service</h3>
+                    <p class="quick-action-desc" data-i18n="clientDashboard.bookServiceDesc">Schedule your next appointment</p>
+                </a>
+
+                <a href="#saved-professionals" class="quick-action-card">
+                    <div class="quick-action-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="quick-action-title" data-i18n="clientDashboard.myFavorites">My Favorites</h3>
+                    <p class="quick-action-desc" data-i18n="clientDashboard.myFavoritesDesc">View your saved professionals</p>
+                </a>
+            </div>
+
+            <!-- Upcoming Appointments (TOP PRIORITY) -->
+            <div class="dashboard-section-block">
+                <div class="section-header-row">
+                    <h2 class="section-title" data-i18n="clientDashboard.upcomingAppointments">Upcoming Appointments</h2>
+                    <a href="#" class="section-link" data-i18n="clientDashboard.viewAll">View All</a>
+                </div>
+
+                <div class="appointments-list">
+                    <!-- Appointment Card 1 -->
+                    <div class="appointment-card">
+                        <div class="appointment-header">
+                            <div class="appointment-professional">
+                                <img src="images/professionals/sofia-martinez.jpg" alt="Sofia Martinez" class="appointment-photo">
+                                <div class="appointment-info">
+                                    <h3 class="appointment-name">Sofia Martinez</h3>
+                                    <p class="appointment-specialization">Nail Artist</p>
+                                </div>
+                            </div>
+                            <span class="appointment-status status-confirmed" data-i18n="clientDashboard.statusConfirmed">Confirmed</span>
+                        </div>
+                        <div class="appointment-details">
+                            <div class="appointment-detail">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                <span>December 28, 2025 at 2:00 PM</span>
+                            </div>
+                            <div class="appointment-detail">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                <span>Gel Manicure (60 min)</span>
+                            </div>
+                            <div class="appointment-detail">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                <span>Downtown Beauty Salon</span>
+                            </div>
+                        </div>
+                        <div class="appointment-actions">
+                            <button class="btn btn-secondary btn-sm" data-i18n="clientDashboard.reschedule">Reschedule</button>
+                            <button class="btn btn-outline btn-sm" data-i18n="clientDashboard.cancel">Cancel</button>
+                            <button class="btn btn-primary btn-sm" data-i18n="clientDashboard.message">Message</button>
+                        </div>
+                    </div>
+
+                    <!-- Appointment Card 2 -->
+                    <div class="appointment-card">
+                        <div class="appointment-header">
+                            <div class="appointment-professional">
+                                <img src="images/professionals/elena-rodriguez.jpg" alt="Elena Rodriguez" class="appointment-photo">
+                                <div class="appointment-info">
+                                    <h3 class="appointment-name">Elena Rodriguez</h3>
+                                    <p class="appointment-specialization">Makeup Artist</p>
+                                </div>
+                            </div>
+                            <span class="appointment-status status-pending" data-i18n="clientDashboard.statusPending">Pending</span>
+                        </div>
+                        <div class="appointment-details">
+                            <div class="appointment-detail">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                <span>January 2, 2026 at 10:00 AM</span>
+                            </div>
+                            <div class="appointment-detail">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                <span>Bridal Makeup (120 min)</span>
+                            </div>
+                            <div class="appointment-detail">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                <span>Glamour Studio</span>
+                            </div>
+                        </div>
+                        <div class="appointment-actions">
+                            <button class="btn btn-outline btn-sm" data-i18n="clientDashboard.cancel">Cancel Request</button>
+                            <button class="btn btn-primary btn-sm" data-i18n="clientDashboard.message">Message</button>
+                        </div>
+                    </div>
+
+                    <!-- Empty State (hidden if appointments exist) -->
+                    <div class="empty-state" style="display: none;">
+                        <div class="empty-icon">📅</div>
+                        <h3 class="empty-title" data-i18n="clientDashboard.noAppointments">No Upcoming Appointments</h3>
+                        <p class="empty-description" data-i18n="clientDashboard.noAppointmentsDesc">Book your first beauty service to get started!</p>
+                        <a href="professionals.html" class="btn btn-primary" data-i18n="clientDashboard.browseProfessionals">Browse Professionals</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Saved Professionals -->
+            <div class="dashboard-section-block" id="saved-professionals">
+                <div class="section-header-row">
+                    <h2 class="section-title" data-i18n="clientDashboard.savedProfessionals">Saved Professionals</h2>
+                    <a href="professionals.html" class="section-link" data-i18n="clientDashboard.exploreMore">Explore More</a>
+                </div>
+
+                <div class="saved-professionals-scroll">
+                    <!-- Saved Professional Card 1 -->
+                    <div class="saved-professional-card">
+                        <img src="images/professionals/sofia-martinez.jpg" alt="Sofia Martinez" class="saved-prof-photo">
+                        <div class="saved-prof-info">
+                            <h3 class="saved-prof-name">Sofia Martinez</h3>
+                            <p class="saved-prof-specialization">Nail Artist</p>
+                            <div class="saved-prof-rating">
+                                <span class="star-icon filled">★</span>
+                                <span class="rating-number">4.9</span>
+                                <span class="rating-count">(127)</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-sm btn-block" data-i18n="clientDashboard.bookAgain">Book Again</button>
+                    </div>
+
+                    <!-- Saved Professional Card 2 -->
+                    <div class="saved-professional-card">
+                        <img src="images/professionals/elena-rodriguez.jpg" alt="Elena Rodriguez" class="saved-prof-photo">
+                        <div class="saved-prof-info">
+                            <h3 class="saved-prof-name">Elena Rodriguez</h3>
+                            <p class="saved-prof-specialization">Makeup Artist</p>
+                            <div class="saved-prof-rating">
+                                <span class="star-icon filled">★</span>
+                                <span class="rating-number">4.8</span>
+                                <span class="rating-count">(95)</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-sm btn-block" data-i18n="clientDashboard.bookAgain">Book Again</button>
+                    </div>
+
+                    <!-- Saved Professional Card 3 -->
+                    <div class="saved-professional-card">
+                        <img src="images/professionals/anna-kim.jpg" alt="Anna Kim" class="saved-prof-photo">
+                        <div class="saved-prof-info">
+                            <h3 class="saved-prof-name">Anna Kim</h3>
+                            <p class="saved-prof-specialization">Hair Stylist</p>
+                            <div class="saved-prof-rating">
+                                <span class="star-icon filled">★</span>
+                                <span class="rating-number">4.9</span>
+                                <span class="rating-count">(143)</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-sm btn-block" data-i18n="clientDashboard.bookAgain">Book Again</button>
+                    </div>
+
+                    <!-- Saved Professional Card 4 -->
+                    <div class="saved-professional-card">
+                        <img src="images/professionals/maria-garcia.jpg" alt="Maria Garcia" class="saved-prof-photo">
+                        <div class="saved-prof-info">
+                            <h3 class="saved-prof-name">Maria Garcia</h3>
+                            <p class="saved-prof-specialization">Esthetician</p>
+                            <div class="saved-prof-rating">
+                                <span class="star-icon filled">★</span>
+                                <span class="rating-number">5.0</span>
+                                <span class="rating-count">(89)</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-sm btn-block" data-i18n="clientDashboard.bookAgain">Book Again</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reviews Section -->
+            <div class="dashboard-section-block">
+                <div class="section-header-row">
+                    <h2 class="section-title" data-i18n="clientDashboard.myReviews">My Reviews</h2>
+                    <a href="#" class="section-link" data-i18n="clientDashboard.viewAll">View All</a>
+                </div>
+
+                <div class="reviews-grid">
+                    <!-- Review Card 1 -->
+                    <div class="review-card-client">
+                        <div class="review-card-header">
+                            <img src="images/professionals/sofia-martinez.jpg" alt="Sofia Martinez" class="review-prof-photo">
+                            <div class="review-prof-info">
+                                <h3 class="review-prof-name">Sofia Martinez</h3>
+                                <div class="review-stars">
+                                    <span class="star-icon filled">★</span>
+                                    <span class="star-icon filled">★</span>
+                                    <span class="star-icon filled">★</span>
+                                    <span class="star-icon filled">★</span>
+                                    <span class="star-icon filled">★</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="review-comment">Amazing nail art! Sofia is incredibly talented and professional. I absolutely love my new gel manicure.</p>
+                        <p class="review-date">December 15, 2025</p>
+                    </div>
+
+                    <!-- Review Card 2 -->
+                    <div class="review-card-client">
+                        <div class="review-card-header">
+                            <img src="images/professionals/anna-kim.jpg" alt="Anna Kim" class="review-prof-photo">
+                            <div class="review-prof-info">
+                                <h3 class="review-prof-name">Anna Kim</h3>
+                                <div class="review-stars">
+                                    <span class="star-icon filled">★</span>
+                                    <span class="star-icon filled">★</span>
+                                    <span class="star-icon filled">★</span>
+                                    <span class="star-icon filled">★</span>
+                                    <span class="star-icon filled">★</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="review-comment">Best haircut I've had in years! Anna really listened to what I wanted and delivered perfectly.</p>
+                        <p class="review-date">December 10, 2025</p>
+                    </div>
+
+                    <!-- Review Reminder Card -->
+                    <div class="review-reminder-card">
+                        <div class="reminder-icon">⭐</div>
+                        <h3 class="reminder-title" data-i18n="clientDashboard.reviewReminder">Share Your Experience</h3>
+                        <p class="reminder-description" data-i18n="clientDashboard.reviewReminderDesc">You have 1 appointment waiting for your review</p>
+                        <button class="btn btn-primary btn-sm" data-i18n="clientDashboard.writeReview">Write Review</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings & Profile -->
+            <div class="dashboard-section-block">
+                <h2 class="section-title" data-i18n="clientDashboard.settings">Settings & Profile</h2>
+
+                <div class="settings-grid">
+                    <a href="#" class="setting-card">
+                        <div class="setting-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h3 class="setting-title" data-i18n="clientDashboard.personalInfo">Personal Information</h3>
+                        <p class="setting-description" data-i18n="clientDashboard.personalInfoDesc">Update your name, email, and photo</p>
+                    </a>
+
+                    <a href="#" class="setting-card">
+                        <div class="setting-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a 15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="setting-title" data-i18n="clientDashboard.language">Language & Region</h3>
+                        <p class="setting-description" data-i18n="clientDashboard.languageDesc">Change your preferred language</p>
+                    </a>
+
+                    <a href="#" class="setting-card">
+                        <div class="setting-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                            </svg>
+                        </div>
+                        <h3 class="setting-title" data-i18n="clientDashboard.notifications">Notifications</h3>
+                        <p class="setting-description" data-i18n="clientDashboard.notificationsDesc">Manage email and push notifications</p>
+                    </a>
+
+                    <a href="#" class="setting-card">
+                        <div class="setting-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="setting-title" data-i18n="clientDashboard.security">Security & Privacy</h3>
+                        <p class="setting-description" data-i18n="clientDashboard.securityDesc">Password and account security</p>
+                    </a>
+
+                    <button class="setting-card logout-card" id="logout-btn">
+                        <div class="setting-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                <polyline points="16 17 21 12 16 7"></polyline>
+                                <line x1="21" y1="12" x2="9" y2="12"></line>
+                            </svg>
+                        </div>
+                        <h3 class="setting-title" data-i18n="clientDashboard.logout">Logout</h3>
+                        <p class="setting-description" data-i18n="clientDashboard.logoutDesc">Sign out of your account</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">
+                        <span class="logo-icon">✨</span>
+                        Radiant Beauty
+                    </h3>
+                    <p class="footer-description" data-i18n="footer.description">
+                        Connecting clients with talented beauty professionals. Your one-stop platform for all beauty services.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-heading" data-i18n="footer.servicesTitle">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="makeup.html" data-i18n="footer.makeup">Makeup</a></li>
+                        <li><a href="hair.html" data-i18n="footer.hairStyling">Hair Styling</a></li>
+                        <li><a href="nails.html" data-i18n="footer.nails">Nails</a></li>
+                        <li><a href="skincare.html" data-i18n="footer.skincare">Skincare</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-heading" data-i18n="footer.platformTitle">Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="professionals.html" data-i18n="footer.findProfessionals">Find Professionals</a></li>
+                        <li><a href="contact.html" data-i18n="footer.joinProfessional">Join as Professional</a></li>
+                        <li><a href="index.html" data-i18n="footer.home">Home</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-heading" data-i18n="footer.connectTitle">Connect</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-link" aria-label="Pinterest">📌</a>
+                        <a href="#" class="social-link" aria-label="YouTube">▶️</a>
+                        <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-i18n="footer.copyright">&copy; 2025 Radiant Beauty Platform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/language-switcher.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        // Protect page - only allow clients
+        protectPage('client');
+
+        // Display user name in dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            const user = getCurrentUser();
+            if (user) {
+                const firstName = user.name.split(' ')[0];
+                document.getElementById('user-first-name').textContent = firstName;
+                document.getElementById('user-name-display').textContent = firstName;
+            }
+
+            // Logout button
+            const logoutBtn = document.getElementById('logout-btn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function() {
+                    if (confirm('Are you sure you want to logout?')) {
+                        logout();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
