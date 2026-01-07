@@ -64,10 +64,10 @@ const professionals = [
             }
         ],
         calendar: [
-            { date: "2025-12-26", availableSlots: 2 },
-            { date: "2025-12-27", availableSlots: 4 },
-            { date: "2025-12-28", availableSlots: 0 },
-            { date: "2025-12-29", availableSlots: 3 }
+            { date: "2026-01-07", availableSlots: 2 },
+            { date: "2026-01-08", availableSlots: 4 },
+            { date: "2026-01-09", availableSlots: 0 },
+            { date: "2026-01-10", availableSlots: 3 }
         ]
     },
     {
@@ -129,10 +129,10 @@ const professionals = [
             }
         ],
         calendar: [
-            { date: "2025-12-26", availableSlots: 0 },
-            { date: "2025-12-27", availableSlots: 1 },
-            { date: "2025-12-28", availableSlots: 2 },
-            { date: "2025-12-30", availableSlots: 3 }
+            { date: "2026-01-07", availableSlots: 0 },
+            { date: "2026-01-08", availableSlots: 1 },
+            { date: "2026-01-09", availableSlots: 2 },
+            { date: "2026-01-11", availableSlots: 3 }
         ]
     },
     {
@@ -193,10 +193,10 @@ const professionals = [
             }
         ],
         calendar: [
-            { date: "2025-12-26", availableSlots: 5 },
-            { date: "2025-12-27", availableSlots: 3 },
-            { date: "2025-12-28", availableSlots: 4 },
-            { date: "2025-12-29", availableSlots: 2 }
+            { date: "2026-01-07", availableSlots: 5 },
+            { date: "2026-01-08", availableSlots: 3 },
+            { date: "2026-01-09", availableSlots: 4 },
+            { date: "2026-01-10", availableSlots: 2 }
         ]
     },
     {
@@ -257,10 +257,10 @@ const professionals = [
             }
         ],
         calendar: [
-            { date: "2025-12-26", availableSlots: 0 },
-            { date: "2025-12-27", availableSlots: 0 },
-            { date: "2025-12-28", availableSlots: 1 },
-            { date: "2025-12-31", availableSlots: 2 }
+            { date: "2026-01-07", availableSlots: 0 },
+            { date: "2026-01-08", availableSlots: 0 },
+            { date: "2026-01-09", availableSlots: 1 },
+            { date: "2026-01-12", availableSlots: 2 }
         ]
     },
     {
@@ -321,10 +321,10 @@ const professionals = [
             }
         ],
         calendar: [
-            { date: "2025-12-26", availableSlots: 3 },
-            { date: "2025-12-27", availableSlots: 2 },
-            { date: "2025-12-28", availableSlots: 4 },
-            { date: "2025-12-29", availableSlots: 1 }
+            { date: "2026-01-07", availableSlots: 3 },
+            { date: "2026-01-08", availableSlots: 2 },
+            { date: "2026-01-09", availableSlots: 4 },
+            { date: "2026-01-10", availableSlots: 1 }
         ]
     },
     {
@@ -385,10 +385,10 @@ const professionals = [
             }
         ],
         calendar: [
-            { date: "2025-12-26", availableSlots: 0 },
-            { date: "2025-12-27", availableSlots: 0 },
-            { date: "2025-12-28", availableSlots: 0 },
-            { date: "2026-01-02", availableSlots: 2 }
+            { date: "2026-01-07", availableSlots: 0 },
+            { date: "2026-01-08", availableSlots: 0 },
+            { date: "2026-01-09", availableSlots: 0 },
+            { date: "2026-01-13", availableSlots: 2 }
         ]
     },
     {
@@ -449,10 +449,10 @@ const professionals = [
             }
         ],
         calendar: [
-            { date: "2025-12-26", availableSlots: 1 },
-            { date: "2025-12-27", availableSlots: 3 },
-            { date: "2025-12-28", availableSlots: 2 },
-            { date: "2025-12-29", availableSlots: 4 }
+            { date: "2026-01-07", availableSlots: 1 },
+            { date: "2026-01-08", availableSlots: 3 },
+            { date: "2026-01-09", availableSlots: 2 },
+            { date: "2026-01-10", availableSlots: 4 }
         ]
     },
     {
@@ -513,10 +513,10 @@ const professionals = [
             }
         ],
         calendar: [
-            { date: "2025-12-26", availableSlots: 2 },
-            { date: "2025-12-27", availableSlots: 1 },
-            { date: "2025-12-28", availableSlots: 3 },
-            { date: "2025-12-29", availableSlots: 2 }
+            { date: "2026-01-07", availableSlots: 2 },
+            { date: "2026-01-08", availableSlots: 1 },
+            { date: "2026-01-09", availableSlots: 3 },
+            { date: "2026-01-10", availableSlots: 2 }
         ]
     }
 ];
