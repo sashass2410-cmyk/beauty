@@ -433,7 +433,8 @@
     }
 
     .hero,
-    .page-hero {
+    .page-hero,
+    .professional-works-section {
         margin-top: 70px;
     }
 }
@@ -551,7 +552,8 @@
     }
 
     .hero,
-    .page-hero {
+    .page-hero,
+    .professional-works-section {
         margin-top: 0;
     }
 
