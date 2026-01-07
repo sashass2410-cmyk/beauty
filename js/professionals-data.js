@@ -8,6 +8,7 @@ const professionals = [
         id: 1,
         name: "Sofia Martinez",
         photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80",
+        categories: ["nails"],
         specializations: {
             en: ["Nails", "Nail Art"],
             ru: ["Ногти", "Нейл-арт"],
@@ -73,6 +74,7 @@ const professionals = [
         id: 2,
         name: "Isabella Chen",
         photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80",
+        categories: ["makeup"],
         specializations: {
             en: ["Makeup", "Bridal Makeup"],
             ru: ["Макияж", "Свадебный макияж"],
@@ -137,6 +139,7 @@ const professionals = [
         id: 3,
         name: "Emma Rodriguez",
         photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=400&q=80",
+        categories: ["brows"],
         specializations: {
             en: ["Brow Lamination", "Eyelashes"],
             ru: ["Ламинирование бровей", "Ресницы"],
@@ -200,6 +203,7 @@ const professionals = [
         id: 4,
         name: "Olivia Thompson",
         photo: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=400&q=80",
+        categories: ["hair"],
         specializations: {
             en: ["Hair Styling", "Hair Coloring"],
             ru: ["Укладка волос", "Окрашивание"],
@@ -263,6 +267,7 @@ const professionals = [
         id: 5,
         name: "Mia Anderson",
         photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+        categories: ["skincare"],
         specializations: {
             en: ["Skincare", "Facial Treatments"],
             ru: ["Уход за кожей", "Процедуры для лица"],
@@ -326,6 +331,7 @@ const professionals = [
         id: 6,
         name: "Ava Williams",
         photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
+        categories: ["nails"],
         specializations: {
             en: ["Nails", "Pedicure"],
             ru: ["Ногти", "Педикюр"],
@@ -389,6 +395,7 @@ const professionals = [
         id: 7,
         name: "Lily Parker",
         photo: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=400&q=80",
+        categories: ["makeup"],
         specializations: {
             en: ["Makeup", "Special Effects"],
             ru: ["Макияж", "Спецэффекты"],
@@ -452,6 +459,7 @@ const professionals = [
         id: 8,
         name: "Chloe Davis",
         photo: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80",
+        categories: ["makeup", "nails", "hair", "skincare"],
         specializations: {
             en: ["Cosmetology", "Full Beauty Services"],
             ru: ["Косметология", "Полный спектр услуг"],

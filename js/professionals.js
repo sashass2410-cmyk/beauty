@@ -65,7 +65,7 @@ function initFilterButtons() {
     });
 }
 
-// Filter professionals by specialization
+// Filter professionals by category
 function filterProfessionals(filter) {
     if (typeof getAllProfessionals === 'undefined') return;
 
@@ -76,24 +76,15 @@ function filterProfessionals(filter) {
         return;
     }
 
-    // Get current language
-    const currentLang = typeof getLanguage === 'function' ? getLanguage() : 'en';
-
-    // Filter by specialization
+    // Filter by internal category keys (language-independent)
     const filtered = allProfs.filter(prof => {
-        // Get specializations for current language
-        const specializations = prof.specializations[currentLang] || prof.specializations.en || prof.specializations;
-
-        // Handle both array and string specializations
-        if (Array.isArray(specializations)) {
-            return specializations.some(spec =>
-                spec.toLowerCase().includes(filter.toLowerCase())
-            );
-        } else if (typeof specializations === 'string') {
-            return specializations.toLowerCase().includes(filter.toLowerCase());
+        // Check if professional has categories array
+        if (!prof.categories || !Array.isArray(prof.categories)) {
+            return false;
         }
 
-        return false;
+        // Check if the filter matches any of the professional's categories
+        return prof.categories.includes(filter);
     });
 
     displayProfessionals(filtered);
