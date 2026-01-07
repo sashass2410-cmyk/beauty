@@ -370,11 +370,20 @@ function redirectIfLoggedIn() {
 
 function updateNavigation() {
     const user = getCurrentUser();
+    const role = getUserRole();
     const accountBtn = document.querySelector('.account-btn');
 
     if (accountBtn && user) {
-        // User is logged in - update button to show user info
-        accountBtn.href = 'dashboard.html';
+        // User is logged in - link to appropriate dashboard based on role
+        if (role === 'client') {
+            accountBtn.href = 'client-dashboard.html';
+        } else if (role === 'professional') {
+            accountBtn.href = 'professional-dashboard.html';
+        } else {
+            // No role set yet - link to onboarding
+            accountBtn.href = 'onboarding.html';
+        }
+
         const accountText = accountBtn.querySelector('.account-text');
         if (accountText) {
             accountText.textContent = user.name.split(' ')[0]; // First name only

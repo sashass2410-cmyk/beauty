@@ -288,15 +288,267 @@ function initSearchButton() {
     const searchBtn = document.getElementById('search-btn');
 
     if (searchBtn) {
-        searchBtn.addEventListener('click', function() {
-            // Placeholder for search functionality
-            // In a production site, this would open a search modal or redirect to search page
-            alert('Search functionality coming soon!\n\nThis would typically open a search modal or redirect to a search page.');
-
-            // Example: You could implement a search modal here
-            // showSearchModal();
-        });
+        searchBtn.addEventListener('click', showSearchModal);
     }
+
+    // Close modal on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            hideSearchModal();
+        }
+    });
+}
+
+// Show search modal
+function showSearchModal() {
+    // Create modal if it doesn't exist
+    let modal = document.getElementById('search-modal');
+    if (!modal) {
+        modal = createSearchModal();
+        document.body.appendChild(modal);
+    }
+
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+
+    // Focus on search input
+    const searchInput = document.getElementById('search-input');
+    if (searchInput) {
+        setTimeout(() => searchInput.focus(), 100);
+    }
+}
+
+// Hide search modal
+function hideSearchModal() {
+    const modal = document.getElementById('search-modal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+}
+
+// Create search modal HTML
+function createSearchModal() {
+    const modal = document.createElement('div');
+    modal.id = 'search-modal';
+    modal.style.cssText = `
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 10000;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 60px 20px 20px;
+        overflow-y: auto;
+    `;
+
+    modal.innerHTML = `
+        <div class="search-modal-content" style="
+            background: white;
+            border-radius: 12px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 80vh;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        ">
+            <div style="padding: 24px; border-bottom: 1px solid var(--gray-200);">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input
+                        type="text"
+                        id="search-input"
+                        placeholder="Search professionals by name, service, or specialty..."
+                        style="
+                            flex: 1;
+                            border: none;
+                            outline: none;
+                            font-size: 1.1rem;
+                            font-family: 'Poppins', sans-serif;
+                            color: var(--dark-color);
+                        "
+                    >
+                    <button id="search-close-btn" style="
+                        background: none;
+                        border: none;
+                        font-size: 1.5rem;
+                        color: var(--gray-500);
+                        cursor: pointer;
+                        padding: 4px 8px;
+                        line-height: 1;
+                    ">&times;</button>
+                </div>
+            </div>
+            <div id="search-results" style="
+                padding: 20px;
+                max-height: calc(80vh - 100px);
+                overflow-y: auto;
+            ">
+                <p style="color: var(--gray-500); text-align: center; padding: 40px 20px;">
+                    Start typing to search for beauty professionals...
+                </p>
+            </div>
+        </div>
+    `;
+
+    // Close button event
+    modal.querySelector('#search-close-btn').addEventListener('click', hideSearchModal);
+
+    // Close on backdrop click
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            hideSearchModal();
+        }
+    });
+
+    // Search input event
+    const searchInput = modal.querySelector('#search-input');
+    searchInput.addEventListener('input', debounce(handleSearch, 300));
+
+    return modal;
+}
+
+// Handle search query
+function handleSearch(e) {
+    const query = e.target.value.trim().toLowerCase();
+    const resultsContainer = document.getElementById('search-results');
+
+    if (!resultsContainer) return;
+
+    // If query is empty, show placeholder
+    if (!query) {
+        resultsContainer.innerHTML = `
+            <p style="color: var(--gray-500); text-align: center; padding: 40px 20px;">
+                Start typing to search for beauty professionals...
+            </p>
+        `;
+        return;
+    }
+
+    // Search through professionals
+    if (typeof getAllProfessionals === 'undefined') {
+        resultsContainer.innerHTML = `
+            <p style="color: var(--gray-500); text-align: center; padding: 40px 20px;">
+                Unable to load professionals data.
+            </p>
+        `;
+        return;
+    }
+
+    const allProfs = getAllProfessionals();
+    const currentLang = typeof getLanguage === 'function' ? getLanguage() : 'en';
+
+    // Filter professionals based on query
+    const results = allProfs.filter(prof => {
+        const name = prof.name.toLowerCase();
+        const specializations = (prof.specializations[currentLang] || prof.specializations.en || []);
+        const specializationsText = Array.isArray(specializations)
+            ? specializations.join(' ').toLowerCase()
+            : specializations.toLowerCase();
+        const bio = (prof.bio[currentLang] || prof.bio.en || '').toLowerCase();
+        const location = (prof.location[currentLang] || prof.location.en || '').toLowerCase();
+
+        // Search in services if available
+        let servicesText = '';
+        if (prof.services && Array.isArray(prof.services)) {
+            servicesText = prof.services.map(s => {
+                const serviceName = s.name[currentLang] || s.name.en || '';
+                return serviceName.toLowerCase();
+            }).join(' ');
+        }
+
+        return name.includes(query) ||
+               specializationsText.includes(query) ||
+               bio.includes(query) ||
+               location.includes(query) ||
+               servicesText.includes(query);
+    });
+
+    // Display results
+    if (results.length === 0) {
+        resultsContainer.innerHTML = `
+            <p style="color: var(--gray-500); text-align: center; padding: 40px 20px;">
+                No professionals found matching "${e.target.value}".
+            </p>
+        `;
+        return;
+    }
+
+    resultsContainer.innerHTML = `
+        <p style="color: var(--gray-600); margin-bottom: 16px; font-size: 0.9rem;">
+            Found ${results.length} professional${results.length === 1 ? '' : 's'}
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+            ${results.map(prof => createSearchResultCard(prof, currentLang)).join('')}
+        </div>
+    `;
+
+    // Apply translations if available
+    if (typeof applyTranslations === 'function') {
+        applyTranslations(currentLang);
+    }
+}
+
+// Create search result card
+function createSearchResultCard(prof, currentLang = 'en') {
+    const specializations = prof.specializations[currentLang] || prof.specializations.en || prof.specializations;
+    const specializationsText = Array.isArray(specializations) ? specializations.join(' • ') : specializations;
+    const location = prof.location[currentLang] || prof.location.en || prof.location;
+
+    return `
+        <a href="professional.html?id=${prof.id}" style="
+            display: flex;
+            gap: 16px;
+            padding: 12px;
+            background: var(--gray-50);
+            border-radius: 8px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s ease;
+        " onmouseover="this.style.background='var(--gray-100)'" onmouseout="this.style.background='var(--gray-50)'">
+            <img src="${prof.photo}" alt="${prof.name}" style="
+                width: 60px;
+                height: 60px;
+                border-radius: 8px;
+                object-fit: cover;
+            ">
+            <div style="flex: 1; min-width: 0;">
+                <h4 style="
+                    margin: 0 0 4px 0;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    color: var(--dark-color);
+                ">${prof.name}</h4>
+                <p style="
+                    margin: 0 0 4px 0;
+                    font-size: 0.85rem;
+                    color: var(--gray-600);
+                ">${specializationsText}</p>
+                <p style="
+                    margin: 0;
+                    font-size: 0.8rem;
+                    color: var(--gray-500);
+                ">📍 ${location}</p>
+            </div>
+            <div style="
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                color: var(--gold-color);
+                font-weight: 600;
+                font-size: 0.9rem;
+            ">
+                ★ ${prof.rating}
+            </div>
+        </a>
+    `;
 }
 
 /*===================================
