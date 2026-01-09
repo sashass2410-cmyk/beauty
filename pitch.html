@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radiant Beauty - Investor Pitch Deck</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --rose-gold: #D4AF37;
+            --soft-pink: #E91E63;
+            --nude-beige: #F5F0E8;
+            --cream-white: #FAFAFA;
+            --charcoal: #2C2C2C;
+            --warm-gray: #666666;
+            --light-gray: #E8E8E8;
+            --success-green: #22C55E;
+            --trust-blue: #3B82F6;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--nude-beige), #FFE4E1);
+            overflow: hidden;
+            color: var(--charcoal);
+        }
+
+        .presentation {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 100px;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: translateX(0);
+            z-index: 1;
+        }
+
+        .slide.prev {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 3.5rem;
+            color: var(--charcoal);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 2.5rem;
+            color: var(--charcoal);
+            margin-bottom: 2rem;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--warm-gray);
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            background: linear-gradient(135deg, var(--soft-pink), var(--rose-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            width: 100%;
+            max-width: 1200px;
+            margin: 2rem 0;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .metric-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--soft-pink), var(--rose-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 1.2rem;
+            color: var(--warm-gray);
+        }
+
+        .content-box {
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .bullet-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .bullet-list li {
+            font-size: 1.3rem;
+            padding: 1rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--charcoal);
+        }
+
+        .bullet-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--rose-gold);
+            font-weight: bold;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--soft-pink);
+        }
+
+        .card ul {
+            list-style: none;
+        }
+
+        .card li {
+            font-size: 1.1rem;
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success-green);
+            font-weight: bold;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            display: flex;
+            gap: 1rem;
+            z-index: 1000;
+        }
+
+        .nav-btn {
+            background: white;
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .progress {
+            position: fixed;
+            bottom: 40px;
+            left: 40px;
+            color: var(--warm-gray);
+            font-size: 1rem;
+            background: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+        }
+
+        .highlight {
+            color: var(--soft-pink);
+            font-weight: 600;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--soft-pink), var(--rose-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 1000px;
+            margin: 2rem 0;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--soft-pink);
+        }
+
+        .stat-desc {
+            font-size: 1.1rem;
+            color: var(--warm-gray);
+            margin-top: 0.5rem;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 2rem 0;
+        }
+
+        .table th {
+            background: linear-gradient(135deg, var(--soft-pink), var(--rose-gold));
+            color: white;
+            padding: 1rem;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        .table th:first-child {
+            border-radius: 12px 0 0 0;
+        }
+
+        .table th:last-child {
+            border-radius: 0 12px 0 0;
+        }
+
+        .table td {
+            padding: 1rem;
+            background: white;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .table tr:last-child td:first-child {
+            border-radius: 0 0 0 12px;
+        }
+
+        .table tr:last-child td:last-child {
+            border-radius: 0 0 12px 0;
+        }
+
+        .badge {
+            background: var(--success-green);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .mockup {
+            width: 300px;
+            height: 600px;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            overflow: hidden;
+        }
+
+        .mockup-card {
+            background: var(--nude-beige);
+            border-radius: 12px;
+            padding: 15px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .mockup-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--soft-pink), var(--rose-gold));
+        }
+
+        .mockup-info {
+            flex: 1;
+        }
+
+        .mockup-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+        }
+
+        .mockup-rating {
+            font-size: 0.8rem;
+            color: var(--rose-gold);
+        }
+
+        .funding-ask {
+            font-size: 2rem;
+            color: var(--warm-gray);
+            margin-top: 2rem;
+        }
+
+        .contact {
+            font-size: 1.2rem;
+            color: var(--warm-gray);
+            margin-top: 1rem;
+        }
+
+        .phase-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            margin: 1rem 0;
+            border-left: 6px solid var(--rose-gold);
+        }
+
+        .phase-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--soft-pink);
+            margin-bottom: 1rem;
+        }
+
+        .use-of-funds {
+            width: 100%;
+            max-width: 800px;
+            margin: 2rem 0;
+        }
+
+        .fund-bar {
+            display: flex;
+            height: 80px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+        }
+
+        .fund-segment {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.5rem;
+            position: relative;
+        }
+
+        .fund-segment:nth-child(1) { background: var(--rose-gold); }
+        .fund-segment:nth-child(2) { background: var(--soft-pink); }
+        .fund-segment:nth-child(3) { background: var(--trust-blue); }
+        .fund-segment:nth-child(4) { background: var(--warm-gray); }
+
+        .fund-label {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .slide {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .metrics-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .navigation {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .progress {
+                bottom: 20px;
+                left: 20px;
+            }
+        }
+
+        @media print {
+            .navigation, .progress {
+                display: none;
+            }
+
+            .slide {
+                page-break-after: always;
+                position: relative;
+                opacity: 1 !important;
+                transform: none !important;
+                padding: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation">
+        <!-- Slide 1: Cover -->
+        <div class="slide active" data-slide="1">
+            <h1 class="logo">✨ Radiant Beauty</h1>
+            <p class="subtitle">The Beauty Services Marketplace</p>
+            <p style="font-size: 1.3rem; color: var(--warm-gray); text-align: center; max-width: 700px; margin-bottom: 3rem;">
+                Where Clients Meet Their Perfect Beauty Professional
+            </p>
+
+            <div class="mockup">
+                <div style="text-align: center; padding: 10px; font-weight: 600; color: var(--soft-pink);">
+                    Find Your Beauty Pro
+                </div>
+                <div class="mockup-card">
+                    <div class="mockup-img"></div>
+                    <div class="mockup-info">
+                        <div class="mockup-name">Sofia Martinez</div>
+                        <div class="mockup-rating">★★★★★ 4.9</div>
+                        <div style="font-size: 0.75rem; color: var(--success-green); margin-top: 4px;">Available today</div>
+                    </div>
+                </div>
+                <div class="mockup-card">
+                    <div class="mockup-img"></div>
+                    <div class="mockup-info">
+                        <div class="mockup-name">Isabella Chen</div>
+                        <div class="mockup-rating">★★★★★ 4.8</div>
+                        <div style="font-size: 0.75rem; color: var(--trust-blue); margin-top: 4px;">Next slot: Wed</div>
+                    </div>
+                </div>
+                <div class="mockup-card">
+                    <div class="mockup-img"></div>
+                    <div class="mockup-info">
+                        <div class="mockup-name">Emma Rodriguez</div>
+                        <div class="mockup-rating">★★★★★ 4.9</div>
+                        <div style="font-size: 0.75rem; color: var(--success-green); margin-top: 4px;">Available today</div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="funding-ask"><span class="gradient-text">Raising: $2.5M Seed Round</span></p>
+            <p class="contact">contact@radiantbeauty.com</p>
+        </div>
+
+        <!-- Slide 2: Problem -->
+        <div class="slide" data-slide="2">
+            <h2>THE <span class="gradient-text">$532B</span> BEAUTY MARKET RUNS ON CHAOS</h2>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-number">78%</div>
+                    <div class="metric-label">Bookings via Phone/Messengers</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">30%</div>
+                    <div class="metric-label">Revenue Lost to Scheduling Gaps</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">2+hrs</div>
+                    <div class="metric-label">Client Time to Find & Book</div>
+                </div>
+            </div>
+
+            <div class="content-box">
+                <h3 style="margin-bottom: 1.5rem; color: var(--soft-pink);">Pain Points:</h3>
+                <ul class="bullet-list">
+                    <li><strong>Clients:</strong> 2+ hours wasted searching, vetting, and booking</li>
+                    <li><strong>Professionals:</strong> Manual scheduling, frequent no-shows, admin chaos</li>
+                    <li><strong>Market:</strong> Zero transparency on pricing, quality, or availability</li>
+                </ul>
+                <p style="margin-top: 2rem; font-size: 1.3rem; color: var(--charcoal); font-weight: 500;">
+                    Result: Fragmented market, inefficient matching, money left on table
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 3: Solution -->
+        <div class="slide" data-slide="3">
+            <h2>TWO-SIDED MARKETPLACE THAT WORKS</h2>
+
+            <div class="two-column">
+                <div class="card" style="background: linear-gradient(135deg, #FFF5F7, white);">
+                    <h3>FOR CLIENTS</h3>
+                    <ul>
+                        <li>Find in 60 seconds</li>
+                        <li>Transparent pricing</li>
+                        <li>Book 24/7</li>
+                        <li>Reviews (4.9★ avg)</li>
+                        <li>Portfolio previews</li>
+                    </ul>
+                </div>
+                <div class="card" style="background: linear-gradient(135deg, #FFF9E6, white);">
+                    <h3>FOR PROFESSIONALS</h3>
+                    <ul>
+                        <li>+30% utilization</li>
+                        <li>Automated scheduling</li>
+                        <li>Payment processing</li>
+                        <li>Client CRM</li>
+                        <li>Marketing tools</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, var(--soft-pink), var(--rose-gold)); color: white; padding: 2rem; border-radius: 16px; margin-top: 2rem; max-width: 900px; text-align: center;">
+                <p style="font-size: 1.4rem; font-style: italic;">
+                    "Beauty is high-trust, high-repeat. We build trust at scale."
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 4: Market Opportunity -->
+        <div class="slide" data-slide="4">
+            <h2><span class="gradient-text">$532B</span> GLOBAL BEAUTY SERVICES MARKET</h2>
+
+            <div class="stat-row">
+                <div class="stat">
+                    <div class="stat-value">$145B</div>
+                    <div class="stat-desc">TAM<br>(US + EU)</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">$38B</div>
+                    <div class="stat-desc">SAM<br>(Independent Pros)</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">$2.8B</div>
+                    <div class="stat-desc">SOM<br>(3-year target)</div>
+                </div>
+            </div>
+
+            <div class="content-box">
+                <h3 style="margin-bottom: 1.5rem; color: var(--soft-pink);">Market Dynamics:</h3>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-number" style="font-size: 3rem;">41%</div>
+                        <div class="metric-label">CAGR<br>2024-2028</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number" style="font-size: 3rem;">62%</div>
+                        <div class="metric-label">Independent<br>Professionals</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number" style="font-size: 3rem;">89%</div>
+                        <div class="metric-label">Gen Z Prefer<br>App Booking</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Business Model -->
+        <div class="slide" data-slide="5">
+            <h2>TRIPLE REVENUE STREAM</h2>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-number" style="font-size: 3.5rem;">15%</div>
+                    <div class="metric-label">Transaction Fee</div>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--warm-gray);">Industry standard</p>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number" style="font-size: 2.5rem;">$49-199</div>
+                    <div class="metric-label">SaaS Subscription</div>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--warm-gray);">78% opt for paid tier</p>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number" style="font-size: 2.5rem;">$200-800</div>
+                    <div class="metric-label">Promoted Profiles</div>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--warm-gray);">Per month</p>
+                </div>
+            </div>
+
+            <div class="content-box">
+                <h3 style="margin-bottom: 1.5rem; color: var(--soft-pink);">Unit Economics:</h3>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+                    <div>
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--rose-gold);">$3,400</div>
+                        <div style="color: var(--warm-gray); margin-top: 0.5rem;">LTV (Professional)</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--rose-gold);">$220</div>
+                        <div style="color: var(--warm-gray); margin-top: 0.5rem;">CAC</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--rose-gold);">6.8mo</div>
+                        <div style="color: var(--warm-gray); margin-top: 0.5rem;">Payback Period</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--rose-gold);">68%</div>
+                        <div style="color: var(--warm-gray); margin-top: 0.5rem;">Gross Margin</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Competitive Landscape -->
+        <div class="slide" data-slide="6">
+            <h2>WHY WE WIN</h2>
+
+            <div class="content-box">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th style="background: var(--success-green);">Radiant Beauty</th>
+                            <th>StyleSeat</th>
+                            <th>Treatwell</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Take Rate</strong></td>
+                            <td><span class="badge">15% ✓</span></td>
+                            <td>20%</td>
+                            <td>25%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>UX Rating</strong></td>
+                            <td>★★★★★</td>
+                            <td>★★</td>
+                            <td>★★★</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pro Tools</strong></td>
+                            <td>★★★★★</td>
+                            <td>★★</td>
+                            <td>★★</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Integrated CRM</strong></td>
+                            <td><span style="color: var(--success-green); font-weight: bold;">✓</span></td>
+                            <td>✗</td>
+                            <td>✗</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 style="margin: 2rem 0 1.5rem; color: var(--soft-pink);">Our Moats:</h3>
+                <ul class="bullet-list">
+                    <li>🛡️ 3x faster professional onboarding</li>
+                    <li>🛡️ Lowest take rate in market (15% vs 20-25%)</li>
+                    <li>🛡️ Vertical integration (payments + CRM + scheduling)</li>
+                    <li>🛡️ Network effects (supply → demand → better matching)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 7: Traction -->
+        <div class="slide" data-slide="7">
+            <h2><span class="highlight">8 WEEKS</span>, REAL MOMENTUM</h2>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-number">324</div>
+                    <div class="metric-label">Professionals</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">2,847</div>
+                    <div class="metric-label">Clients</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">$47K</div>
+                    <div class="metric-label">GMV Processed</div>
+                </div>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-number" style="font-size: 3rem;">4.9★</div>
+                    <div class="metric-label">Average Rating</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number" style="font-size: 3rem;">42%</div>
+                    <div class="metric-label">Repeat Booking Rate</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number" style="font-size: 3rem;">82%</div>
+                    <div class="metric-label">Pro Retention</div>
+                </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, var(--nude-beige), white); padding: 2rem; border-radius: 16px; margin-top: 2rem; max-width: 900px; text-align: center;">
+                <p style="font-size: 1.5rem; font-style: italic; color: var(--charcoal);">
+                    "Product-market fit signals are clear"
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 8: Go-to-Market -->
+        <div class="slide" data-slide="8">
+            <h2>LAND-AND-EXPAND PLAYBOOK</h2>
+
+            <div style="width: 100%; max-width: 900px;">
+                <div class="phase-card">
+                    <div class="phase-title">Phase 1: Dense Local Supply (Q1 2026)</div>
+                    <ul class="bullet-list">
+                        <li>Target: 200+ pros per city</li>
+                        <li>Strategy: Partnerships, referrals, local events</li>
+                        <li>Timeline: Current focus</li>
+                    </ul>
+                </div>
+
+                <div class="phase-card">
+                    <div class="phase-title">Phase 2: Demand Acceleration (Q2 2026)</div>
+                    <ul class="bullet-list">
+                        <li>Paid ads + influencer partnerships</li>
+                        <li>Referral loops ($20 give/get)</li>
+                        <li>Content marketing</li>
+                    </ul>
+                </div>
+
+                <div class="phase-card">
+                    <div class="phase-title">Phase 3: Multi-City Expansion (Q3 2026)</div>
+                    <ul class="bullet-list">
+                        <li>3 cities → 12 cities</li>
+                        <li>Franchise playbook replication</li>
+                        <li>Regional partnerships</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Roadmap -->
+        <div class="slide" data-slide="9">
+            <h2>18-MONTH VISION</h2>
+
+            <div class="two-column" style="max-width: 1200px;">
+                <div class="card">
+                    <h3>Q1 2026</h3>
+                    <ul class="bullet-list">
+                        <li>1,000 professionals</li>
+                        <li>Referral program launch</li>
+                        <li>AI-powered matching</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Q2 2026</h3>
+                    <ul class="bullet-list">
+                        <li>Expand to 12 cities</li>
+                        <li>Plus tier launch ($199/mo)</li>
+                        <li>Dynamic pricing</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Q3 2026</h3>
+                    <ul class="bullet-list">
+                        <li>1M+ users</li>
+                        <li>5,000 professionals</li>
+                        <li>White-label solution</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Q4 2026</h3>
+                    <ul class="bullet-list">
+                        <li>International expansion</li>
+                        <li>Product marketplace</li>
+                        <li>Loyalty program</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; text-align: center;">
+                <div style="display: inline-block; background: linear-gradient(135deg, var(--soft-pink), var(--rose-gold)); color: white; padding: 1.5rem 3rem; border-radius: 16px;">
+                    <p style="font-size: 1.3rem; font-weight: 600;">🎯 Series A Ready by Q4 2026</p>
+                    <p style="font-size: 1.1rem; margin-top: 0.5rem; opacity: 0.9;">$40-50M valuation</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Team -->
+        <div class="slide" data-slide="10">
+            <h2>BUILT TO SCALE</h2>
+
+            <div class="two-column" style="max-width: 900px;">
+                <div class="card" style="text-align: center;">
+                    <div style="width: 150px; height: 150px; border-radius: 50%; background: linear-gradient(135deg, var(--soft-pink), var(--rose-gold)); margin: 0 auto 1.5rem; border: 6px solid white; box-shadow: 0 4px 20px rgba(0,0,0,0.1);"></div>
+                    <h3 style="margin-bottom: 0.5rem;">CEO / Co-founder</h3>
+                    <p style="font-size: 1.1rem; color: var(--warm-gray); margin-bottom: 1rem;">Stanford MBA</p>
+                    <ul style="text-align: left; list-style: none;">
+                        <li style="padding: 0.3rem 0; color: var(--charcoal);">• Ex-Uber Marketplace</li>
+                        <li style="padding: 0.3rem 0; color: var(--charcoal);">• 10 years marketplace</li>
+                        <li style="padding: 0.3rem 0; color: var(--charcoal);">• 0→$50M GMV</li>
+                    </ul>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="width: 150px; height: 150px; border-radius: 50%; background: linear-gradient(135deg, var(--trust-blue), var(--rose-gold)); margin: 0 auto 1.5rem; border: 6px solid white; box-shadow: 0 4px 20px rgba(0,0,0,0.1);"></div>
+                    <h3 style="margin-bottom: 0.5rem;">CTO / Co-founder</h3>
+                    <p style="font-size: 1.1rem; color: var(--warm-gray); margin-bottom: 1rem;">MIT CS</p>
+                    <ul style="text-align: left; list-style: none;">
+                        <li style="padding: 0.3rem 0; color: var(--charcoal);">• Ex-Airbnb Engineering</li>
+                        <li style="padding: 0.3rem 0; color: var(--charcoal);">• 12 years engineering</li>
+                        <li style="padding: 0.3rem 0; color: var(--charcoal);">• Built 2-sided platforms</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content-box" style="margin-top: 2rem;">
+                <h3 style="margin-bottom: 1rem; color: var(--soft-pink);">Advisors:</h3>
+                <ul class="bullet-list">
+                    <li>Beauty industry veteran - Founded chain, $40M exit</li>
+                    <li>Ex-VP Growth at major marketplace - 0→10M users</li>
+                </ul>
+                <p style="margin-top: 1.5rem; color: var(--warm-gray); font-size: 1.1rem;">
+                    <strong>Next Hires:</strong> Head of Supply, Head of Data/ML
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 11: The Ask -->
+        <div class="slide" data-slide="11">
+            <h1 style="font-size: 4rem; margin-bottom: 2rem;">RAISING <span class="gradient-text">$2.5M</span><br>SEED ROUND</h1>
+
+            <div class="use-of-funds">
+                <h3 style="margin-bottom: 2rem; text-align: center; font-size: 1.8rem; color: var(--charcoal);">Use of Funds:</h3>
+                <div class="fund-bar">
+                    <div class="fund-segment" style="width: 50%;">50%</div>
+                    <div class="fund-segment" style="width: 25%;">25%</div>
+                    <div class="fund-segment" style="width: 15%;">15%</div>
+                    <div class="fund-segment" style="width: 10%;">10%</div>
+                </div>
+                <div class="fund-label">
+                    <span>🎯 Professional Acquisition ($1.25M)</span>
+                    <span>💻 Product & Engineering ($625K)</span>
+                </div>
+                <div class="fund-label">
+                    <span>⚙️ Operations ($375K)</span>
+                    <span>💰 Runway Buffer ($250K)</span>
+                </div>
+            </div>
+
+            <div class="content-box">
+                <h3 style="margin-bottom: 1.5rem; color: var(--soft-pink); text-align: center;">Target Milestones (12 Months):</h3>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-number" style="font-size: 2.5rem;">5,000</div>
+                        <div class="metric-label">Professionals</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number" style="font-size: 2.5rem;">$12M</div>
+                        <div class="metric-label">Annual GMV</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number" style="font-size: 2.5rem;">15</div>
+                        <div class="metric-label">Cities</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Investment Thesis -->
+        <div class="slide" data-slide="12">
+            <h2>WHY INVEST IN RADIANT BEAUTY?</h2>
+
+            <div class="content-box" style="max-width: 1000px;">
+                <div style="display: grid; gap: 2rem;">
+                    <div style="border-left: 6px solid var(--rose-gold); padding-left: 2rem;">
+                        <h3 style="color: var(--soft-pink); margin-bottom: 0.5rem;">1. Massive, Fragmented Market</h3>
+                        <p style="font-size: 1.2rem; color: var(--charcoal);">$532B beauty industry, 62% now freelance professionals</p>
+                    </div>
+
+                    <div style="border-left: 6px solid var(--rose-gold); padding-left: 2rem;">
+                        <h3 style="color: var(--soft-pink); margin-bottom: 0.5rem;">2. Clear Unit Economics</h3>
+                        <p style="font-size: 1.2rem; color: var(--charcoal);">68% margin, 6.8-month payback, proven at scale</p>
+                    </div>
+
+                    <div style="border-left: 6px solid var(--rose-gold); padding-left: 2rem;">
+                        <h3 style="color: var(--soft-pink); margin-bottom: 0.5rem;">3. Network Effects at Scale</h3>
+                        <p style="font-size: 1.2rem; color: var(--charcoal);">More supply = better matching = defensible moat</p>
+                    </div>
+
+                    <div style="border-left: 6px solid var(--rose-gold); padding-left: 2rem;">
+                        <h3 style="color: var(--soft-pink); margin-bottom: 0.5rem;">4. Proven Team</h3>
+                        <p style="font-size: 1.2rem; color: var(--charcoal);">Built and scaled marketplaces before (0→$50M GMV)</p>
+                    </div>
+
+                    <div style="border-left: 6px solid var(--rose-gold); padding-left: 2rem;">
+                        <h3 style="color: var(--soft-pink); margin-bottom: 0.5rem;">5. Early Traction</h3>
+                        <p style="font-size: 1.2rem; color: var(--charcoal);">8 weeks → $47K GMV, 4.9★ rating, strong retention</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem; text-align: center;">
+                <p style="font-size: 2rem; font-style: italic; color: var(--warm-gray); margin-bottom: 1.5rem;">
+                    "The <span class="gradient-text">Faire</span> for beauty services"
+                </p>
+                <p style="font-size: 1.5rem; color: var(--charcoal);">contact@radiantbeauty.com</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="progress">
+        <span id="current-slide">1</span> / 12
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" id="prev-btn">← Previous</button>
+        <button class="nav-btn" id="next-btn">Next →</button>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 12;
+
+        function updateSlide(direction) {
+            const slides = document.querySelectorAll('.slide');
+            const current = slides[currentSlide - 1];
+
+            if (direction === 'next' && currentSlide < totalSlides) {
+                current.classList.remove('active');
+                current.classList.add('prev');
+                currentSlide++;
+                slides[currentSlide - 1].classList.add('active');
+                slides[currentSlide - 1].classList.remove('prev');
+            } else if (direction === 'prev' && currentSlide > 1) {
+                current.classList.remove('active');
+                currentSlide--;
+                slides[currentSlide - 1].classList.add('active');
+                slides[currentSlide - 1].classList.remove('prev');
+            }
+
+            document.getElementById('current-slide').textContent = currentSlide;
+        }
+
+        document.getElementById('next-btn').addEventListener('click', () => updateSlide('next'));
+        document.getElementById('prev-btn').addEventListener('click', () => updateSlide('prev'));
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                updateSlide('next');
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                updateSlide('prev');
+            }
+        });
+
+        // Touch navigation for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            if (touchStartX - touchEndX > 50) {
+                updateSlide('next');
+            } else if (touchEndX - touchStartX > 50) {
+                updateSlide('prev');
+            }
+        });
+    </script>
+</body>
+</html>
